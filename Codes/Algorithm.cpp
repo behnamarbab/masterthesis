@@ -1,0 +1,3 @@
+void algorithm(){
+    return ;
+}

@@ -1,0 +1,6 @@
+*.aux
+*.bbl
+*.lot
+Thesis.out
+*.toc
+*.vscode*

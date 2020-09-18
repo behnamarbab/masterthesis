@@ -1,0 +1,13 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Fuzzing phases\relax }}{3}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces AFL status screen\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example for instrumented basic blocks\relax }}{15}{figure.caption.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Memlock's approach\relax }}{22}{figure.caption.13}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

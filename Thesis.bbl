@@ -1,0 +1,183 @@
+\begin{thebibliography}{10}
+
+\bibitem{omni_sci}
+OmniSci.
+\newblock What is llvm.
+\newblock \url{https://www.omnisci.com/technical-glossary/llvm}, 2020.
+\newblock [Online]; accessed in 2020.
+
+\bibitem{owasp}
+{The Open Web Application Security Project}.
+\newblock \url{https://www.owasp.org}, 2019.
+
+\bibitem{sutton2007fuzzing}
+Michael Sutton, Adam Greene, and Pedram Amini.
+\newblock {\em Fuzzing: brute force vulnerability discovery}.
+\newblock Pearson Education, 2007.
+
+\bibitem{song2019periscope}
+Dokyung Song, Felicitas Hetzelt, Dipanjan Das, Chad Spensky, Yeoul Na, Stijn
+  Volckaert, Giovanni Vigna, Christopher Kruegel, Jean-Pierre Seifert, and
+  Michael Franz.
+\newblock Periscope: An effective probing and fuzzing framework for the
+  hardware-os boundary.
+\newblock In {\em NDSS}, 2019.
+
+\bibitem{out_of_thin_air}
+Michal Zalewski.
+\newblock Pulling jpegs out of thin air.
+\newblock
+  \url{https://lcamtuf.blogspot.com/2014/11/pulling-jpegs-out-of-thin-air.html},
+  2014.
+
+\bibitem{miller1990empirical}
+Barton~P Miller, Louis Fredriksen, and Bryan So.
+\newblock An empirical study of the reliability of unix utilities.
+\newblock {\em Communications of the ACM}, 33(12):32--44, 1990.
+
+\bibitem{banks2006snooze}
+Greg Banks, Marco Cova, Viktoria Felmetsger, Kevin Almeroth, Richard Kemmerer,
+  and Giovanni Vigna.
+\newblock Snooze: toward a stateful network protocol fuzzer.
+\newblock In {\em International Conference on Information Security}, pages
+  343--358. Springer, 2006.
+
+\bibitem{gascon2015pulsar}
+Hugo Gascon, Christian Wressnegger, Fabian Yamaguchi, Daniel Arp, and Konrad
+  Rieck.
+\newblock Pulsar: Stateful black-box fuzzing of proprietary network protocols.
+\newblock In {\em International Conference on Security and Privacy in
+  Communication Systems}, pages 330--347. Springer, 2015.
+
+\bibitem{doupe2012enemy}
+Adam Doup{\'e}, Ludovico Cavedon, Christopher Kruegel, and Giovanni Vigna.
+\newblock Enemy of the state: A state-aware black-box web vulnerability
+  scanner.
+\newblock In {\em Presented as part of the 21st $\{$USENIX$\}$ Security
+  Symposium ($\{$USENIX$\}$ Security 12)}, pages 523--538, 2012.
+
+\bibitem{duchene2012xss}
+Fabien Duchene, Roland Groz, Sanjay Rawat, and Jean-Luc Richier.
+\newblock Xss vulnerability detection using model inference assisted
+  evolutionary fuzzing.
+\newblock In {\em 2012 IEEE Fifth International Conference on Software Testing,
+  Verification and Validation}, pages 815--817. IEEE, 2012.
+
+\bibitem{godefroid2012sage}
+Patrice Godefroid, Michael~Y Levin, and David Molnar.
+\newblock Sage: whitebox fuzzing for security testing.
+\newblock {\em Communications of the ACM}, 55(3):40--44, 2012.
+
+\bibitem{cadar2011symbolic}
+Cristian Cadar, Patrice Godefroid, Sarfraz Khurshid, Corina~S Pasareanu,
+  Koushik Sen, Nikolai Tillmann, and Willem Visser.
+\newblock Symbolic execution for software testing in practice: preliminary
+  assessment.
+\newblock In {\em 2011 33rd International Conference on Software Engineering
+  (ICSE)}, pages 1066--1071. IEEE, 2011.
+
+\bibitem{stephens2016driller}
+Nick Stephens, John Grosen, Christopher Salls, Andrew Dutcher, Ruoyu Wang,
+  Jacopo Corbetta, Yan Shoshitaishvili, Christopher Kruegel, and Giovanni
+  Vigna.
+\newblock Driller: Augmenting fuzzing through selective symbolic execution.
+\newblock In {\em NDSS}, volume~16, pages 1--16, 2016.
+
+\bibitem{ganesh2009taint}
+Vijay Ganesh, Tim Leek, and Martin Rinard.
+\newblock Taint-based directed whitebox fuzzing.
+\newblock In {\em Proceedings of the 31st International Conference on Software
+  Engineering}, pages 474--484. IEEE Computer Society, 2009.
+
+\bibitem{godefroid2008grammar}
+Patrice Godefroid, Adam Kiezun, and Michael~Y Levin.
+\newblock Grammar-based whitebox fuzzing.
+\newblock In {\em ACM Sigplan Notices}, volume~43, pages 206--215. ACM, 2008.
+
+\bibitem{liang2018fuzzing}
+Hongliang Liang, Xiaoxiao Pei, Xiaodong Jia, Wuwei Shen, and Jian Zhang.
+\newblock Fuzzing: State of the art.
+\newblock {\em IEEE Transactions on Reliability}, 67(3):1199--1218, 2018.
+
+\bibitem{yang2009survey}
+Qian Yang, J~Jenny Li, and David~M Weiss.
+\newblock A survey of coverage-based testing tools.
+\newblock {\em The Computer Journal}, 52(5):589--597, 2009.
+
+\bibitem{bohme2017coverage}
+Marcel B{\"o}hme, Van-Thuan Pham, and Abhik Roychoudhury.
+\newblock Coverage-based greybox fuzzing as markov chain.
+\newblock {\em IEEE Transactions on Software Engineering}, 2017.
+
+\bibitem{bohme2017directed}
+Marcel B{\"o}hme, Van-Thuan Pham, Manh-Dung Nguyen, and Abhik Roychoudhury.
+\newblock Directed greybox fuzzing.
+\newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
+  Communications Security}, pages 2329--2344. ACM, 2017.
+
+\bibitem{lemieux2018perffuzz}
+Caroline Lemieux, Rohan Padhye, Koushik Sen, and Dawn Song.
+\newblock Perffuzz: Automatically generating pathological inputs.
+\newblock In {\em Proceedings of the 27th ACM SIGSOFT International Symposium
+  on Software Testing and Analysis}, pages 254--265. ACM, 2018.
+
+\bibitem{petsios2017slowfuzz}
+Theofilos Petsios, Jason Zhao, Angelos~D Keromytis, and Suman Jana.
+\newblock Slowfuzz: Automated domain-independent detection of algorithmic
+  complexity vulnerabilities.
+\newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
+  Communications Security}, pages 2155--2168. ACM, 2017.
+
+\bibitem{wen2020memlock}
+Cheng Wen, Haijun Wang, Yuekang Li, Shengchao Qin, Yang Liu, Zhiwu Xu, Hongxu
+  Chen, Xiaofei Xie, Geguang Pu, and Ting Liu.
+\newblock Memlock: Memory usage guided fuzzing.
+\newblock ICSE, 2020.
+
+\bibitem{zalewski2014american}
+Michal Zalewski.
+\newblock American fuzzy lop.(2014).
+\newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
+
+\bibitem{afl_git}
+american fuzzy lop - a security-oriented fuzzer.
+\newblock \url{https://github.com/google/AFL}, 2020.
+
+\bibitem{afl_strategies}
+Michal Zalewski.
+\newblock Binary fuzzing strategies: what works, what doesn't.
+\newblock
+  \url{https://lcamtuf.blogspot.com/2014/08/binary-fuzzing-strategies-what-works.html},
+  2014.
+
+\bibitem{llvm}
+LLVM.
+\newblock Llvm project.
+\newblock \url{http://llvm.org/}, 2020.
+\newblock [Online]; accessed in 2020.
+
+\bibitem{lattner2004llvm}
+Chris Lattner and Vikram Adve.
+\newblock Llvm: A compilation framework for lifelong program analysis \&
+  transformation.
+\newblock In {\em International Symposium on Code Generation and Optimization,
+  2004. CGO 2004.}, pages 75--86. IEEE, 2004.
+
+\bibitem{clang}
+LLVM.
+\newblock Clang: a c language family frontend for llvm.
+\newblock \url{https://clang.llvm.org/}, 2020.
+\newblock [Online]; accessed in 2020.
+
+\bibitem{manzoor2008common}
+Shahriar Manzoor.
+\newblock Common mistakes in online and real-time contests.
+\newblock {\em XRDS: Crossroads, The ACM Magazine for Students}, 14(4):10--16,
+  2008.
+
+\bibitem{wasik2018survey}
+Szymon Wasik, Maciej Antczak, Jan Badura, Artur Laskowski, and Tomasz Sternal.
+\newblock A survey on online judge systems and their applications.
+\newblock {\em ACM Computing Surveys (CSUR)}, 51(1):1--34, 2018.
+
+\end{thebibliography}
