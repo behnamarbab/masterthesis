@@ -6,9 +6,9 @@ As mentioned in Chapter \ref{chap:ch2}, AFL uses the instrumentation for increas
 
 In addition to the features implemented and used in AFL, Waffle leverages 2 other features for guiding the fuzzing execution.
 \subsubsection{Memory consumption}
-Our memory consumption features are derived from the features used in Memlock \cite{wen2020memlock}. To collect these information, Memlock monitors the heap or the stack's usage during the runtime and depending on the allocation or deallocation instructions, the counter is increased or decreased accordingly. In appendix \ref{appendix:memlock} we can see a section of the source code for Memlock that is responsible for injecting the new instructions. These instructions are added in compile-time and do not change the efficiency of the binary in execution speed. In addition, this job is a one time job that is done before the fuzzing is started.
+Our memory consumption features are derived from the features used in Memlock \cite{wen2020memlock}. To collect this information, Memlock monitors the heap or the stack's usage during the runtime, and depending on the allocation or deallocation instructions, the counter is increased or decreased accordingly. In appendix \ref{appendix:memlock} we can see a section of the source code for Memlock that is responsible for injecting the new instructions. These instructions are added in compile-time and do not change the efficiency of the binary in execution speed. In addition, this job is a one time job that is done before the fuzzing is started.
 
-Before AFL/Memlock starts fuzzing the program, it first shares memory with the target program. When the fuzzer runs the program, the instrumented binary is capable of filling the \textbf{shared memory} according to any strategy we choose and LLVM supports.
+Before AFL/Memlock starts fuzzing the program, it first sets up a shared memory with the target program. When the fuzzer runs the program, the instrumented binary is capable of filling the \textbf{shared memory} according to any strategy we choose and LLVM supports.
 
 Memlock has two arrays for collecting the runtime information. These arrays are $\texttt{\_\_afl\_area\_initial}$ which is implemented in AFL, and $\texttt{\_\_afl\_perf\_initial}$ for collecting the memory consuming features. Currently, the first array can keep $2^{16}$ elements, each one as a byte; the second array keeps $2^{14}$ elements of double words - 32bits.
 
@@ -22,14 +22,9 @@ After these instrumentations are applied on the target, Memlock can start fuzzin
 
 \subsubsection{Instruction counters}
 
-We are looking for features that can help the fuzzer find inputs causing a timeout, or memory exhaustion. We collect these information in runtime using our instrumentation.
+We are looking for features that can help the fuzzer find inputs causing a timeout, or memory exhaustion. We collect this information in runtime using our instrumentation.
 
-% TODO: talk about algorithmic problems, maybe
-The intuition behind this thesis comes from the fact that all the programming competitions announce two main resources that are limited for the execution of the submitted program. This means that a program must be run without any compile-time or run-time errors and generate the correct output; and the whole execution is constrained with a specific time limit and memory limit. \cite{manzoor2008common} In some competitions, the judge system lets the competitors read each others' submitted program. If they can find a vulnerability in the program that is exploitable and causes any expected result, except the correct answer, the recieve the score for their successful \textbf{hacking} attempt. \cite{wasik2018survey}
-
-A fuzzer can automate the process of finding vulnerabilities; and targeting the algorithmic problems requires a resource-aware approach for investigating a larger range of problematic inputs.
-
-Collecting the memory-related features are done by Memlock and Waffle needs to be aware of the time-consuming instructions that may lead to a timeout. To gather these information, Waffle \textbf{counts the number of instructions in a basic block and increases a counter by that value}. Waffle gathers the information with the help of \textbf{instruction visitors} defined by LLVM.
+Collecting the memory-related features is done by Memlock and Waffle needs to be aware of the time-consuming instructions that may lead to a timeout. To gather this information, Waffle \textbf{counts the number of instructions in a basic block and increases a counter by that value}. Waffle gathers the information with the help of \textbf{instruction visitors} defined by LLVM.
 
 From the documentations of LLVM, \say{instruction visitors are used when you want to perform different actions for different kinds of instructions without having to use lots of casts and a big switch statement (in your code, that is).} For our purpose, we only take the visitor class \texttt{visitInstruction}, and only count how many instructions are located in the current basic block. This number is later added to the total value whenever the basic block is run in the execution.
 

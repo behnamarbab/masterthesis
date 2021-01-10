@@ -20,22 +20,23 @@
 \contentsline {section}{\numberline {3.2}Motivating example}{18}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Instrumentation}{18}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Features}{18}{subsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.1}Memory consumption}{18}{subsubsection.3.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.2}Instruction counters}{19}{subsubsection.3.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}Memory consumption}{19}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}Instruction counters}{20}{subsubsection.3.3.1.2}%
 \contentsline {section}{\numberline {3.4}Fuzzing the target}{21}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Concluding remarks}{21}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Simulation}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Target program and instrumentation}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Program inputs and setups}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Generating fuzzed data}{23}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Program execution and monitoring}{23}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Report vulnerabilities}{23}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Results and Evaluation}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}FuzzBench}{24}{section.5.1}%
-\contentsline {section}{\numberline {5.2}results}{24}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{25}{chapter.6}%
-\contentsline {chapter}{Bibliography}{26}{chapter*.14}%
-\contentsline {chapter}{\numberline {A}Handling stack operations in Memlock}{30}{appendix.A}%
-\contentsline {chapter}{Glossary}{33}{appendix*.15}%
+\contentsline {chapter}{\numberline {4}Simulation}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Target program and instrumentation}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Program inputs and setups}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Generating fuzzed data}{25}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Program execution and monitoring}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Report vulnerabilities}{25}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Results and Evaluation}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}FuzzBench}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}results}{26}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{27}{chapter.6}%
+\contentsline {chapter}{Bibliography}{28}{chapter*.14}%
+\contentsline {chapter}{\numberline {A}Handling stack operations in Memlock}{32}{appendix.A}%
+\contentsline {chapter}{Glossary}{35}{appendix*.15}%
 \cftpagenumbersoff {chapter}
-\contentsline {chapter}{Vita}{34}{section*.16}%
+\contentsline {chapter}{Vita}{36}{section*.16}%
