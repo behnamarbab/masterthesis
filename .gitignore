@@ -5,3 +5,5 @@ Thesis.out
 *.toc
 *.vscode*
 *.log
+Thesis.log
+Thesis.pdf
