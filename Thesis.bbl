@@ -30,6 +30,23 @@ Michal Zalewski.
   \url{https://lcamtuf.blogspot.com/2014/11/pulling-jpegs-out-of-thin-air.html},
   2014.
 
+\bibitem{sample_code_ref}
+Finding memory bugs with addresssanitizer.
+\newblock
+  \url{https://embeddedbits.org/finding-memory-bugs-with-addresssanitizer/},
+  2020.
+
+\bibitem{address_san}
+Google/addresssanitizer.
+\newblock \url{https://github.com/google/sanitizers/wiki/AddressSanitizer},
+  2019.
+
+\bibitem{serebryany2012addresssanitizer}
+Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitriy Vyukov.
+\newblock Addresssanitizer: A fast address sanity checker.
+\newblock In {\em 2012 $\{$USENIX$\}$ Annual Technical Conference
+  ($\{$USENIX$\}$$\{$ATC$\}$ 12)}, pages 309--318, 2012.
+
 \bibitem{miller1990empirical}
 Barton~P Miller, Louis Fredriksen, and Bryan So.
 \newblock An empirical study of the reliability of unix utilities.
@@ -94,6 +111,12 @@ Patrice Godefroid, Adam Kiezun, and Michael~Y Levin.
 \newblock Grammar-based whitebox fuzzing.
 \newblock In {\em ACM Sigplan Notices}, volume~43, pages 206--215. ACM, 2008.
 
+\bibitem{afl_qemu}
+High-performance binary-only instrumentation for afl-fuzz.
+\newblock
+  \url{https://github.com/mirrorer/afl/blob/master/qemu_mode/README.qemu},
+  2020.
+
 \bibitem{liang2018fuzzing}
 Hongliang Liang, Xiaoxiao Pei, Xiaodong Jia, Wuwei Shen, and Jian Zhang.
 \newblock Fuzzing: State of the art.
@@ -134,22 +157,6 @@ Cheng Wen, Haijun Wang, Yuekang Li, Shengchao Qin, Yang Liu, Zhiwu Xu, Hongxu
 \newblock Memlock: Memory usage guided fuzzing.
 \newblock ICSE, 2020.
 
-\bibitem{zalewski2014american}
-Michal Zalewski.
-\newblock American fuzzy lop.(2014).
-\newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
-
-\bibitem{afl_git}
-american fuzzy lop - a security-oriented fuzzer.
-\newblock \url{https://github.com/google/AFL}, 2020.
-
-\bibitem{afl_strategies}
-Michal Zalewski.
-\newblock Binary fuzzing strategies: what works, what doesn't.
-\newblock
-  \url{https://lcamtuf.blogspot.com/2014/08/binary-fuzzing-strategies-what-works.html},
-  2014.
-
 \bibitem{llvm}
 LLVM.
 \newblock Llvm project.
@@ -169,15 +176,35 @@ LLVM.
 \newblock \url{https://clang.llvm.org/}, 2020.
 \newblock [Online]; accessed in 2020.
 
-\bibitem{manzoor2008common}
-Shahriar Manzoor.
-\newblock Common mistakes in online and real-time contests.
-\newblock {\em XRDS: Crossroads, The ACM Magazine for Students}, 14(4):10--16,
-  2008.
+\bibitem{inst_visitor}
+Base class for instruction visitors.
+\newblock \url{https://llvm.org/doxygen/InstVisitor_8h_source.html}, 2021.
 
-\bibitem{wasik2018survey}
-Szymon Wasik, Maciej Antczak, Jan Badura, Artur Laskowski, and Tomasz Sternal.
-\newblock A survey on online judge systems and their applications.
-\newblock {\em ACM Computing Surveys (CSUR)}, 51(1):1--34, 2018.
+\bibitem{zalewski2014american}
+Michal Zalewski.
+\newblock American fuzzy lop.(2014).
+\newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
+
+\bibitem{afl_git}
+american fuzzy lop - a security-oriented fuzzer.
+\newblock \url{https://github.com/google/AFL}, 2020.
+
+\bibitem{afl_strategies}
+Michal Zalewski.
+\newblock Binary fuzzing strategies: what works, what doesn't.
+\newblock
+  \url{https://lcamtuf.blogspot.com/2014/08/binary-fuzzing-strategies-what-works.html},
+  2014.
+
+\bibitem{hoare1962quicksort}
+Charles~AR Hoare.
+\newblock Quicksort.
+\newblock {\em The Computer Journal}, 5(1):10--16, 1962.
+
+\bibitem{nosanitize}
+add nosanitize metadata to more coverage instrumentation instructions.
+\newblock
+  \url{https://lists.llvm.org/pipermail/llvm-commits/Week-of-Mon-20150302/263798.html},
+  2015.
 
 \end{thebibliography}

@@ -1,5 +1,7 @@
-\section{Introduction}
+\section{Introduction} \label{sec:2.1}
 
 The term \textbf{fuzzing} or \textbf{fuzz testing} was first introduced in late 80's. OWAPS defines it as a tool for \say{finding implementation bugs using malformed/semi-malformed data injection in an automated fashion}. \cite{owasp}
 
-Since the growth of computer programs conquered all the globe, the profit of compromising the programs grew as well. 
+There are different implementations of fuzzers for different purposes. Our fuzzer is a coverage-based whitebox fuzzer, and we will explain theis definition in this chapter.
+
+In this chapter, we begin by reviewing the previous works that lead to this thesis \ref{sec:2.2}. We bring up the features we use from LLVM in section \ref{sec:2-llvm}. In section \ref{sec:2-afl} we review the implementation of AFL, and we wrap up this chapter with conclusions.
