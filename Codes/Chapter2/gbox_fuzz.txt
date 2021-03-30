@@ -1,0 +1,3 @@
+$ ./greybox-instr-c ./sample_vul_asan --output sample_gry_inst
+$ ./greybox-fuzzer sample_gry_inst
+  [Greybox fuzzing: sample_gry_inst]

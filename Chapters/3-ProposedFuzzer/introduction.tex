@@ -1,10 +1,15 @@
 \section{Introduction}
-In this chapter a new fuzzer is introduced, that is capable of finding the vulnerabilities related to (theoretically) any resource's exhaustion. The first section explains a motivating example leading to our proposed fuzzer. The fuzzer is based on AFL and uses the implementation of Memlock for memory usage assessments. For monitoring the resources, we use compile-time instrumentation of the target program using LLVM's APIs; we take advantage of \textbf{visiting} APIs that let us keep track of any type of instructions defined for LLVM. As a result, the instructions related to any resource are counted and this information is later used in the fuzzing stage. The vulnerabilities found by our fuzzer are then tested for exploitability. The short-comings and performance expectations of our fuzzer are investigated before we conclude this chapter.
+In this chapter, we introduce \textbf{Waffle} in more details. Waffle is a tool capable of finding the vulnerabilities related to (theoretically) any resource exhaustion. The first section explains a motivating example leading to our proposed fuzzer. This fuzzer is based on AFL and extends its implementation. For monitoring the resources, we use compile-time instrumentation of the target program using LLVM's APIs; we take advantage of \textbf{visiting} APIs that let us keep track of any instructions defined for LLVM. As a result, the instructions related to any resource are counted, and this information is later used in the fuzzing stage.
 
-We will call our proposed fuzzer \textbf{Waffle}, which is derived from \textbf{What An Amazing AFL} - WAAAFL! The summary of our contributions are as follows:
+AFL is the state-of-the-art in finding vulnerabilities and as it is amazing to be developed, the name of our fuzzer comes after \textit{WAAAFL}!
+
+\vspace{\baselineskip}
+
+In this chapter we are contributing the following topics:
 
 \begin{itemize}
-    \item A new instrumentation for collecting runtime information about resource usages, i.e. memory and time.
-    \item A new fuzz testing algorithm for collectively considering the former features of AFL and Memlock, as well as the features we introduce in Waffle.
+    \item An implementation of a fuzzer for finding the worst-case scenario in an algebraic problem.
+    \item We use the \textbf{visitor} functions, which are not used in previous works, as we are aware of.
+    \item A new instrumentation for collecting runtime information about resource usages. In Waffle, we focus on maximising the number of instructions.
+    \item A new fuzz testing approach for collectively considering the former features of AFL, as well as the features we introduce in Waffle.
 \end{itemize}
-

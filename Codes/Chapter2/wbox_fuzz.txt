@@ -1,0 +1,3 @@
+$ ./whitebox-instr-c sample_vul.c --output sample_wht_inst
+$ ./whitebox-fuzzer sample_wht_inst
+  [Whitebox fuzzing: sample_wht_inst]

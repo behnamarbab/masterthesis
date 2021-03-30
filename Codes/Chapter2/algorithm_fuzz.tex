@@ -1,0 +1,19 @@
+% fuzz
+%     calibrate the test case
+%     trim the test cases (if needed)
+%     calculate the performance score
+%     bitflip
+%     interesting values and dictionary usage
+%     random havoc
+
+\begin{algorithm}
+    \KwIn{\textbf{$queue Entry$}}
+    $test\_case \leftarrow Entry.test\_case$
+    $calibrate(test\_case)$\;
+    $bitflip(test\_case)$\;
+    $save\_if\_interesting(test\_case)$\;
+    $random\_havoc(test\_case)$\;
+
+    \caption{$fuzz\_one$: Fuzz one Entry}
+    \label{algo:fuzzone}
+\end{algorithm}

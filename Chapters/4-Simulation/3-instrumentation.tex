@@ -1,0 +1,31 @@
+\section{Instrumentation}
+
+To inject code into the binary of the target program, we modify the two files \textit{waffle-llvm-rt.o.c} and \textit{waffle-llvm-pass.so.cc}. The first file is responsible for the initial setup for the SHM and fork server. The later file injects the basic-block level instrumentation, which contains our feature collection procedure.
+
+In the file \textit{waffle-llvm-rt.o.c} first, we specify an array of 64KB, in addition to the shared memory implemented in Memlock. This array collects the instruction counters and monitors the execution of the program through each basic-block.
+
+\begin{lstlisting}[language=C++,style=CodeStyle,caption={waffle-llvm-rt.o.c},label={lst:memlock}]
+    u32  __wafl_icnt_initial[ICNT_SIZE];
+    u32* __wafl_icnt_ptr = __wafl_icnt_initial;
+\end{lstlisting}
+
+Here $ICNT\_SIZE$ is equal to $2^{14}$ words, which makes the size of 64KB. 
+
+In the file \textit{waffle-llvm-pass.so.cc} we implement the LLVM pass, which helps us with injecting basic-block level instructions. For our purposes, we are using the instruction visitor, which we explained in Chapter \ref{chap:ch2}. 
+
+After the above modifications on Memlock, we can \textit{make} the LLVM project within Waffle. Our improvements will be applied in the \textit{waffle-clang}, which we can use for compiling the target program.
+
+To compile a source code to an executable, we specify the path to \textit{waffle-clang} as the compiler for building executable target programs. For instance, if the program contains a single source file, we can use the following command:
+
+\begin{lstlisting}[language=bash,style=CommandStyle,caption=Compile a single file using waffle-clang]
+    ./waffle-clang -i <sourcecode-path> -o <executable-path>
+\end{lstlisting}
+
+Choosing the right compiler here is necessary as \textit{waffle-clang/waffle-clang++} injects the proposed instrumentation. Generally, we can define the path to the compiler by exporting it to the environment variables:
+
+\begin{lstlisting}[language=bash,style=CommandStyle,caption=Compile using waffle-clang]
+    export CC=waffle-clang
+    export CXX=waffle-clang++
+\end{lstlisting}
+
+Waffle uses the resulting executables for its fuzzing procedure.

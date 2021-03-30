@@ -1,0 +1,29 @@
+% main
+%     initialize the fuzzer
+%     while fuzzing is not terminated:
+%         cull the queue of tests and update the bitmap
+%         select the first entity of the queue, as E
+%         fuzz(E)
+
+% calibrate:
+%     /* Calibrate a new test case. This is done when processing the input directory
+%    to warn about flaky or otherwise problematic test cases early on; and when
+%    new paths are discovered to detect variable behavior and so on. */
+
+% trimming:
+%     /* Trim all new test cases to save cycles when doing deterministic checks. The
+%    trimmer uses power-of-two increments somewhere between 1/16 and 1/1024 of
+%    file size, to keep the stage short and sweet. */
+
+\begin{algorithm}
+    % \DontPrintSemicolon % Some LaTeX compilers require you to use \dontprintsemicolon instead
+    \KwIn{\textbf{$in\_dir$}, \textbf{$out\_dir$}, $instrumented$ \textbf{$Target$}}
+    initialize fuzzer\;
+    \While{fuzzing is not terminated} {
+      cull queue and update bitmaps\;
+      $Entry \leftarrow q.first\_entry()$\;
+      $fuzz\_one(Entry)$\;
+    }
+    \caption{afl-fuzz}
+    \label{algo:afl}
+\end{algorithm}

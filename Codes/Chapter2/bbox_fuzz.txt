@@ -1,0 +1,2 @@
+$ ./blackbox-fuzzer ./sample_vul_asan
+  [Blackbox fuzzing: sample_vul_asan]
