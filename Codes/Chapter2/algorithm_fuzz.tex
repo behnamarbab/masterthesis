@@ -8,12 +8,17 @@
 
 \begin{algorithm}
     \KwIn{\textbf{$queue Entry$}}
-    $test\_case \leftarrow Entry.test\_case$
-    $calibrate(test\_case)$\;
-    $bitflip(test\_case)$\;
-    $save\_if\_interesting(test\_case)$\;
-    $random\_havoc(test\_case)$\;
-
+    $T \leftarrow Entry.test\_case$\;
+    $calibrate(T)$\;
+    $trim(T)$\;
+    $perf\_score \leftarrow calculate\_score(T)$\;
+    \If{$deterministic\_mode$}{
+      $deterministic\_stages(T)$\;
+    }
+    $MX \leftarrow calc\_stages(perf\_score, \mathcal{C})$\;
+    \ForEach{element in $ (0, MX)$}{
+      $random\_havoc(T)$\;
+    }
     \caption{$fuzz\_one$: Fuzz one Entry}
     \label{algo:fuzzone}
 \end{algorithm}

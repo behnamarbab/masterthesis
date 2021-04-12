@@ -19,45 +19,45 @@ Database file #1: mybibliography.bib
 Warning--can't use both volume and number fields in stephens2016driller
 Warning--can't use both volume and number fields in godefroid2008grammar
 Warning--empty booktitle in wen2020memlock
-You've used 35 entries,
+You've used 38 entries,
             1791 wiz_defined-function locations,
-            634 strings with 9869 characters,
-and the built_in function-call counts, 8940 in all, are:
-= -- 821
+            643 strings with 10091 characters,
+and the built_in function-call counts, 9227 in all, are:
+= -- 846
 > -- 374
 < -- 15
-+ -- 141
-- -- 106
-* -- 504
-:= -- 1255
-add.period$ -- 111
-call.type$ -- 35
-change.case$ -- 34
++ -- 143
+- -- 105
+* -- 507
+:= -- 1275
+add.period$ -- 116
+call.type$ -- 38
+change.case$ -- 37
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 424
-empty$ -- 927
-format.name$ -- 106
-if$ -- 2133
+cite$ -- 41
+duplicate$ -- 439
+empty$ -- 981
+format.name$ -- 105
+if$ -- 2214
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 38
 missing$ -- 23
-newline$ -- 174
-num.names$ -- 28
-pop$ -- 189
+newline$ -- 185
+num.names$ -- 27
+pop$ -- 211
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 258
+skip$ -- 271
 stack$ -- 0
 substring$ -- 532
-swap$ -- 170
+swap$ -- 173
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 77
-width$ -- 37
-write$ -- 374
+while$ -- 76
+width$ -- 40
+write$ -- 396
 (There were 3 warnings)

@@ -1,3 +1,9 @@
-\section{Fuzzing the target}
+\section{Fuzzing}
 
+% \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}
 
+Waffle needs the instrumented binary from the previous section (\ref{sec:3-instr}) to start its fuzz testing loop. The input and output directories are specified for the fuzzer to work with. Next, Waffle takes one second for the timeout and considers no memory limit for each execution of the target program \cite{asan_note}. We also let the fuzzer work in deterministic mode, which we was discussed.
+
+% According to the Algorithm \ref{}
+
+% algo

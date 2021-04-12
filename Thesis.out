@@ -17,15 +17,16 @@
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Motivating example}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.3}{Instrumentation}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Concluding remarks}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Simulation}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Implementation}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Instrumentation}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Start fuzzing}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.4}{Monitoring fuzzing procedure}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.5}{Summary}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Results and Evaluation}{}% 27
-\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 28
-\BOOKMARK [0][-]{chapter*.17}{Bibliography}{}% 29
-\BOOKMARK [0][-]{chapter*.18}{Glossary}{}% 30
-\BOOKMARK [0][-]{section*.19}{Vita}{}% 31
+\BOOKMARK [1][-]{section.3.4}{Fuzzing}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{Concluding remarks}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{Simulation}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Implementation}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Instrumentation}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.3}{Start fuzzing}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.4}{Monitoring fuzzing procedure}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.5}{Summary}{chapter.4}% 27
+\BOOKMARK [0][-]{chapter.5}{Results and Evaluation}{}% 28
+\BOOKMARK [0][-]{chapter.6}{Conclusions and Future Work}{}% 29
+\BOOKMARK [0][-]{chapter*.18}{Bibliography}{}% 30
+\BOOKMARK [0][-]{chapter*.19}{Glossary}{}% 31
+\BOOKMARK [0][-]{section*.20}{Vita}{}% 32

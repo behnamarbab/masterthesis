@@ -13,21 +13,22 @@
 \contentsline {section}{\numberline {2.3}LLVM}{9}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{10}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}AFL}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Concluding remarks}{18}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Motivating example}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Instrumentation}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Concluding remarks}{24}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Simulation}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Implementation}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Instrumentation}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Start fuzzing}{27}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Monitoring fuzzing procedure}{28}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Summary}{29}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Results and Evaluation}{30}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{31}{chapter.6}%
-\contentsline {chapter}{Bibliography}{32}{chapter*.17}%
-\contentsline {chapter}{Glossary}{37}{chapter*.18}%
+\contentsline {section}{\numberline {2.5}Concluding remarks}{19}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Motivating example}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Instrumentation}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Fuzzing}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Concluding remarks}{27}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Simulation}{28}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Implementation}{28}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Instrumentation}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Start fuzzing}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Monitoring fuzzing procedure}{31}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Summary}{32}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Results and Evaluation}{33}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{34}{chapter.6}%
+\contentsline {chapter}{Bibliography}{35}{chapter*.18}%
+\contentsline {chapter}{Glossary}{40}{chapter*.19}%
 \cftpagenumbersoff {chapter}
-\contentsline {chapter}{Vita}{38}{section*.19}%
+\contentsline {chapter}{Vita}{41}{section*.20}%

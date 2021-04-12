@@ -36,7 +36,7 @@ To evaluate the performance of a fuzzer and assess the execution of it, the samp
 
 The sample program has a \textbf{Heap buffer overflow vulnerability}. If we compile this code with GCC and debugging flags, the vulnerability stays hidden and the program executes without any errors:
 
-\lstinputlisting[language=bash,style=CommandStyle,label={lst:exec1}]{Codes/Chapter2/exec_1.txt}
+\lstinputlisting[language=bash,style=CommandStyle,label={lst:gcc-sample},caption={Compile the sample program}]{Codes/Chapter2/exec_1.txt}
 
 One way to detect the prior vulnerability, is to add AddressSanitizer flag for the compilation \cite{address_san}. ASan is a fast memory error detector. This tool uses memory poisoning for the detection of a heap buffer overflow. (You can find more features of this tool in the reference) \cite{serebryany2012addresssanitizer}
 

@@ -23,13 +23,13 @@ struct CountAllVisitor : public InstVisitor<CountAllVisitor> {
 };
 \end{lstlisting}
 
-This way, we can count the number of memory copies in an execution. The \texttt{CountAll\-Visitor} structure keeps track of the instructions that LLVM considers them as memory copies.
+We count the number of memory copies in an execution. The \texttt{CountAll\-Visitor} structure keeps track of the instructions that LLVM considers them as memory copies.
 
 Now we can insert our instructions to the basicblocks:
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-pass},caption={LLVM-mode instrumentation pass}]{Codes/Chapter3/mini-wafl-llvm-pass.so.cc}
 
-In Line 7, we locate the shared bitmap. Lines 16 loads the pointer to the bitmap and configures the meta data for storage \cite{nosanitize}.
+In Line 7, we locate the shared bitmap. Lines 16 loads the pointer to the bitmap and configures the meta-data for storage \cite{nosanitize}.
 
 Same as AFL, Waffle stores the counters in the \textbf{hashed value} of the path we explored (Listing \ref{lst:hash}). The usage of the coverage-guided hashed values, helps Waffle to collect coverage information, and at the same time, maximise the number of instructions in executions. The lines 21 to 23 loads the pointer to the appropriate location on the bitmap.
 
@@ -42,5 +42,17 @@ In each basicblock, the visitors look for the \textbf{copies}. In different exec
 
 Now that we have calculated \texttt{CNT}, we load the pointer on the bitmap and add \texttt{CNT} to the content of the pointer. Waffle stores the result of the addition in the same pointer. (Lines 36-39)
 
+Waffle applies these instrumentation in the compile time, and when the program is run, the instructions have to add a number which is pregenerated, into the shared memory.
+
 \subsubsection*{Applying the instrumentation}
 
+To compile the target program with the adjusted instrumentation, we replace the C/C++ compilers (clang/clang++) with \textbf{\texttt{wafl-clang}}. \say{This program is a drop-in replacement for clang, similar in most respects to ../afl-gcc. It tries to figure out compilation mode, adds a bunch of flags, and then calls the real compiler.} \cite{clang-fast} Except refactoring the filenames and the name of the variables, we did not apply any other modifications on \texttt{wafl-clang.c}.
+
+Same as \ref{lst:gcc-sample}, we can start instrumentation by the command below:
+
+\begin{lstlisting}[language=bash,style=CommandStyle,label={lst:wafl-clang}]
+  ./wafl-clang sample_vul.c -o sample_vul_instr
+\end{lstlisting}
+
+Notice that we can insert compilation flags, such as \texttt{-fsanitize=address}, to enhance the performance of Waffle.
+% Can I add the IR here?

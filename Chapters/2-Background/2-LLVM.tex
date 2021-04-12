@@ -33,8 +33,8 @@ The instrumentation is applied before the IR generation, and the LLVM IR is fed 
 Waffle is based on AFL and we are extending the AFL's instrumentation in our work. The goal of using instrumentation for AFL is to differentiate code coverages. There are two techniques for instrumentation in AFL:
 
 \begin{enumerate}
-  \item \textit{$llvm_mode$}: AFL takes the source code and an instrumentation recipe and generates the instrumented binary of the target program.
-  \item \textit{$qemu_mode$}: AFL leverages the QEMU mode to obtain instrumentation output for closed-source binaries. We don't use this mode in this thesis.
+  \item \textit{$llvm\_mode$}: AFL takes the source code and an instrumentation recipe and generates the instrumented binary of the target program.
+  \item \textit{$qemu\_mode$}: AFL leverages the QEMU mode to obtain instrumentation output for closed-source binaries. We don't use this mode in this thesis.
 \end{enumerate}
 
 In the LLVM recipe, we instantiate the bitmap and assign it to the shared memory for modifications. The remaining instructions for the recipe will be applied on the basic blocks in \textbf{AFLCoverage} module. This module takes effect in compilation of the program before the generation of IR. We can see some of the implementation of this \textbf{pass} in Listing \ref{lst:afl-llvm}:

@@ -185,16 +185,17 @@ Michal Zalewski.
 \newblock American fuzzy lop.(2014).
 \newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
 
+\bibitem{about_afl}
+More about afl.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/about_afl.html}, 2019.
+
 \bibitem{afl_git}
 american fuzzy lop - a security-oriented fuzzer.
 \newblock \url{https://github.com/google/AFL}, 2020.
 
-\bibitem{afl_strategies}
-Michal Zalewski.
-\newblock Binary fuzzing strategies: what works, what doesn't.
-\newblock
-  \url{https://lcamtuf.blogspot.com/2014/08/binary-fuzzing-strategies-what-works.html},
-  2014.
+\bibitem{afl_userguide}
+Afl user guide.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/user_guide.html}, 2019.
 
 \bibitem{hoare1962quicksort}
 Charles~AR Hoare.
@@ -206,5 +207,16 @@ add nosanitize metadata to more coverage instrumentation instructions.
 \newblock
   \url{https://lists.llvm.org/pipermail/llvm-commits/Week-of-Mon-20150302/263798.html},
   2015.
+
+\bibitem{clang-fast}
+source of afl-clang-fast.c.
+\newblock
+  \url{https://github.com/google/AFL/blob/master/llvm_mode/afl-clang-fast.c},
+  2021.
+
+\bibitem{asan_note}
+Using asan with afl.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/notes_for_asan.html},
+  2019.
 
 \end{thebibliography}
