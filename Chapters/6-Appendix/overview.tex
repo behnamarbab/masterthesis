@@ -1,0 +1,36 @@
+\chapter{Appendix}
+
+\begin{subappendices}
+    % ! Waffle
+    \section{Waffle}
+    \label{app:waffle}
+    
+    % random_havoc stage
+    \subsection{random\_havoc}
+    \label{app:havoc}
+    An abstract implementation of the \texttt{havoc\_stage} used in AFL and Waffle. Most of the commands are removed, and the remaining comments describe the operations of this stage.
+    \lstinputlisting[language=C,style=CodeStyle,label={code:havoc},caption={Random havoc stage}]{Codes/Chapter2/havoc.c}    
+
+\newpage
+    % ! Fuzzbench
+    \section{FuzzBench}
+    \label{app:fuzzbench}
+
+    We have reviewed the recipe for adding Waffle to FuzzBench in this section.
+
+    \subsection{builder.Dockerfile}
+    \label{app:builder.docker}
+    Builds Waffle for the usage in FuzzBench.
+
+    The \texttt{parent\_image} is an image instance with premitive configurations, and is on \texttt{ubuntu:xenial} OS. Building Python, installing python requirements, and installing the \texttt{google-cloud-sdk}, are the operations applied on the \texttt{parent\_image}.
+
+    \lstinputlisting[language=docker-compose,style=CodeStyle,label={code:builder},caption={Recipe for building Waffle FuzzBench}]{Codes/Chapter4/builder.Dockerfile}
+
+    \subsection{fuzzer.py}
+    \label{app:fuzzer.py}
+    This python program specifies the sequence of the actions Waffle takes, in order to start fuzzing and use the benchmark as the target program. This program modifies the file located in \texttt{\{FUZZBENCH\_DIR\}/fuzzers/AFL/fuzzer.py}. As Waffle is based on AFL, this program can start the process same as the AFL's \texttt{fuzzer.py}.
+
+    \lstinputlisting[language=Python,style=CodeStyle,label={code:fuzz.py},caption={Recipe for running fuzzing with Waffle on a target}]{Codes/Chapter4/fuzzer.py}
+
+
+\end{subappendices}

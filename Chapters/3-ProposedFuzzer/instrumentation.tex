@@ -25,34 +25,41 @@ struct CountAllVisitor : public InstVisitor<CountAllVisitor> {
 
 We count the number of memory copies in an execution. The \texttt{CountAll\-Visitor} structure keeps track of the instructions that LLVM considers them as memory copies.
 
+The highest number of instructions is a goal that Waffle follows, so that the new generations of the inputs are executed with more instructions. The hit-counts in the shared array starting from \texttt{\_\_wafl\_area\_ptr}, are the number of times an edge is visited. Each time we visit an edge, we add the counted instructions to the appropriate index. The content of the array tracks the impact of edges in increasing the total number of instructions, and Waffle leverages these values to measures the influence of the changes in each index. [next section: \nameref{sec:3-afl}]
+
+The length of the shared memories are constant, but each time Waffle fuzzes a test-case, it needs to aggregate the content of the array and find the total number of instructions. Instead of calculating this total number in the fuzzing procedure, Waffle stores the total number of instructions in another shared memory region, \texttt{sys\_data} [Listing \ref{lst:sys-data-inst}]. Whenever the function \texttt{instr\_AddInsts()} is called, the \texttt{MaxInstCount} is increased by the provided value. Later, when the program is finishing its execution, the shared memory containing the \texttt{MaxInstCount} is updated. 
+
+\lstinputlisting[language=C,style=CodeStyle,label={lst:sys-data-inst},caption={sys\_data in instrumentation}]{Codes/Chapter3/waffle-fuzz/sys_data_inst.c}
+
 Now we can insert our instructions to the basicblocks:
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-pass},caption={LLVM-mode instrumentation pass}]{Codes/Chapter3/mini-wafl-llvm-pass.so.cc}
 
-In Line 7, we locate the shared bitmap. Lines 16 loads the pointer to the bitmap and configures the meta-data for storage \cite{nosanitize}.
+In Line 6, we locate the shared bitmap. Line 19 loads the pointer to the bitmap and configures the meta-data for storage \cite{nosanitize}.
 
-Same as AFL, Waffle stores the counters in the \textbf{hashed value} of the path we explored (Listing \ref{lst:hash}). The usage of the coverage-guided hashed values, helps Waffle to collect coverage information, and at the same time, maximise the number of instructions in executions. The lines 21 to 23 loads the pointer to the appropriate location on the bitmap.
+Same as AFL, Waffle stores the counters in the \textbf{hashed value} of the path we explored (Listing \ref{lst:hash}). The usage of the coverage-guided hashed values, helps Waffle in collecting the coverage information, and at the same time, maximizing the number of instructions in executions. Instructions in lines 23 to 25, load the pointer to the appropriate location on the bitmap.
 
-In each basicblock, the visitors look for the \textbf{copies}. In different executions, we noticed that the number of instructions increases so fast, and to control this number, we calculate its $\log$ (Lines 30-31):
+In each basicblock, the visitors look for the \textbf{memory copies}. In different executions, we could see that the number of instructions increases rapidly, and to control this number, we calculate its $\log$ value (Lines 32-33):
 
 \begin{equation}
   \label{eq:log}
   CNT = \log_{2}^{CAV} 
 \end{equation}
 
-Now that we have calculated \texttt{CNT}, we load the pointer on the bitmap and add \texttt{CNT} to the content of the pointer. Waffle stores the result of the addition in the same pointer. (Lines 36-39)
+Now that we have calculated \texttt{CNT}, we load the pointer on the bitmap and add \texttt{CNT} to the content of the pointer and replaces it with the new summation. (Lines 36-39)
 
-Waffle applies these instrumentation in the compile time, and when the program is run, the instructions have to add a number which is pregenerated, into the shared memory.
+The last step in instrumenting a basic-block, is to call the \texttt{instr\_AddInsts}. The command in line 42 calls the function with the previously set pointer, and sends \texttt{CNT} as the argument to this function.
 
-\subsubsection*{Applying the instrumentation}
+Waffle applies these instrumentations in the compile-time, and when the program is being run, the performance and coverage information are set.
 
-To compile the target program with the adjusted instrumentation, we replace the C/C++ compilers (clang/clang++) with \textbf{\texttt{wafl-clang}}. \say{This program is a drop-in replacement for clang, similar in most respects to ../afl-gcc. It tries to figure out compilation mode, adds a bunch of flags, and then calls the real compiler.} \cite{clang-fast} Except refactoring the filenames and the name of the variables, we did not apply any other modifications on \texttt{wafl-clang.c}.
+\subsubsection*{Run the instrumentation}
+
+To compile the target program with the adjusted instrumentation, we replace the C/C++ compilers (clang/clang++) with \textbf{\texttt{waffle-clang}}. \say{This program is a drop-in replacement for clang, similar in most respects to ../afl-gcc. It tries to figure out compilation mode, adds a bunch of flags, and then calls the real compiler.} \cite{clang-fast} Except refactoring the filenames and the name of the variables, we did not apply any other modifications on \texttt{waffle-clang.c}.
 
 Same as \ref{lst:gcc-sample}, we can start instrumentation by the command below:
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:wafl-clang}]
-  ./wafl-clang sample_vul.c -o sample_vul_instr
+  ./waffle-clang sample_vul.c -o sample_vul_waffle
 \end{lstlisting}
 
 Notice that we can insert compilation flags, such as \texttt{-fsanitize=address}, to enhance the performance of Waffle.
-% Can I add the IR here?

@@ -2,7 +2,7 @@ struct sys_data {
   int MaxInstCount;
 };
 
-struct sys_data* mem_data;                /* SHM (wcventure) - behnamarbab  */
+struct sys_data* mem_data;
 
 void ReadMemStatus(){
   total_icnt_cur = mem_data->MaxInstCount;

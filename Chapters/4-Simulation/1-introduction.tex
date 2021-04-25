@@ -1,7 +1,5 @@
-% \section{Introduction}
+\section{Introduction}
 
-This chapter presents the details of our implementation of Waffle.
+We developed Waffle to analyze the executables, with experimental instrumentation, to enhance the performance of AFL in finding test-cases exposing vulnerabilities due to resource-exhaustion. In this chapter, we compare the performance of Waffle with state-of-the-art coverage-based fuzzers, \textbf{AFL} \cite{afl_git}, and \textbf{libfuzzer} \cite{serebryany2015libfuzzer}. To evaluate the performance of Waffle, we use \textbf{fuzzbench} \cite{metzman2020fuzzbench} comparing the fuzzers on different programs.
 
-We implement and evaluate the performance of Waffle on an Ubuntu 18.4.5 LTS operating system. The computer consists of 16GB of RAM and Intel® Core™ i7-3770 CPU. 
-
-In the following sections, we will explain the implementation and the execution of Waffle in more detail.
+In the next section, we briefly describe the \textbf{fuzzbench} project, and explain how we utilize this service in this thesis. Next, we evaluate our work, and we continue with a discussion on the performance of Waffle.

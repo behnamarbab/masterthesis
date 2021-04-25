@@ -1,11 +1,11 @@
 \babel@toc {english}{}
-\contentsline {chapter}{Abstract}{ii}{chapter*.1}%
-\contentsline {chapter}{Dedication}{iii}{chapter*.2}%
-\contentsline {chapter}{Acknowledgments}{iv}{chapter*.3}%
-\contentsline {chapter}{Table of Contents}{v}{chapter*.3}%
-\contentsline {chapter}{List of Tables}{vii}{section*.4}%
-\contentsline {chapter}{List of Figures}{viii}{section*.5}%
-\contentsline {chapter}{Abbreviations}{ix}{chapter*.6}%
+\contentsline {chapter}{Abstract}{ii}{chapter*.2}%
+\contentsline {chapter}{Dedication}{iii}{chapter*.3}%
+\contentsline {chapter}{Acknowledgments}{iv}{chapter*.4}%
+\contentsline {chapter}{Table of Contents}{v}{chapter*.4}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.6}%
+\contentsline {chapter}{List of Figures}{viii}{chapter*.7}%
+\contentsline {chapter}{Abbreviations}{ix}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}%
@@ -13,22 +13,21 @@
 \contentsline {section}{\numberline {2.3}LLVM}{9}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{10}{subsection.2.3.1}%
 \contentsline {section}{\numberline {2.4}AFL}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Concluding remarks}{19}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Motivating example}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Instrumentation}{24}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Fuzzing}{27}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Concluding remarks}{27}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Simulation}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Implementation}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Instrumentation}{28}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Start fuzzing}{30}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Monitoring fuzzing procedure}{31}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Summary}{32}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Results and Evaluation}{33}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{34}{chapter.6}%
-\contentsline {chapter}{Bibliography}{35}{chapter*.18}%
-\contentsline {chapter}{Glossary}{40}{chapter*.19}%
-\cftpagenumbersoff {chapter}
-\contentsline {chapter}{Vita}{41}{section*.20}%
+\contentsline {section}{\numberline {2.5}Concluding remarks}{22}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Motivating example}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Instrumentation}{26}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Fuzzing}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Concluding remarks}{34}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Simulation}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}FuzzBench}{35}{section.4.2}%
+\contentsline {section}{\numberline {4.3}FuzzBench Reports}{38}{section.4.3}%
+\contentsline {chapter}{Bibliography}{44}{chapter*.41}%
+\contentsline {chapter}{\numberline {5}Appendix}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.A}Waffle}{49}{section.1.5.A}%
+\contentsline {subsection}{\numberline {5.A.1}random\_havoc}{49}{subsection.1.5.A.1}%
+\contentsline {section}{\numberline {5.B}FuzzBench}{51}{section.1.5.B}%
+\contentsline {subsection}{\numberline {5.B.1}builder.Dockerfile}{51}{subsection.1.5.B.1}%
+\contentsline {subsection}{\numberline {5.B.2}fuzzer.py}{52}{subsection.1.5.B.2}%

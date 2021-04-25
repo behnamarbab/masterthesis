@@ -9,55 +9,51 @@ A level-1 auxiliary file: Chapters/1-Introduction/overview.aux
 A level-1 auxiliary file: Chapters/2-Background/overview.aux
 A level-1 auxiliary file: Chapters/3-ProposedFuzzer/overview.aux
 A level-1 auxiliary file: Chapters/4-Simulation/overview.aux
-A level-1 auxiliary file: Chapters/5-ResultsEvaluation/overview.aux
-A level-1 auxiliary file: Chapters/6-Conclusion/overview.aux
 The style file: unsrt.bst
-A level-1 auxiliary file: SideChapters/08-appendices.aux
-A level-1 auxiliary file: SideChapters/09-glossary.aux
-A level-1 auxiliary file: SideChapters/10-vita.aux
+A level-1 auxiliary file: Chapters/6-Appendix/overview.aux
 Database file #1: mybibliography.bib
 Warning--can't use both volume and number fields in stephens2016driller
 Warning--can't use both volume and number fields in godefroid2008grammar
 Warning--empty booktitle in wen2020memlock
-You've used 38 entries,
+You've used 43 entries,
             1791 wiz_defined-function locations,
-            643 strings with 10091 characters,
-and the built_in function-call counts, 9227 in all, are:
-= -- 846
-> -- 374
+            656 strings with 10577 characters,
+and the built_in function-call counts, 9828 in all, are:
+= -- 896
+> -- 392
 < -- 15
-+ -- 143
-- -- 105
-* -- 507
-:= -- 1275
-add.period$ -- 116
-call.type$ -- 38
-change.case$ -- 37
++ -- 152
+- -- 109
+* -- 521
+:= -- 1359
+add.period$ -- 128
+call.type$ -- 43
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 439
-empty$ -- 981
-format.name$ -- 105
-if$ -- 2214
+cite$ -- 46
+duplicate$ -- 470
+empty$ -- 1063
+format.name$ -- 109
+if$ -- 2360
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 23
-newline$ -- 185
-num.names$ -- 27
-pop$ -- 211
+int.to.str$ -- 43
+missing$ -- 25
+newline$ -- 207
+num.names$ -- 29
+pop$ -- 238
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 271
+skip$ -- 289
 stack$ -- 0
 substring$ -- 532
-swap$ -- 173
+swap$ -- 178
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 76
-width$ -- 40
-write$ -- 396
+while$ -- 78
+width$ -- 45
+write$ -- 440
 (There were 3 warnings)
