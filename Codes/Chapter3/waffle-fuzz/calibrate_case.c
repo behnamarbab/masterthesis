@@ -7,7 +7,7 @@ static u8 calibrate_case(char** argv, struct queue_entry* q, u8* use_mem,
 
   static u8 first_trace[MAP_SIZE];
 
-  u8  fault = 0, new_bits = 0, new_max = 0, var_detected = 0,
+  u8  fault = 0, new_bits = 0, new_icnt = 0, var_detected = 0,
       first_run = (q->exec_cksum == 0);
 
   u64 start_us, stop_us;
@@ -68,8 +68,8 @@ static u8 calibrate_case(char** argv, struct queue_entry* q, u8* use_mem,
       u8 hnb = has_new_bits(virgin_bits);
       if (hnb > new_bits) new_bits = hnb;
 
-      u8 hnm = has_new_max();
-      if (hnm > new_max) new_max = hnm;
+      u8 hni = has_new_icnt();
+      if (hni > new_icnt) new_icnt = hni;
 
       if (q->exec_cksum) {
 
@@ -136,7 +136,7 @@ abort_calibration:
     queued_with_cov++;
   }
 
-  if (new_max == 2 && !q->has_new_icnt) {
+  if (new_icnt == 2 && !q->has_new_icnt) {
     q->has_new_icnt = 1;
     queued_with_icnt++;
   }

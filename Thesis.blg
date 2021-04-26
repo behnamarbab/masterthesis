@@ -9,6 +9,7 @@ A level-1 auxiliary file: Chapters/1-Introduction/overview.aux
 A level-1 auxiliary file: Chapters/2-Background/overview.aux
 A level-1 auxiliary file: Chapters/3-ProposedFuzzer/overview.aux
 A level-1 auxiliary file: Chapters/4-Simulation/overview.aux
+A level-1 auxiliary file: Chapters/5-Conclusion/overview.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: Chapters/6-Appendix/overview.aux
 Database file #1: mybibliography.bib
@@ -17,7 +18,7 @@ Warning--can't use both volume and number fields in godefroid2008grammar
 Warning--empty booktitle in wen2020memlock
 You've used 43 entries,
             1791 wiz_defined-function locations,
-            656 strings with 10577 characters,
+            657 strings with 10611 characters,
 and the built_in function-call counts, 9828 in all, are:
 = -- 896
 > -- 392

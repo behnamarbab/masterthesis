@@ -23,7 +23,7 @@ AFL checks the uniqueness of an execution by keeping a hashed value of \texttt{t
     \item \texttt{has\_new\_bits()}: AFL keeps the hit-counts of \texttt{trace\_bits[]}, for identifying the new edges appeared in the execution of the current test-case. \texttt{trace\_bits[]} is a sparse array, and AFL tracks the modified indices for better performance.
     \item \texttt{has\_new\_icnt()}: In addition to the previous method, Waffle searches for the highest values in \texttt{icnt\_bits[]}. Each cell in \texttt{icnt\_bits} contains 4 bytes of information. We saw in Listing \ref{lst:llvm-pass} that in an index, such as \texttt{i}, \texttt{icnt\_bits[i]} is added with \texttt{CNT}, while the increments in \texttt{trace\_bits[]} are always by one. An analysis on \texttt{./sample\_vul\_instr} showed that the average value for \texttt{CNT}s is more than 3. As a result, the variance for the values in \texttt{icnt\_bits[]} is higher than \texttt{trace\_bits[]}'s. To decrease this variance and enhance the performance of Waffle, it leverages a constant float number, \texttt{MAX\_CNT\_MULT}:
     
-    \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_max},caption={has\_new\_max()}]{Codes/Chapter3/waffle-fuzz/has_new_max.c}
+    \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_icnt},caption={has\_new\_icnt()}]{Codes/Chapter3/waffle-fuzz/has_new_icnt.c}
 
     By default, Waffle sets $MAX\_CNT\_MULT=1.05$, which means it expects at least 5\% increase for \texttt{icnt\_bits[i]} before updating the content of index $i$.
     % !                     ----!

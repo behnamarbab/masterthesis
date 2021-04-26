@@ -24,10 +24,12 @@
 \contentsline {section}{\numberline {4.1}Introduction}{37}{section.4.1}%
 \contentsline {section}{\numberline {4.2}FuzzBench}{38}{section.4.2}%
 \contentsline {section}{\numberline {4.3}FuzzBench Reports}{41}{section.4.3}%
-\contentsline {chapter}{Bibliography}{48}{chapter*.42}%
-\contentsline {chapter}{\numberline {5}Appendix}{53}{chapter.5}%
-\contentsline {section}{\numberline {5.A}Waffle}{53}{section.1.5.A}%
-\contentsline {subsection}{\numberline {5.A.1}random\_havoc}{53}{subsection.1.5.A.1}%
-\contentsline {section}{\numberline {5.B}FuzzBench}{55}{section.1.5.B}%
-\contentsline {subsection}{\numberline {5.B.1}builder.Dockerfile}{55}{subsection.1.5.B.1}%
-\contentsline {subsection}{\numberline {5.B.2}fuzzer.py}{56}{subsection.1.5.B.2}%
+\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{44}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Future Works and Conclusions}{48}{chapter.5}%
+\contentsline {chapter}{Bibliography}{49}{chapter*.42}%
+\contentsline {chapter}{\numberline {6}Appendix}{54}{chapter.6}%
+\contentsline {section}{\numberline {6.A}Waffle}{54}{section.1.6.A}%
+\contentsline {subsection}{\numberline {6.A.1}random\_havoc}{54}{subsection.1.6.A.1}%
+\contentsline {section}{\numberline {6.B}FuzzBench}{56}{section.1.6.B}%
+\contentsline {subsection}{\numberline {6.B.1}builder.Dockerfile}{56}{subsection.1.6.B.1}%
+\contentsline {subsection}{\numberline {6.B.2}fuzzer.py}{57}{subsection.1.6.B.2}%

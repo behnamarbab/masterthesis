@@ -8,7 +8,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{38}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{44}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{45}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{46}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{45}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution\relax }}{46}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution (cont.)\relax }}{47}{figure.caption.41}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }

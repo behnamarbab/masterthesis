@@ -1,4 +1,4 @@
-static inline u8 has_new_max() {
+static inline u8 has_new_icnt() {
   // #define MAX_CNT_MULT 1.05
   int ret = 0;
   for (int i = 0; i < ICNT_SIZE; i++) {

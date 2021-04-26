@@ -6,7 +6,7 @@ static u8 save_if_interesting(char** argv, void* mem, u32 len, u8 fault) {
 
   u8  *fn = "";
   u8  hnb = 0;
-  u8  hnm_icnt = 0;
+  u8  hni_icnt = 0;
   s32 fd;
   u8  keeping = 0, res;
   u32 cksum = hash32(trace_bits, MAP_SIZE, HASH_CONST);
@@ -18,7 +18,7 @@ static u8 save_if_interesting(char** argv, void* mem, u32 len, u8 fault) {
        future fuzzing, etc. */
 
     hnb = has_new_bits(virgin_bits);
-    hnm_icnt = has_new_max();
+    hni_icnt = has_new_icnt();
 
     if (!hnb) {
       if (crash_mode) total_crashes++;
@@ -29,7 +29,7 @@ static u8 save_if_interesting(char** argv, void* mem, u32 len, u8 fault) {
 #ifndef SIMPLE_FILES
 
     fn = alloc_printf("%s/queue/id:%06u,%s%s", out_dir, queued_paths,
-                      describe_op(hnb), hnm_icnt ? ",+icnt": "");
+                      describe_op(hnb), hni_icnt ? ",+icnt": "");
 
 #else
 
@@ -37,7 +37,7 @@ static u8 save_if_interesting(char** argv, void* mem, u32 len, u8 fault) {
 
 #endif /* ^!SIMPLE_FILES */
   
-    // DEBUG("Q.add: %02u hnm_icnt: %d\n", queued_paths, hnm_icnt);
+    // DEBUG("Q.add: %02u hni_icnt: %d\n", queued_paths, hni_icnt);
 
 	if (queue_cur->exec_cksum == cksum){ // (wcventure)
 		add_to_queue(fn, len, 0);
@@ -51,7 +51,7 @@ static u8 save_if_interesting(char** argv, void* mem, u32 len, u8 fault) {
     queued_with_cov++;
   }
 
-  if (hnm_icnt & 2) {
+  if (hni_icnt & 2) {
     queue_top->has_new_icnt = 1;
     queued_with_icnt++;
   }
