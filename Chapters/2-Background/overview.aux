@@ -2,7 +2,6 @@
 \providecommand\hyper@newdestlabel[2]{}
 \citation{owasp}
 \citation{sutton2007fuzzing}
-\citation{song2019periscope}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -10,42 +9,43 @@
 \newlabel{chap:ch2}{{2}{2}{Background}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}\protected@file@percent }
 \newlabel{sec:2.1}{{2.1}{2}{Introduction}{section.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Literature Review}{2}{section.2.2}\protected@file@percent }
-\newlabel{sec:2.2}{{2.2}{2}{Literature Review}{section.2.2}{}}
+\citation{song2019periscope}
 \citation{out_of_thin_air}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Literature Review}{3}{section.2.2}\protected@file@percent }
+\newlabel{sec:2.2}{{2.2}{3}{Literature Review}{section.2.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Fuzzing phases\relax }}{3}{figure.caption.10}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:fuzz_phases}{{2.1}{3}{Fuzzing phases\relax }{figure.caption.10}{}}
 \citation{sample_code_ref}
 \newlabel{lst:sample_vul}{{2.1}{4}{Sample vulnerable program}{lstlisting.2.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}Sample vulnerable program}{4}{lstlisting.2.1}\protected@file@percent }
-\newlabel{lst:gcc-sample}{{2.2}{4}{Compile the sample program}{lstlisting.2.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}Compile the sample program}{4}{lstlisting.2.2}\protected@file@percent }
 \citation{address_san}
 \citation{serebryany2012addresssanitizer}
+\newlabel{lst:gcc-sample}{{2.2}{5}{Compile the sample program}{lstlisting.2.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}Compile the sample program}{5}{lstlisting.2.2}\protected@file@percent }
 \newlabel{lst:exec2}{{2.2}{5}{}{lstlisting.2.-1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/exec\textunderscore 2.txt}{5}{lstlisting.2.-1}\protected@file@percent }
-\newlabel{lst:bbox}{{2.2}{5}{}{lstlisting.2.-2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/bbox\textunderscore fuzz.txt}{5}{lstlisting.2.-2}\protected@file@percent }
 \citation{miller1990empirical}
 \citation{banks2006snooze}
 \citation{gascon2015pulsar}
 \citation{doupe2012enemy}
 \citation{duchene2012xss}
+\newlabel{lst:bbox}{{2.2}{6}{}{lstlisting.2.-2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/bbox\textunderscore fuzz.txt}{6}{lstlisting.2.-2}\protected@file@percent }
 \citation{godefroid2012sage}
 \citation{cadar2011symbolic}
 \citation{stephens2016driller}
 \citation{ganesh2009taint}
 \citation{godefroid2008grammar}
-\newlabel{lst:wbox}{{2.2}{6}{}{lstlisting.2.-3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/wbox\textunderscore fuzz.txt}{6}{lstlisting.2.-3}\protected@file@percent }
+\newlabel{lst:wbox}{{2.2}{7}{}{lstlisting.2.-3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/wbox\textunderscore fuzz.txt}{7}{lstlisting.2.-3}\protected@file@percent }
 \citation{afl_qemu}
 \citation{liang2018fuzzing}
-\newlabel{lst:gbox}{{2.2}{7}{}{lstlisting.2.-4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/gbox\textunderscore fuzz.txt}{7}{lstlisting.2.-4}\protected@file@percent }
 \citation{yang2009survey}
 \citation{bohme2017coverage}
 \citation{bohme2017directed}
+\newlabel{lst:gbox}{{2.2}{8}{}{lstlisting.2.-4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{Codes/Chapter2/gbox\textunderscore fuzz.txt}{8}{lstlisting.2.-4}\protected@file@percent }
 \citation{lemieux2018perffuzz}
 \citation{petsios2017slowfuzz}
 \citation{wen2020memlock}
@@ -54,46 +54,46 @@
 \citation{clang}
 \citation{omni_sci}
 \citation{omni_sci}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}LLVM}{9}{section.2.3}\protected@file@percent }
-\newlabel{sec:2-llvm}{{2.3}{9}{LLVM}{section.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite  {omni_sci}\relax }}{10}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:llvm}{{2.2}{10}{LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{10}{subsection.2.3.1}\protected@file@percent }
-\newlabel{instrumentation}{{2.3.1}{10}{Instrumentation and coverage measurements}{subsection.2.3.1}{}}
-\newlabel{lst:afl-llvm}{{2.3}{11}{AFLCoverage module}{lstlisting.2.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}AFLCoverage module}{11}{lstlisting.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}LLVM}{10}{section.2.3}\protected@file@percent }
+\newlabel{sec:2-llvm}{{2.3}{10}{LLVM}{section.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite  {omni_sci}\relax }}{11}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:llvm}{{2.2}{11}{LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{11}{subsection.2.3.1}\protected@file@percent }
+\newlabel{instrumentation}{{2.3.1}{11}{Instrumentation and coverage measurements}{subsection.2.3.1}{}}
+\newlabel{lst:afl-llvm}{{2.3}{12}{AFLCoverage module}{lstlisting.2.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}AFLCoverage module}{12}{lstlisting.2.3}\protected@file@percent }
 \citation{inst_visitor}
-\newlabel{lst:hash}{{2.4}{12}{Select element and update in shared\_mem}{lstlisting.2.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}Select element and update in shared\_mem}{12}{lstlisting.2.4}\protected@file@percent }
-\newlabel{lst:visitors}{{2.5}{12}{Visitors example}{lstlisting.2.5}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.5}Visitors example}{12}{lstlisting.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Example for instrumented basic blocks\relax }}{13}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:instrumentation}{{2.3}{13}{Example for instrumented basic blocks\relax }{figure.caption.16}{}}
+\newlabel{lst:hash}{{2.4}{13}{Select element and update in shared\_mem}{lstlisting.2.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}Select element and update in shared\_mem}{13}{lstlisting.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Example for instrumented basic blocks\relax }}{14}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:instrumentation}{{2.3}{14}{Example for instrumented basic blocks\relax }{figure.caption.16}{}}
 \citation{zalewski2014american}
 \citation{about_afl}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}AFL}{14}{section.2.4}\protected@file@percent }
-\newlabel{sec:2-afl}{{2.4}{14}{AFL}{section.2.4}{}}
+\newlabel{lst:visitors}{{2.5}{15}{Visitors example}{lstlisting.2.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.5}Visitors example}{15}{lstlisting.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}AFL}{15}{section.2.4}\protected@file@percent }
+\newlabel{sec:2-afl}{{2.4}{15}{AFL}{section.2.4}{}}
 \citation{afl_git}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces afl-fuzz\relax }}{15}{algocf.1}\protected@file@percent }
-\newlabel{algo:afl}{{1}{15}{AFL}{algocf.1}{}}
-\newlabel{eq:afl_fav_fac}{{2.1}{15}{AFL}{equation.2.4.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces afl-fuzz\relax }}{16}{algocf.1}\protected@file@percent }
+\newlabel{algo:afl}{{1}{16}{AFL}{algocf.1}{}}
+\newlabel{eq:afl_fav_fac}{{2.1}{17}{AFL}{equation.2.4.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces $fuzz\_one$: Fuzz one Entry\relax }}{17}{algocf.2}\protected@file@percent }
+\newlabel{algo:fuzzone}{{2}{17}{fuzz\_one()}{algocf.2}{}}
 \citation{afl_userguide}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces $fuzz\_one$: Fuzz one Entry\relax }}{16}{algocf.2}\protected@file@percent }
-\newlabel{algo:fuzzone}{{2}{16}{fuzz\_one()}{algocf.2}{}}
-\newlabel{sub:calc_score}{{9}{17}{calculate\_score()}{section*.21}{}}
-\newlabel{lst:calc_score}{{2.6}{17}{An abstract implementation of calculate\_score()}{lstlisting.2.6}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.6}An abstract implementation of calculate\_score()}{17}{lstlisting.2.6}\protected@file@percent }
-\newlabel{lst:common_stuff}{{2.7}{18}{An abstract implementation of common\_fuzz\_stuff()}{lstlisting.2.7}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.7}An abstract implementation of common\_fuzz\_stuff()}{18}{lstlisting.2.7}\protected@file@percent }
-\newlabel{lst:has_new_bits}{{2.8}{19}{The implementation of has\_new\_bits()}{lstlisting.2.8}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.8}The implementation of has\_new\_bits()}{19}{lstlisting.2.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces AFL status screen\relax }}{20}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:status_screen}{{2.4}{20}{AFL status screen\relax }{figure.caption.25}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.9}Instrument $sample\_vul$.c}{22}{lstlisting.2.9}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.10}Execute AFL}{22}{lstlisting.2.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Concluding remarks}{22}{section.2.5}\protected@file@percent }
+\newlabel{sub:calc_score}{{9}{18}{calculate\_score()}{section*.21}{}}
+\newlabel{lst:calc_score}{{2.6}{18}{An abstract implementation of calculate\_score()}{lstlisting.2.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.6}An abstract implementation of calculate\_score()}{18}{lstlisting.2.6}\protected@file@percent }
+\newlabel{lst:common_stuff}{{2.7}{19}{An abstract implementation of common\_fuzz\_stuff()}{lstlisting.2.7}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.7}An abstract implementation of common\_fuzz\_stuff()}{19}{lstlisting.2.7}\protected@file@percent }
+\newlabel{lst:has_new_bits}{{2.8}{20}{The implementation of has\_new\_bits()}{lstlisting.2.8}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.8}The implementation of has\_new\_bits()}{20}{lstlisting.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces AFL status screen\relax }}{22}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:status_screen}{{2.4}{22}{AFL status screen\relax }{figure.caption.25}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.9}Instrument $sample\_vul$.c}{23}{lstlisting.2.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.10}Execute AFL}{23}{lstlisting.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Concluding remarks}{24}{section.2.5}\protected@file@percent }
 \@setckpt{Chapters/2-Background/overview}{
-\setcounter{page}{23}
+\setcounter{page}{25}
 \setcounter{equation}{1}
 \setcounter{enumi}{8}
 \setcounter{enumii}{0}

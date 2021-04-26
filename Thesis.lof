@@ -2,13 +2,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Fuzzing phases\relax }}{3}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }}{10}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example for instrumented basic blocks\relax }}{13}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces AFL status screen\relax }}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example for instrumented basic blocks\relax }}{14}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces AFL status screen\relax }}{22}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{36}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{41}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{42}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{43}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{38}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{44}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{45}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The above figures displays the reached coverage in the end of the experiments. The green boxes represent Waffle's code-coverage.\relax }}{46}{figure.caption.40}%
 \addvspace {10\p@ }
