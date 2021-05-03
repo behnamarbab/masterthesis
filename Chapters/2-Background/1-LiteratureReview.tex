@@ -7,11 +7,12 @@
     \centering
     \caption{Fuzzing phases}
     \label{fig:fuzz_phases}
-\end{figure} 
+\end{figure}
 
-Sutton et al. \cite{sutton2007fuzzing} defined the procedure of fuzz testing, as shown in Figure \ref{fig:fuzz_phases}:
+Figure \ref{fig:fuzz_phases} depicts the fuzz testing procedure defined by Sutton et al. \cite{sutton2007fuzzing}.  
+
 \begin{enumerate}
-    \item Generally, the first stage is \textbf{to identify the target}. A target may be a software or a combination of software and hardware \cite{song2019periscope}. The targeted software is any program that is executed on a machine. For the rest of this article, a target is software.
+    \item Generally, the first stage is \textbf{to identify the target}. A target may be a software or a combination of software and hardware \cite{song2019periscope}. The targeted software is any program that is executed on a machine. For the rest of this article, a target is a software.
     
     \item To execute the target program, we need to specify how the program parses the inputs. Inputs are a set of environmental variables, file formats, and any other parameters that affect the program's execution.
     
@@ -21,7 +22,7 @@ Sutton et al. \cite{sutton2007fuzzing} defined the procedure of fuzz testing, as
 
     \item In this stage, the inputs are processed and executed. Depending on the resources needed for the target program's execution, this stage can be the bottleneck for the fuzzing process. The executions' interesting behavior and information are collected for the evolution of the inputs in future iterations.
 
-    \item If an exceptional event happens during the program's execution and the program exits unsuccessfully, we say an exception is occurred. These exceptions are the vulnerabilities that may be exploitable and cause security problems. Handling an exception properly and pinpointing the inputs responsible for the exception is the primary purpose of this stage.
+    \item If an exceptional event happens during the program's execution and the program exits unsuccessfully, we say an exception occurs. These exceptions are the vulnerabilities that may be exploitable and cause security problems. Handling an exception properly and pinpointing the inputs responsible for the exception is the primary purpose of this stage.
     
     \item The last stage of the fuzzing is evaluating the reported vulnerabilities. This evaluation explains whether the vulnerabilities are exploitable or not.
 

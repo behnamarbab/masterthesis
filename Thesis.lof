@@ -1,15 +1,16 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Fuzzing phases\relax }}{3}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example for instrumented basic blocks\relax }}{14}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces AFL status screen\relax }}{22}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Fuzzing papers published between January 1st, 1990 and June 30 2017. \cite {liang2018fuzzing}\relax }}{4}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Fuzzing phases\relax }}{6}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces LLVM architecture: A front-end compiler generates the LLVM IR, and then it is converted into machine code \cite {omni_sci}\relax }}{14}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example for instrumented basic blocks\relax }}{17}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces AFL status screen\relax }}{25}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{38}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{45}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution\relax }}{46}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution (cont.)\relax }}{47}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{48}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution\relax }}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution (cont.)\relax }}{50}{figure.caption.41}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

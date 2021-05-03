@@ -1,4 +1,4 @@
-\section{AFL} \label{sec:2-afl}
+\section{AFL} \label{sec:2.3}
 
 Michal Zalewski initially developed American Fuzzy Lopper. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpora produced by the tool help seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american}
 
@@ -23,7 +23,7 @@ After the environmental initializations, the fuzzing loop continues until receiv
 
 An entry is selected after culling the queue. AFL evolves the input corpus by generating new entries out of the selected input entry - \texttt{fuzz\_one()}. 
 
-\subsubsection*{fuzz\_one()}
+\subsubsection{fuzz\_one()}
 
 \input{Codes/Chapter2/algorithm_fuzz.tex}
 
