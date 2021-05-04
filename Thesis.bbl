@@ -35,6 +35,23 @@ Darrell Whitley.
 \newblock A genetic algorithm tutorial.
 \newblock {\em Statistics and computing}, 4(2):65--85, 1994.
 
+\bibitem{bohme2017coverage}
+Marcel B{\"o}hme, Van-Thuan Pham, and Abhik Roychoudhury.
+\newblock Coverage-based greybox fuzzing as markov chain.
+\newblock {\em IEEE Transactions on Software Engineering}, 2017.
+
+\bibitem{lemieux2018perffuzz}
+Caroline Lemieux, Rohan Padhye, Koushik Sen, and Dawn Song.
+\newblock Perffuzz: Automatically generating pathological inputs.
+\newblock In {\em Proceedings of the 27th ACM SIGSOFT International Symposium
+  on Software Testing and Analysis}, pages 254--265. ACM, 2018.
+
+\bibitem{newsome2005dynamic}
+James Newsome and Dawn~Xiaodong Song.
+\newblock Dynamic taint analysis for automatic detection, analysis, and
+  signaturegeneration of exploits on commodity software.
+\newblock In {\em NDSS}, volume~5, pages 3--4. Citeseer, 2005.
+
 \bibitem{afl_git}
 american fuzzy lop - a security-oriented fuzzer.
 \newblock \url{https://github.com/google/AFL}, 2020.
@@ -141,22 +158,11 @@ Qian Yang, J~Jenny Li, and David~M Weiss.
 \newblock A survey of coverage-based testing tools.
 \newblock {\em The Computer Journal}, 52(5):589--597, 2009.
 
-\bibitem{bohme2017coverage}
-Marcel B{\"o}hme, Van-Thuan Pham, and Abhik Roychoudhury.
-\newblock Coverage-based greybox fuzzing as markov chain.
-\newblock {\em IEEE Transactions on Software Engineering}, 2017.
-
 \bibitem{bohme2017directed}
 Marcel B{\"o}hme, Van-Thuan Pham, Manh-Dung Nguyen, and Abhik Roychoudhury.
 \newblock Directed greybox fuzzing.
 \newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
   Communications Security}, pages 2329--2344. ACM, 2017.
-
-\bibitem{lemieux2018perffuzz}
-Caroline Lemieux, Rohan Padhye, Koushik Sen, and Dawn Song.
-\newblock Perffuzz: Automatically generating pathological inputs.
-\newblock In {\em Proceedings of the 27th ACM SIGSOFT International Symposium
-  on Software Testing and Analysis}, pages 254--265. ACM, 2018.
 
 \bibitem{petsios2017slowfuzz}
 Theofilos Petsios, Jason Zhao, Angelos~D Keromytis, and Suman Jana.
