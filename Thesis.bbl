@@ -5,6 +5,11 @@ Hongliang Liang, Xiaoxiao Pei, Xiaodong Jia, Wuwei Shen, and Jian Zhang.
 \newblock Fuzzing: State of the art.
 \newblock {\em IEEE Transactions on Reliability}, 67(3):1199--1218, 2018.
 
+\bibitem{sutton2007fuzzing}
+Michael Sutton, Adam Greene, and Pedram Amini.
+\newblock {\em Fuzzing: brute force vulnerability discovery}.
+\newblock Pearson Education, 2007.
+
 \bibitem{omni_sci}
 OmniSci.
 \newblock What is llvm.
@@ -52,10 +57,10 @@ High-performance binary-only instrumentation for afl-fuzz.
   \url{https://github.com/mirrorer/afl/blob/master/qemu_mode/README.qemu},
   2020.
 
-\bibitem{sutton2007fuzzing}
-Michael Sutton, Adam Greene, and Pedram Amini.
-\newblock {\em Fuzzing: brute force vulnerability discovery}.
-\newblock Pearson Education, 2007.
+\bibitem{miller1990empirical}
+Barton~P Miller, Louis Fredriksen, and Bryan So.
+\newblock An empirical study of the reliability of unix utilities.
+\newblock {\em Communications of the ACM}, 33(12):32--44, 1990.
 
 \bibitem{song2019periscope}
 Dokyung Song, Felicitas Hetzelt, Dipanjan Das, Chad Spensky, Yeoul Na, Stijn
@@ -88,11 +93,6 @@ Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitriy Vyukov.
 \newblock Addresssanitizer: A fast address sanity checker.
 \newblock In {\em 2012 $\{$USENIX$\}$ Annual Technical Conference
   ($\{$USENIX$\}$$\{$ATC$\}$ 12)}, pages 309--318, 2012.
-
-\bibitem{miller1990empirical}
-Barton~P Miller, Louis Fredriksen, and Bryan So.
-\newblock An empirical study of the reliability of unix utilities.
-\newblock {\em Communications of the ACM}, 33(12):32--44, 1990.
 
 \bibitem{banks2006snooze}
 Greg Banks, Marco Cova, Viktoria Felmetsger, Kevin Almeroth, Richard Kemmerer,

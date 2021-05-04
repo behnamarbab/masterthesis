@@ -14,26 +14,26 @@
 \contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Literature Review}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}LLVM}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{14}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}AFL}{18}{section.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.0.1}fuzz\_one()}{20}{subsubsection.2.4.0.1}%
-\contentsline {section}{\numberline {2.5}Concluding remarks}{27}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{28}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{28}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Motivating example}{29}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Instrumentation}{31}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Fuzzing}{35}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Concluding remarks}{39}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Simulation}{40}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{40}{section.4.1}%
-\contentsline {section}{\numberline {4.2}FuzzBench}{41}{section.4.2}%
-\contentsline {section}{\numberline {4.3}FuzzBench Reports}{44}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{47}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Future Works and Conclusions}{51}{chapter.5}%
-\contentsline {chapter}{Bibliography}{52}{chapter*.42}%
-\contentsline {chapter}{\numberline {6}Appendix}{58}{chapter.6}%
-\contentsline {section}{\numberline {6.A}Waffle}{58}{section.1.6.A}%
-\contentsline {subsection}{\numberline {6.A.1}random\_havoc}{58}{subsection.1.6.A.1}%
-\contentsline {section}{\numberline {6.B}FuzzBench}{60}{section.1.6.B}%
-\contentsline {subsection}{\numberline {6.B.1}builder.Dockerfile}{60}{subsection.1.6.B.1}%
-\contentsline {subsection}{\numberline {6.B.2}fuzzer.py}{61}{subsection.1.6.B.2}%
+\contentsline {subsection}{\numberline {2.3.1}Instrumentation and coverage measurements}{15}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}AFL}{19}{section.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.0.1}fuzz\_one()}{21}{subsubsection.2.4.0.1}%
+\contentsline {section}{\numberline {2.5}Concluding remarks}{28}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Proposed Fuzzer}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Motivating example}{30}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Instrumentation}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Fuzzing}{36}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Concluding remarks}{40}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Simulation}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}%
+\contentsline {section}{\numberline {4.2}FuzzBench}{42}{section.4.2}%
+\contentsline {section}{\numberline {4.3}FuzzBench Reports}{45}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{48}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Future Works and Conclusions}{52}{chapter.5}%
+\contentsline {chapter}{Bibliography}{53}{chapter*.42}%
+\contentsline {chapter}{\numberline {6}Appendix}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.A}Waffle}{59}{section.1.6.A}%
+\contentsline {subsection}{\numberline {6.A.1}random\_havoc}{59}{subsection.1.6.A.1}%
+\contentsline {section}{\numberline {6.B}FuzzBench}{61}{section.1.6.B}%
+\contentsline {subsection}{\numberline {6.B.1}builder.Dockerfile}{61}{subsection.1.6.B.1}%
+\contentsline {subsection}{\numberline {6.B.2}fuzzer.py}{62}{subsection.1.6.B.2}%
