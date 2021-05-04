@@ -9,55 +9,52 @@ A level-1 auxiliary file: Chapters/1-Introduction/overview.aux
 A level-1 auxiliary file: Chapters/2-Background/overview.aux
 A level-1 auxiliary file: Chapters/3-ProposedFuzzer/overview.aux
 A level-1 auxiliary file: Chapters/4-Simulation/overview.aux
-A level-1 auxiliary file: Chapters/5-ResultsEvaluation/overview.aux
-A level-1 auxiliary file: Chapters/6-Conclusion/overview.aux
+A level-1 auxiliary file: Chapters/5-Conclusion/overview.aux
 The style file: unsrt.bst
-A level-1 auxiliary file: SideChapters/08-appendices.aux
-A level-1 auxiliary file: SideChapters/09-glossary.aux
-A level-1 auxiliary file: SideChapters/10-vita.aux
+A level-1 auxiliary file: Chapters/6-Appendix/overview.aux
 Database file #1: mybibliography.bib
 Warning--can't use both volume and number fields in stephens2016driller
 Warning--can't use both volume and number fields in godefroid2008grammar
 Warning--empty booktitle in wen2020memlock
-You've used 35 entries,
+You've used 46 entries,
             1791 wiz_defined-function locations,
-            634 strings with 9869 characters,
-and the built_in function-call counts, 8940 in all, are:
-= -- 821
-> -- 374
-< -- 15
-+ -- 141
-- -- 106
-* -- 504
-:= -- 1255
-add.period$ -- 111
-call.type$ -- 35
-change.case$ -- 34
+            678 strings with 11036 characters,
+and the built_in function-call counts, 10454 in all, are:
+= -- 953
+> -- 411
+< -- 18
++ -- 160
+- -- 114
+* -- 560
+:= -- 1447
+add.period$ -- 137
+call.type$ -- 46
+change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 424
-empty$ -- 927
-format.name$ -- 106
-if$ -- 2133
+cite$ -- 49
+duplicate$ -- 506
+empty$ -- 1132
+format.name$ -- 114
+if$ -- 2510
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 23
-newline$ -- 174
-num.names$ -- 28
-pop$ -- 189
+int.to.str$ -- 46
+missing$ -- 29
+newline$ -- 221
+num.names$ -- 31
+pop$ -- 252
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 258
+skip$ -- 304
 stack$ -- 0
-substring$ -- 532
-swap$ -- 170
-text.length$ -- 15
+substring$ -- 555
+swap$ -- 189
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 77
-width$ -- 37
-write$ -- 374
+while$ -- 83
+width$ -- 48
+write$ -- 473
 (There were 3 warnings)

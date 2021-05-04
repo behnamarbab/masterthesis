@@ -1,19 +1,66 @@
 \begin{thebibliography}{10}
 
+\bibitem{liang2018fuzzing}
+Hongliang Liang, Xiaoxiao Pei, Xiaodong Jia, Wuwei Shen, and Jian Zhang.
+\newblock Fuzzing: State of the art.
+\newblock {\em IEEE Transactions on Reliability}, 67(3):1199--1218, 2018.
+
+\bibitem{sutton2007fuzzing}
+Michael Sutton, Adam Greene, and Pedram Amini.
+\newblock {\em Fuzzing: brute force vulnerability discovery}.
+\newblock Pearson Education, 2007.
+
 \bibitem{omni_sci}
 OmniSci.
 \newblock What is llvm.
 \newblock \url{https://www.omnisci.com/technical-glossary/llvm}, 2020.
 \newblock [Online]; accessed in 2020.
 
-\bibitem{owasp}
-{The Open Web Application Security Project}.
-\newblock \url{https://www.owasp.org}, 2019.
+\bibitem{wafl_git}
+Waffle project.
+\newblock \url{https://github.com/behnamarbab/memlock-waffle/tree/waffle},
+  2021.
 
-\bibitem{sutton2007fuzzing}
-Michael Sutton, Adam Greene, and Pedram Amini.
-\newblock {\em Fuzzing: brute force vulnerability discovery}.
-\newblock Pearson Education, 2007.
+\bibitem{afl_cve}
+Afl-cve.
+\newblock \url{https://github.com/mrash/afl-cve}, 2019.
+
+\bibitem{banzhaf1998genetic}
+Wolfgang Banzhaf, Peter Nordin, Robert~E Keller, and Frank~D Francone.
+\newblock {\em Genetic programming: an introduction}, volume~1.
+\newblock Morgan Kaufmann Publishers San Francisco, 1998.
+
+\bibitem{whitley1994genetic}
+Darrell Whitley.
+\newblock A genetic algorithm tutorial.
+\newblock {\em Statistics and computing}, 4(2):65--85, 1994.
+
+\bibitem{afl_git}
+american fuzzy lop - a security-oriented fuzzer.
+\newblock \url{https://github.com/google/AFL}, 2020.
+
+\bibitem{llvm}
+LLVM.
+\newblock Llvm project.
+\newblock \url{http://llvm.org/}, 2020.
+\newblock [Online]; accessed in 2020.
+
+\bibitem{bellard2005qemu}
+Fabrice Bellard.
+\newblock Qemu, a fast and portable dynamic translator.
+\newblock In {\em USENIX annual technical conference, FREENIX Track},
+  volume~41, page~46. Califor-nia, USA, 2005.
+
+\bibitem{afl_qemu}
+High-performance binary-only instrumentation for afl-fuzz.
+\newblock
+  \url{https://github.com/mirrorer/afl/blob/master/qemu_mode/README.qemu},
+  2020.
+
+\bibitem{miller1990empirical}
+Barton~P Miller, Louis Fredriksen, and Bryan So.
+\newblock An empirical study of the reliability of unix utilities.
+\newblock {\em Communications of the ACM}, 33(12):32--44, 1990.
 
 \bibitem{song2019periscope}
 Dokyung Song, Felicitas Hetzelt, Dipanjan Das, Chad Spensky, Yeoul Na, Stijn
@@ -46,11 +93,6 @@ Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitriy Vyukov.
 \newblock Addresssanitizer: A fast address sanity checker.
 \newblock In {\em 2012 $\{$USENIX$\}$ Annual Technical Conference
   ($\{$USENIX$\}$$\{$ATC$\}$ 12)}, pages 309--318, 2012.
-
-\bibitem{miller1990empirical}
-Barton~P Miller, Louis Fredriksen, and Bryan So.
-\newblock An empirical study of the reliability of unix utilities.
-\newblock {\em Communications of the ACM}, 33(12):32--44, 1990.
 
 \bibitem{banks2006snooze}
 Greg Banks, Marco Cova, Viktoria Felmetsger, Kevin Almeroth, Richard Kemmerer,
@@ -111,17 +153,6 @@ Patrice Godefroid, Adam Kiezun, and Michael~Y Levin.
 \newblock Grammar-based whitebox fuzzing.
 \newblock In {\em ACM Sigplan Notices}, volume~43, pages 206--215. ACM, 2008.
 
-\bibitem{afl_qemu}
-High-performance binary-only instrumentation for afl-fuzz.
-\newblock
-  \url{https://github.com/mirrorer/afl/blob/master/qemu_mode/README.qemu},
-  2020.
-
-\bibitem{liang2018fuzzing}
-Hongliang Liang, Xiaoxiao Pei, Xiaodong Jia, Wuwei Shen, and Jian Zhang.
-\newblock Fuzzing: State of the art.
-\newblock {\em IEEE Transactions on Reliability}, 67(3):1199--1218, 2018.
-
 \bibitem{yang2009survey}
 Qian Yang, J~Jenny Li, and David~M Weiss.
 \newblock A survey of coverage-based testing tools.
@@ -157,12 +188,6 @@ Cheng Wen, Haijun Wang, Yuekang Li, Shengchao Qin, Yang Liu, Zhiwu Xu, Hongxu
 \newblock Memlock: Memory usage guided fuzzing.
 \newblock ICSE, 2020.
 
-\bibitem{llvm}
-LLVM.
-\newblock Llvm project.
-\newblock \url{http://llvm.org/}, 2020.
-\newblock [Online]; accessed in 2020.
-
 \bibitem{lattner2004llvm}
 Chris Lattner and Vikram Adve.
 \newblock Llvm: A compilation framework for lifelong program analysis \&
@@ -171,10 +196,9 @@ Chris Lattner and Vikram Adve.
   2004. CGO 2004.}, pages 75--86. IEEE, 2004.
 
 \bibitem{clang}
-LLVM.
-\newblock Clang: a c language family frontend for llvm.
+Clang: a c language family frontend for llvm.
 \newblock \url{https://clang.llvm.org/}, 2020.
-\newblock [Online]; accessed in 2020.
+\newblock [Online]; accessed in 2021.
 
 \bibitem{inst_visitor}
 Base class for instruction visitors.
@@ -185,16 +209,13 @@ Michal Zalewski.
 \newblock American fuzzy lop.(2014).
 \newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
 
-\bibitem{afl_git}
-american fuzzy lop - a security-oriented fuzzer.
-\newblock \url{https://github.com/google/AFL}, 2020.
+\bibitem{about_afl}
+More about afl.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/about_afl.html}, 2019.
 
-\bibitem{afl_strategies}
-Michal Zalewski.
-\newblock Binary fuzzing strategies: what works, what doesn't.
-\newblock
-  \url{https://lcamtuf.blogspot.com/2014/08/binary-fuzzing-strategies-what-works.html},
-  2014.
+\bibitem{afl_userguide}
+Afl user guide.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/user_guide.html}, 2019.
 
 \bibitem{hoare1962quicksort}
 Charles~AR Hoare.
@@ -206,5 +227,37 @@ add nosanitize metadata to more coverage instrumentation instructions.
 \newblock
   \url{https://lists.llvm.org/pipermail/llvm-commits/Week-of-Mon-20150302/263798.html},
   2015.
+
+\bibitem{clang-fast}
+source of afl-clang-fast.c.
+\newblock
+  \url{https://github.com/google/AFL/blob/master/llvm_mode/afl-clang-fast.c},
+  2021.
+
+\bibitem{serebryany2015libfuzzer}
+K~Serebryany.
+\newblock libfuzzer a library for coverage-guided fuzz testing.
+\newblock {\em LLVM project}, 2015.
+
+\bibitem{metzman2020fuzzbench}
+L{\'a}szl{\'o} Szekeres~Jonathan Metzman, Abhishek Arya, and L~Szekeres.
+\newblock Fuzzbench: Fuzzer benchmarking as a service.
+\newblock {\em Google Security Blog}, 2020.
+
+\bibitem{error0612}
+Local experiment issue - erro[0612].
+\newblock \url{https://github.com/google/fuzzbench/issues/946}, 2021.
+
+\bibitem{request_exp}
+Requesting an experiment.
+\newblock
+  \url{https://google.github.io/fuzzbench/getting-started/adding-a-new-fuzzer/#requesting-an-experiment},
+  2021.
+
+\bibitem{request_gcp}
+Setting up gcp.
+\newblock
+  \url{https://google.github.io/fuzzbench/running-a-cloud-experiment/setting-up-a-google-cloud-project},
+  2021.
 
 \end{thebibliography}

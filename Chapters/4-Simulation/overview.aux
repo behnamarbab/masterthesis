@@ -1,28 +1,71 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Simulation}{25}{chapter.4}\protected@file@percent }
+\citation{afl_git}
+\citation{serebryany2015libfuzzer}
+\citation{metzman2020fuzzbench}
+\citation{metzman2020fuzzbench}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Simulation}{41}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Implementation}{25}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Instrumentation}{25}{section.4.2}\protected@file@percent }
-\newlabel{lst:memlock}{{4.1}{26}{waffle-llvm-rt.o.c}{lstlisting.4.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}waffle-llvm-rt.o.c}{26}{lstlisting.4.1}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}Compile a single file using waffle-clang}{26}{lstlisting.4.2}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}Compile using waffle-clang}{26}{lstlisting.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Start fuzzing}{27}{section.4.3}\protected@file@percent }
-\newlabel{lst:update_bitmap}{{4.4}{27}{Update bitmap scores}{lstlisting.4.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}Update bitmap scores}{27}{lstlisting.4.4}\protected@file@percent }
-\newlabel{lst:cull_queue}{{4.5}{28}{Cull queue}{lstlisting.4.5}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}Cull queue}{28}{lstlisting.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Monitoring fuzzing procedure}{28}{section.4.4}\protected@file@percent }
-\newlabel{img:waffle-screen}{{4.4}{29}{Monitoring fuzzing procedure}{section.4.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Status screen}}{29}{figure.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Summary}{29}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Fuzzbench overview\relax }}{42}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:fuzz_bench}{{4.1}{42}{Fuzzbench overview\relax }{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}FuzzBench}{42}{section.4.2}\protected@file@percent }
+\newlabel{sec:fuzzbench}{{4.2}{42}{FuzzBench}{section.4.2}{}}
+\citation{error0612}
+\citation{request_exp}
+\citation{request_gcp}
+\newlabel{code:run.sh}{{4.1}{44}{Final steps for adding Waffle to FuzzBench}{lstlisting.4.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}Final steps for adding Waffle to FuzzBench}{44}{lstlisting.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}FuzzBench Reports}{45}{section.4.3}\protected@file@percent }
+\newlabel{sec:report}{{4.3}{45}{FuzzBench Reports}{section.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Statistics of the experiments.\relax }}{47}{table.caption.38}\protected@file@percent }
+\newlabel{table:all}{{4.1}{47}{Statistics of the experiments.\relax }{table.caption.38}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{48}{section.4.4}\protected@file@percent }
+\newlabel{sec:neck}{{4.4}{48}{Performance Bottlenecks of Waffle}{section.4.4}{}}
+\newlabel{gro:b}{{4.2a}{49}{Waffle-AFL libpng-1.2.56\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:b}{{a}{49}{Waffle-AFL libpng-1.2.56\relax }{figure.caption.39}{}}
+\newlabel{gro:f}{{4.2b}{49}{Waffle-LF libpng-1.2.56\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:f}{{b}{49}{Waffle-LF libpng-1.2.56\relax }{figure.caption.39}{}}
+\newlabel{gro:e}{{4.2c}{49}{Waffle-AFL openthread-2019-12-23\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:e}{{c}{49}{Waffle-AFL openthread-2019-12-23\relax }{figure.caption.39}{}}
+\newlabel{gro:h}{{4.2d}{49}{Waffle-LF openthread-2019-12-23\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:h}{{d}{49}{Waffle-LF openthread-2019-12-23\relax }{figure.caption.39}{}}
+\newlabel{gro:c}{{4.2e}{49}{Waffle-AFL php\_php-fuzz-execute\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:c}{{e}{49}{Waffle-AFL php\_php-fuzz-execute\relax }{figure.caption.39}{}}
+\newlabel{gro:g}{{4.2f}{49}{Waffle-LF php\_php-fuzz-execute\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:g}{{f}{49}{Waffle-LF php\_php-fuzz-execute\relax }{figure.caption.39}{}}
+\newlabel{gro:a}{{4.2g}{49}{Waffle-AFL curl\_curl\_fuzzer\_http\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:a}{{g}{49}{Waffle-AFL curl\_curl\_fuzzer\_http\relax }{figure.caption.39}{}}
+\newlabel{gro:d}{{4.2h}{49}{Waffle-AFL sqlite3\_ossfuzz\relax }{figure.caption.39}{}}
+\newlabel{sub@gro:d}{{h}{49}{Waffle-AFL sqlite3\_ossfuzz\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Mean code coverage growth over time\relax }}{49}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:report-log}{{4.2}{49}{Mean code coverage growth over time\relax }{figure.caption.39}{}}
+\newlabel{box:wal}{{4.3a}{50}{Waffle-AFL libpng-1.2.56\relax }{figure.caption.40}{}}
+\newlabel{sub@box:wal}{{a}{50}{Waffle-AFL libpng-1.2.56\relax }{figure.caption.40}{}}
+\newlabel{box:wll}{{4.3b}{50}{Waffle-LF libpng-1.2.56\relax }{figure.caption.40}{}}
+\newlabel{sub@box:wll}{{b}{50}{Waffle-LF libpng-1.2.56\relax }{figure.caption.40}{}}
+\newlabel{box:wao}{{4.3c}{50}{Waffle-AFL openthread-2019-12-23\relax }{figure.caption.40}{}}
+\newlabel{sub@box:wao}{{c}{50}{Waffle-AFL openthread-2019-12-23\relax }{figure.caption.40}{}}
+\newlabel{box:wlo}{{4.3d}{50}{Waffle-LF openthread-2019-12-23\relax }{figure.caption.40}{}}
+\newlabel{sub@box:wlo}{{d}{50}{Waffle-LF openthread-2019-12-23\relax }{figure.caption.40}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution\relax }}{50}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:report-box}{{4.3}{50}{Reached code coverage distribution\relax }{figure.caption.40}{}}
+\newlabel{box:wap}{{4.3e}{51}{Waffle-AFL php\_php-fuzz-execute\relax }{figure.caption.41}{}}
+\newlabel{sub@box:wap}{{e}{51}{Waffle-AFL php\_php-fuzz-execute\relax }{figure.caption.41}{}}
+\newlabel{box:wlp}{{4.3f}{51}{Waffle-LF php\_php-fuzz-execute\relax }{figure.caption.41}{}}
+\newlabel{sub@box:wlp}{{f}{51}{Waffle-LF php\_php-fuzz-execute\relax }{figure.caption.41}{}}
+\newlabel{box:wac}{{4.3g}{51}{Waffle-AFL curl\_curl\_fuzzer\_http\relax }{figure.caption.41}{}}
+\newlabel{sub@box:wac}{{g}{51}{Waffle-AFL curl\_curl\_fuzzer\_http\relax }{figure.caption.41}{}}
+\newlabel{box:was}{{4.3h}{51}{Waffle-AFL sqlite3\_ossfuzz\relax }{figure.caption.41}{}}
+\newlabel{sub@box:was}{{h}{51}{Waffle-AFL sqlite3\_ossfuzz\relax }{figure.caption.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Reached code coverage distribution (cont.)\relax }}{51}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:report-box}{{4.3}{51}{Reached code coverage distribution (cont.)\relax }{figure.caption.41}{}}
 \@setckpt{Chapters/4-Simulation/overview}{
-\setcounter{page}{30}
+\setcounter{page}{52}
 \setcounter{equation}{0}
-\setcounter{enumi}{8}
+\setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -30,41 +73,41 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{4}
-\setcounter{section}{5}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{1}
-\setcounter{table}{0}
+\setcounter{figure}{3}
+\setcounter{table}{1}
 \setcounter{parentequation}{0}
-\setcounter{KVtest}{2}
-\setcounter{subfigure}{0}
-\setcounter{subfigure@save}{0}
-\setcounter{lofdepth}{1}
-\setcounter{subtable}{0}
-\setcounter{subtable@save}{0}
-\setcounter{lotdepth}{1}
 \setcounter{pp@next@reset}{0}
 \setcounter{ALC@unique}{0}
 \setcounter{ALC@line}{0}
 \setcounter{ALC@rem}{0}
 \setcounter{ALC@depth}{0}
-\setcounter{lstnumber}{14}
+\setcounter{lstnumber}{10}
 \setcounter{FancyVerbLine}{0}
-\setcounter{Item}{16}
+\setcounter{Item}{23}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{26}
+\setcounter{bookmark@seq@number}{30}
 \setcounter{dirtytalk@qdepth}{0}
-\setcounter{AlgoLine}{4}
-\setcounter{algocfline}{2}
-\setcounter{algocfproc}{2}
-\setcounter{algocf}{2}
+\setcounter{AlgoLine}{12}
+\setcounter{algocfline}{3}
+\setcounter{algocfproc}{3}
+\setcounter{algocf}{3}
 \setcounter{float@type}{8}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{caption@flags}{0}
+\setcounter{continuedfloat}{1}
+\setcounter{subfigure}{8}
+\setcounter{subtable}{0}
 \setcounter{theorem}{0}
 \setcounter{definition}{0}
 \setcounter{lemma}{0}
 \setcounter{notation}{0}
-\setcounter{lstlisting}{5}
+\setcounter{lstlisting}{1}
 \setcounter{section@level}{1}
 }

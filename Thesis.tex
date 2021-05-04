@@ -1,8 +1,8 @@
 \documentclass[12pt]{unbthesis}
 \usepackage[left=4cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage{graphicx}
-\usepackage[caption = false]{subfig}
-\usepackage[subfigure]{tocloft} % no number for Vita in ToC
+% \usepackage[caption = false]{subfig}
+% \usepackage[subfigure]{tocloft} % no number for Vita in ToC
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
@@ -22,7 +22,66 @@
 \usepackage[linesnumbered, ruled, vlined]{algorithm2e}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+\usepackage{array}
 
+\captionsetup[figure]{font=small,skip=5pt}
+\captionsetup[lstlisting]{font=small,skip=0pt}
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+
+\usepackage{listingsutf8}
+
+\lstdefinelanguage{docker}{
+  keywords={FROM, RUN, COPY, ADD, ENTRYPOINT, CMD,  ENV, ARG, WORKDIR, EXPOSE, LABEL, USER, VOLUME, STOPSIGNAL, ONBUILD, MAINTAINER},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinelanguage{docker-compose}{
+  keywords={image, environment, ports, container_name, ports, volumes, links},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstdefinelanguage{docker-compose-2}{
+  keywords={version, volumes, services},
+  keywordstyle=\color{blue}\bfseries,
+  keywords=[2]{image, environment, ports, container_name, ports, links, build},
+  keywordstyle=[2]\color{olive}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{\#},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue},
+  inputencoding=utf8,
+  extendedchars=true
+}
+
+% \include{dockerlst.tex}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -76,7 +135,7 @@
 
 \graphicspath{ {./Images/} }
 
-\title{Behnam Fuzzer}
+\title{Waffle}
 \author{Behnam Bojnordi Arbab}
 \predegree{Previous Degrees (i.e. Degree, University, Year)\\
 Bachelor of Computer Engineering, Ferdowsi University of Mashhad, 2015}
@@ -85,9 +144,9 @@ Bachelor of Computer Engineering, Ferdowsi University of Mashhad, 2015}
 \supervisor{Ali Ghorbani, Faculty of Computer Science}
 \examboard{N/A}
 \externalexam{N/A}
-\date{Soon...!}
-\copyrightyear{2020}
-\setlength\parindent{0pt}
+\date{.}
+\copyrightyear{2021}
+\setlength\parindent{2em}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}{Lemma}[section]
@@ -130,15 +189,14 @@ Bachelor of Computer Engineering, Ferdowsi University of Mashhad, 2015}
 \include{Chapters/2-Background/overview}
 \include{Chapters/3-ProposedFuzzer/overview}
 \include{Chapters/4-Simulation/overview}
-\include{Chapters/5-ResultsEvaluation/overview}
-\include{Chapters/6-Conclusion/overview}
+\include{Chapters/5-Conclusion/overview}
 
-% \include{bibliography}
-% changes default name Bibliography to References
-%\renewcommand{\bibname}{References}
 \bibliographystyle{unsrt}
 \bibliography{mybibliography}
-\include{SideChapters/08-appendices}
-\include{SideChapters/09-glossary}
-\include{SideChapters/10-vita}
+
+\include{Chapters/6-Appendix/overview}
+
+% \include{SideChapters/09-glossary}
+% \include{SideChapters/10-vita}
+
 \end{document}

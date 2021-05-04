@@ -1,31 +1,25 @@
 \section{Literature Review} \label{sec:2.2}
 
-% Talk about the meaning and history of fuzzing
+The vulnerabilities arise after a target program executes a triggering input. Miller introduced fuzz testing to examine the vulnerabilities of a collection of Unix utilities \cite{miller1990empirical}. The results showed that a random fuzzing on different versions of the utilities could discover bugs in 28\% of the targets. The automation in testing programs helps the researchers with validating the reliability of a program. The early fuzzers mimic a procedure of searching for the bugs by starting with \textit{identification} of the target program and its inputs. Next, the fuzzing loop initiates, and the program is run with fuzzed inputs as long as the fuzz testing is not terminated. Figure \ref{fig:fuzz_phases} depicts the fuzz testing procedure defined by Sutton et al. \cite{sutton2007fuzzing}. Based on the definitions, a standard fuzzer consists of:
+
+\begin{itemize}
+    \item Target identification
+    \item Inputs identification
+    \item Generate fuzzed data
+    \item Execute target with fuzzed data
+    \item Monitor for exceptions
+    \item Determine exploitability
+\end{itemize}
 
 \begin{figure}[!b]
     \includegraphics[width=\textwidth]{Chapter2/FuzzingPhases.png}
     \centering
-    \caption{Fuzzing phases}
+    \caption{Fuzzing phases. Inspired by the definition of Sutton et al. \cite{sutton2007fuzzing}}
     \label{fig:fuzz_phases}
-\end{figure} 
+\end{figure}
 
-Sutton et al. \cite{sutton2007fuzzing} defined the procedure of fuzz testing, as shown in Figure \ref{fig:fuzz_phases}:
-\begin{enumerate}
-    \item Generally, the first stage is \textbf{to identify the target}. A target may be a software or a combination of software and hardware \cite{song2019periscope}. The targeted software is any program that is executed on a machine. For the rest of this article, a target is software.
-    
-    \item To execute the target program, we need to specify how the program parses the inputs. Inputs are a set of environmental variables, file formats, and any other parameters that affect the program's execution.
-    
-    A fuzzer needs a set of seeds for initialization. This set could be empty, and a fuzzer without any sample inputs may find valid fuzzed files out of thin air \cite{out_of_thin_air} that the target program considers them as valid.
-    
-    \item The fuzzing loop starts with generating fuzzed inputs. The fuzzer provides these files for the program to execute and process them.
-
-    \item In this stage, the inputs are processed and executed. Depending on the resources needed for the target program's execution, this stage can be the bottleneck for the fuzzing process. The executions' interesting behavior and information are collected for the evolution of the inputs in future iterations.
-
-    \item If an exceptional event happens during the program's execution and the program exits unsuccessfully, we say an exception is occurred. These exceptions are the vulnerabilities that may be exploitable and cause security problems. Handling an exception properly and pinpointing the inputs responsible for the exception is the primary purpose of this stage.
-    
-    \item The last stage of the fuzzing is evaluating the reported vulnerabilities. This evaluation explains whether the vulnerabilities are exploitable or not.
-
-\end{enumerate}
+\textbf{Target} is a software or a combination of executables and hardware \cite{song2019periscope}. A targeted software is any program that a machine can execute. 
+Fuzzer needs to know the command for executing the target program and the inputs (arguments) of the program. \textbf{Inputs} are a set of environmental variables, file formats, and any other parameters that affect the execution. The initial seeds of the inputs can guide the fuzzer for finding more complex test cases, yet, it is not mandatory to provide seeds, and a fuzzer can generate valid inputs \textit{out of thin air} \cite{out_of_thin_air}. After the initial setup, the \textbf{fuzzing loop} begins iterating. In each iteration the fuzzer \textbf{executes} the target with the \textbf{provided test cases}. Fuzzer then looks for any exceptions returning from the executions and considers the executed input responsible for causing a \textbf{vulnerability}. The vulnerability can be analyzed for \textbf{exploitability} in the last stage. An exploitable vulnerability can compromise the system and initiate an anomaly.
 
 A common feature in most of the fuzzers is the fuzzing loop which is looking for more valuable inputs. The stages may vary depending on the problem and goals of a fuzzer. We will walk over the stages of AFL as our fuzzer is based on AFL, and we will be back on the stages of fuzzing in the following sections.
 
@@ -36,7 +30,7 @@ To evaluate the performance of a fuzzer and assess the execution of it, the samp
 
 The sample program has a \textbf{Heap buffer overflow vulnerability}. If we compile this code with GCC and debugging flags, the vulnerability stays hidden and the program executes without any errors:
 
-\lstinputlisting[language=bash,style=CommandStyle,label={lst:exec1}]{Codes/Chapter2/exec_1.txt}
+\lstinputlisting[language=bash,style=CommandStyle,label={lst:gcc-sample},caption={Compile the sample program}]{Codes/Chapter2/exec_1.txt}
 
 One way to detect the prior vulnerability, is to add AddressSanitizer flag for the compilation \cite{address_san}. ASan is a fast memory error detector. This tool uses memory poisoning for the detection of a heap buffer overflow. (You can find more features of this tool in the reference) \cite{serebryany2012addresssanitizer}
 

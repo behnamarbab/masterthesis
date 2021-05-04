@@ -1,3 +1,51 @@
-\section{Fuzzing the target}
+\section{Fuzzing}
+\label{sec:3-afl}
+% !     Replacement tip:         the \texttt   ->   \texttt
+% \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}
 
+Waffle extends the instrumentation and the fuzzing procedure of AFL. The instrumented binary from the previous stage is given to the \textit{waffle-fuzz}, and Waffle develops the new features in \textit{waffle-fuzz.c}.
 
+To analyze the implementation of Waffle, we merge the algorithm \ref{algo:afl} and algorithm \ref{algo:fuzzone}:
+
+\input{Codes/Chapter3/waffle-fuzz/algorithm.tex}
+
+The lines in red are the instructions that were modified in Waffle.
+
+\subsubsection*{Calibration}
+
+Each entry of the queue is calibrated in order to collect the execution stats. Besides the execution-time and the bitmap-coverage information, Waffle runs the target program and collects the added \textbf{instruction counters}. Each instruction counter is monitored in the shared\_memory, \texttt{icnt\_bits[]}, and \texttt{top\_rated\_icnt[]} tracks the changes on \texttt{icnt\_bits[]} in an \texttt{struct} of type \texttt{queue\_entries}, .
+
+Waffle collects the instrumentation's data after running the binary. The values of \texttt{icnt\_bits} and \texttt{trace\_bits} track the performance and the coverage-instrumentation. As described in Section \nameref{sec:3-instr}, \texttt{sys\_data} stores the sum of the instruction counters.
+
+AFL checks the uniqueness of an execution by keeping a hashed value of \texttt{trace\_bits[]}, representing a unique ID for a path-coverage. Within the discovery of a new coverage, Waffle analyzes both the \textit{coverage} array and \textit{instruction counters} to process the new hit-counts:
+
+\begin{itemize}
+    \item \texttt{has\_new\_bits()}: AFL keeps the hit-counts of \texttt{trace\_bits[]}, for identifying the new edges appeared in the execution of the current test-case. \texttt{trace\_bits[]} is a sparse array, and AFL tracks the modified indices for better performance.
+    \item \texttt{has\_new\_icnt()}: In addition to the previous method, Waffle searches for the highest values in \texttt{icnt\_bits[]}. Each cell in \texttt{icnt\_bits} contains 4 bytes of information. We saw in Listing \ref{lst:llvm-pass} that in an index, such as \texttt{i}, \texttt{icnt\_bits[i]} is added with \texttt{CNT}, while the increments in \texttt{trace\_bits[]} are always by one. An analysis on \texttt{./sample\_vul\_instr} showed that the average value for \texttt{CNT}s is more than 3. As a result, the variance for the values in \texttt{icnt\_bits[]} is higher than \texttt{trace\_bits[]}'s. To decrease this variance and enhance the performance of Waffle, it leverages a constant float number, \texttt{MAX\_CNT\_MULT}:
+    
+    \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_icnt},caption={has\_new\_icnt()}]{Codes/Chapter3/waffle-fuzz/has_new_icnt.c}
+
+    By default, Waffle sets $MAX\_CNT\_MULT=1.05$, which means it expects at least 5\% increase for \texttt{icnt\_bits[i]} before updating the content of index $i$.
+    % !                     ----!
+    % TODO: Explain unlikely()hood!
+    % ! --- compare the performance of the has_new_bits and has_new_icnts functions
+    % !                     ----!
+
+    The length of both \texttt{icnt\_bits[]} and \texttt{trace\_bits[]} is the same, but \texttt{icnt\_bits} consumes 4x more of the memory:
+    \lstinputlisting[language=C,style=CodeStyle,label={lst:bitmaps},caption={Configurations of the bitmaps}]{Codes/Chapter3/waffle-fuzz/bitmaps.c}
+\end{itemize}
+
+After analyzing the execution information, the calibration stage updates the undefined or old values of the current \texttt{queue\_entry}.
+
+\subsubsection*{Calculate performance score}
+
+The most favorable entries for Waffle, are the inputs with the highest \texttt{total\_icnt}. In addition to the calculations of AFL, Waffle also compares the \texttt{q->total\_icnt} with the average \texttt{total\_icnt} of all previous entries, \texttt{avg\_total\_icnt}.
+
+\lstinputlisting[language=C,style=CodeStyle,label={lst:wcalc_score},caption={The modifications of Waffle in \texttt{calc\_score()}}]{Codes/Chapter3/waffle-fuzz/calculate_score.c}
+
+With all these modifications, Waffle can start it's fuzzing. The only difference between the execution of Waffle and AFL, is the name of the fuzzer.
+
+\begin{lstlisting}[language=bash,style=CommandStyle,caption=Execute AFL]
+  # waffle-fuzz -i <in_dir> -o <out_dir> [options] -- /path/to/fuzzed/app [params]
+  waffle-fuzz -i in_dir -o out_dir -- ./sample_vul_waffle
+\end{lstlisting}
