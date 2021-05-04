@@ -12,27 +12,30 @@
 \BOOKMARK [0][-]{chapter.2}{Background}{}% 12
 \BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 13
 \BOOKMARK [1][-]{section.2.2}{Literature Review}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.3}{LLVM}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{Instrumentation and coverage measurements}{section.2.3}% 16
-\BOOKMARK [1][-]{section.2.4}{AFL}{chapter.2}% 17
-\BOOKMARK [2][-]{subsubsection.2.4.0.1}{fuzz\137one\(\)}{section.2.4}% 18
-\BOOKMARK [1][-]{section.2.5}{Concluding remarks}{chapter.2}% 19
-\BOOKMARK [0][-]{chapter.3}{Proposed Fuzzer}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.2}{Motivating example}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.3}{Instrumentation}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.4}{Fuzzing}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.5}{Concluding remarks}{chapter.3}% 25
-\BOOKMARK [0][-]{chapter.4}{Simulation}{}% 26
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.2}{FuzzBench}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.3}{FuzzBench Reports}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.4}{Performance Bottlenecks of Waffle}{chapter.4}% 30
-\BOOKMARK [0][-]{chapter.5}{Future Works and Conclusions}{}% 31
-\BOOKMARK [0][-]{chapter*.42}{Bibliography}{}% 32
-\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 33
-\BOOKMARK [1][-]{section.1.6.A}{Waffle}{chapter.6}% 34
-\BOOKMARK [2][-]{subsection.1.6.A.1}{random\137havoc}{section.1.6.A}% 35
-\BOOKMARK [1][-]{section.1.6.B}{FuzzBench}{chapter.6}% 36
-\BOOKMARK [2][-]{subsection.1.6.B.1}{builder.Dockerfile}{section.1.6.B}% 37
-\BOOKMARK [2][-]{subsection.1.6.B.2}{fuzzer.py}{section.1.6.B}% 38
+\BOOKMARK [1][-]{section.2.3}{AFL}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{LLVM}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{Instrumentation and coverage measurements}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{AFL Fuzz}{section.2.3}% 18
+\BOOKMARK [3][-]{subsubsection.2.3.3.1}{fuzz\137one\(\)}{subsection.2.3.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.4}{Start Fuzz Testing}{section.2.3}% 20
+\BOOKMARK [1][-]{section.2.4}{Program analysis}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.5}{Concluding remarks}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Proposed Fuzzer}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Motivating example}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{Instrumentation}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{Fuzzing}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.5}{Concluding remarks}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Simulation}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{FuzzBench}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{FuzzBench Reports}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Performance Bottlenecks of Waffle}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Future Works and Conclusions}{}% 34
+\BOOKMARK [0][-]{chapter*.40}{Bibliography}{}% 35
+\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 36
+\BOOKMARK [1][-]{section.1.6.A}{Waffle}{chapter.6}% 37
+\BOOKMARK [2][-]{subsection.1.6.A.1}{random\137havoc}{section.1.6.A}% 38
+\BOOKMARK [1][-]{section.1.6.B}{FuzzBench}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.1.6.B.1}{builder.Dockerfile}{section.1.6.B}% 40
+\BOOKMARK [2][-]{subsection.1.6.B.2}{fuzzer.py}{section.1.6.B}% 41

@@ -77,23 +77,6 @@ Michal Zalewski.
   \url{https://lcamtuf.blogspot.com/2014/11/pulling-jpegs-out-of-thin-air.html},
   2014.
 
-\bibitem{sample_code_ref}
-Finding memory bugs with addresssanitizer.
-\newblock
-  \url{https://embeddedbits.org/finding-memory-bugs-with-addresssanitizer/},
-  2020.
-
-\bibitem{address_san}
-Google/addresssanitizer.
-\newblock \url{https://github.com/google/sanitizers/wiki/AddressSanitizer},
-  2019.
-
-\bibitem{serebryany2012addresssanitizer}
-Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitriy Vyukov.
-\newblock Addresssanitizer: A fast address sanity checker.
-\newblock In {\em 2012 $\{$USENIX$\}$ Annual Technical Conference
-  ($\{$USENIX$\}$$\{$ATC$\}$ 12)}, pages 309--318, 2012.
-
 \bibitem{banks2006snooze}
 Greg Banks, Marco Cova, Viktoria Felmetsger, Kevin Almeroth, Richard Kemmerer,
   and Giovanni Vigna.
@@ -188,6 +171,15 @@ Cheng Wen, Haijun Wang, Yuekang Li, Shengchao Qin, Yang Liu, Zhiwu Xu, Hongxu
 \newblock Memlock: Memory usage guided fuzzing.
 \newblock ICSE, 2020.
 
+\bibitem{zalewski2014american}
+Michal Zalewski.
+\newblock American fuzzy lop.(2014).
+\newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
+
+\bibitem{about_afl}
+More about afl.
+\newblock \url{https://afl-1.readthedocs.io/en/latest/about_afl.html}, 2019.
+
 \bibitem{lattner2004llvm}
 Chris Lattner and Vikram Adve.
 \newblock Llvm: A compilation framework for lifelong program analysis \&
@@ -204,18 +196,26 @@ Clang: a c language family frontend for llvm.
 Base class for instruction visitors.
 \newblock \url{https://llvm.org/doxygen/InstVisitor_8h_source.html}, 2021.
 
-\bibitem{zalewski2014american}
-Michal Zalewski.
-\newblock American fuzzy lop.(2014).
-\newblock \url{http://lcamtuf. coredump. cx/afl}, 2019.
-
-\bibitem{about_afl}
-More about afl.
-\newblock \url{https://afl-1.readthedocs.io/en/latest/about_afl.html}, 2019.
-
 \bibitem{afl_userguide}
 Afl user guide.
 \newblock \url{https://afl-1.readthedocs.io/en/latest/user_guide.html}, 2019.
+
+\bibitem{sample_code_ref}
+Finding memory bugs with addresssanitizer.
+\newblock
+  \url{https://embeddedbits.org/finding-memory-bugs-with-addresssanitizer/},
+  2020.
+
+\bibitem{address_san}
+Google/addresssanitizer.
+\newblock \url{https://github.com/google/sanitizers/wiki/AddressSanitizer},
+  2019.
+
+\bibitem{serebryany2012addresssanitizer}
+Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitriy Vyukov.
+\newblock Addresssanitizer: A fast address sanity checker.
+\newblock In {\em 2012 $\{$USENIX$\}$ Annual Technical Conference
+  ($\{$USENIX$\}$$\{$ATC$\}$ 12)}, pages 309--318, 2012.
 
 \bibitem{hoare1962quicksort}
 Charles~AR Hoare.

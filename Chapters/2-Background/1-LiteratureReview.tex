@@ -23,23 +23,6 @@ Fuzzer needs to know the command for executing the target program and the inputs
 
 A common feature in most of the fuzzers is the fuzzing loop which is looking for more valuable inputs. The stages may vary depending on the problem and goals of a fuzzer. We will walk over the stages of AFL as our fuzzer is based on AFL, and we will be back on the stages of fuzzing in the following sections.
 
-\subsubsection*{Sample program}
-To evaluate the performance of a fuzzer and assess the execution of it, the sample \textbf{C} code is implemented. (Listing \ref{lst:sample_vul}) \cite{sample_code_ref}
-
-\lstinputlisting[language=C++,style=CodeStyle,caption={Sample vulnerable program},label={lst:sample_vul}]{Codes/Chapter2/sample_vul.c}
-
-The sample program has a \textbf{Heap buffer overflow vulnerability}. If we compile this code with GCC and debugging flags, the vulnerability stays hidden and the program executes without any errors:
-
-\lstinputlisting[language=bash,style=CommandStyle,label={lst:gcc-sample},caption={Compile the sample program}]{Codes/Chapter2/exec_1.txt}
-
-One way to detect the prior vulnerability, is to add AddressSanitizer flag for the compilation \cite{address_san}. ASan is a fast memory error detector. This tool uses memory poisoning for the detection of a heap buffer overflow. (You can find more features of this tool in the reference) \cite{serebryany2012addresssanitizer}
-
-After we provide the ASan flag for the compilation, we face an error with the same input as the previous example (Listing \ref{lst:exec2}):
-
-\lstinputlisting[language=bash,style=CommandStyle,label={lst:exec2}]{Codes/Chapter2/exec_2.txt}
-
-The detection of the vulnerabilities or any other exceptions, signals the operating system for a misbehaviour from the program. A fuzzer would need this signal to evaluate the execution of the target program.
-
 \subsubsection*{Black/Grey/White-box fuzzing}
 
 The \textit{colorful} representation of fuzzers depends on how much information we can collect from any execution of the target. In a blackbox fuzzing, we do not gather any information from the execution, and the fuzzing tries new inputs expecting an error to occur.
