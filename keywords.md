@@ -1,3 +1,0 @@
-- pathological / pathology
-- without any domain knowledge / program agnostic
-- diagnos / examine / investigate / look into / search / monitor / scan / test

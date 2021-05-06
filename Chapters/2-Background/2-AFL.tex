@@ -1,6 +1,6 @@
 \section{AFL} \label{sec:2.2}
 
-Michal Zalewski initially developed American Fuzzy Lopper. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpora produced by the tool help seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american}
+Michal Zalewski initially developed American Fuzzy Lopper. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpus produced by the tool help seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american}
 
 AFL is designed to perform \textbf{fast} and \textbf{reliable}, and at the same time, benefit from the \textbf{simplicity} and \textbf{chainability} of the fuzzer \cite{about_afl}:
 
@@ -10,6 +10,8 @@ AFL is designed to perform \textbf{fast} and \textbf{reliable}, and at the same 
     \item \textbf{Simplicity:} AFL provides different options, helping the users enhance the fuzz testing in a straightforward and meaningful way. 
     \item \textbf{Chainability:} AFL can test any binary which is executable, and is not constrained by the target software. A driver for the target program can connect the binary to the fuzzer.
 \end{itemize}
+
+AFL \say{allows you to build a standalone feature that leverages the QEMU "user emulation" mode and allows callers to obtain instrumentation output for black-box, closed-source binaries}, working as a greybox fuzzer \cite{afl_qemu}. The instrumentation using \textbf{QEMU} on a binary has an average performance cost of 2-5x, which is better than other tools such as \textbf{DynamoRIO} and \textbf{PIN}.
 
 \subsection{LLVM} \label{sub:2.2.1}
 
@@ -40,7 +42,7 @@ The instrumentation is applied before the IR generation, and the LLVM IR is fed 
 
 
 % Instrumentation
-\subsection{Instrumentation and coverage measurements}
+\subsubsection{Instrumentation and coverage measurements}
 \label{instrumentation}
 
 Waffle is based on AFL and we are extending the AFL's instrumentation in our work. The goal of using instrumentation for AFL is to differentiate code coverages. There are two techniques for instrumentation in AFL:
@@ -111,24 +113,24 @@ The evolutionary algorithms for generating new entries are applied in two stages
 
 The \textbf{havoc} stage is a cycle of stacked random tweaks. AFL assesses the current entry to insert into the queue. Each mutation is selected randomly and with a higher \texttt{perf\_score}, this stage continues more fuzzing over the current entry. The \texttt{random\_havoc} stage consists techniques such as bit flips, overwriting with random and interesting integers, block deletion, block duplication, and (if supplied) assorted dictionary-related operations \cite{afl_userguide}. An abstract implementation of the \texttt{havoc\_stage} can be found in Appendix \ref{app:havoc}.
 
-\subsubsection*{calculate\_score()}
+\subsubsection{calculate\_score()}
 \label{sub:calc_score}
 
 This function calculates how much AFL desires to iterate in havoc stage, for the current entry. By default, AFL is interested in fuzzing an input with less execution-time, and simultaneously, showing more coverage, and it's generation depth is higher. The depth of a child entry is one more than the depth of it's parent. For more information, check the following abstraction of the function [Listing \ref{lst:calc_score}]: 
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:calc_score},caption={An abstract implementation of calculate\_score()}]{Codes/Chapter2/calculate_score.c}
 
-\subsubsection*{common\_fuzz\_stuff()}
+\subsubsection{common\_fuzz\_stuff()}
 The newly fuzzed (generated) inputs must pass \texttt{common\_fuzz\_stuff()} for validating and instantiating a \texttt{queue\_entry}. The validation checks the length of the fuzzed file, executes the program and keeps the exit-value of the execution. In the end, AFL calls \texttt{save\_if\_interesting()} to insert the entry into the queue, if it is interesting. The function \texttt{has\_new\_bits()} considers how interesting an entry is.
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:common_stuff},caption={An abstract implementation of common\_fuzz\_stuff()}]{Codes/Chapter2/common_fuzz_stuff.c}
 
-\subsubsection*{has\_new\_bits()}
+\subsubsection{has\_new\_bits()}
 AFL calls this function after each execution of the program, and the optimization of this code participates an important role.
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_bits},caption={The implementation of has\_new\_bits()}]{Codes/Chapter2/has_new_bits.c}
 
-\subsubsection*{Status screen}
+\subsection{Status screen}
 
 The \textbf{status screen} is a UI for the status of the fuzzing procedure. As it is shown in Figure \ref{fig:status_screen}, there are multiple stats provided in real-time updates:
     

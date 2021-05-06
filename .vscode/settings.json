@@ -196,6 +196,26 @@
                     "describe"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/Chapters/2-Background/1-LiteratureReview.tex"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "academic",
+                "emotions": [
+                    "confident",
+                    "respectful",
+                    "analytical"
+                ],
+                "goals": [
+                    "inform",
+                    "describe",
+                    "convince"
+                ]
+            }
         }
     ],
     "cmake.configureOnOpen": true

@@ -122,6 +122,11 @@ Fabien Duchene, Roland Groz, Sanjay Rawat, and Jean-Luc Richier.
 \newblock In {\em 2012 IEEE Fifth International Conference on Software Testing,
   Verification and Validation}, pages 815--817. IEEE, 2012.
 
+\bibitem{king1976symbolic}
+James~C King.
+\newblock Symbolic execution and program testing.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
 \bibitem{godefroid2012sage}
 Patrice Godefroid, Michael~Y Levin, and David Molnar.
 \newblock Sage: whitebox fuzzing for security testing.
