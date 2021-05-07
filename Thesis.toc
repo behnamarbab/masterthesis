@@ -22,32 +22,32 @@
 \contentsline {subsubsection}{\numberline {2.2.2.2}Performance fuzzing}{11}{subsubsection.2.2.2.2}%
 \contentsline {section}{\numberline {2.3}AFL}{12}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}LLVM}{13}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Instrumentation and coverage measurements}{15}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Instrumentation and coverage measurements}{14}{subsubsection.2.3.1.1}%
 \contentsline {subsection}{\numberline {2.3.2}AFL Fuzz}{18}{subsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.2.1}fuzz\_one()}{19}{subsubsection.2.3.2.1}%
 \contentsline {subsubsection}{\numberline {2.3.2.2}calculate\_score()}{20}{subsubsection.2.3.2.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}common\_fuzz\_stuff()}{22}{subsubsection.2.3.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.2.4}has\_new\_bits()}{23}{subsubsection.2.3.2.4}%
-\contentsline {subsection}{\numberline {2.3.3}Status screen}{24}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Start Fuzz Testing}{26}{subsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}common\_fuzz\_stuff()}{21}{subsubsection.2.3.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.2.4}has\_new\_bits()}{22}{subsubsection.2.3.2.4}%
+\contentsline {subsection}{\numberline {2.3.3}Status screen}{23}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Start Fuzz Testing}{25}{subsection.2.3.4}%
 \contentsline {section}{\numberline {2.4}Performance of AFL}{26}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Concluding remarks}{28}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Proposed Fuzzer}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Motivating example}{30}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Instrumentation}{32}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Fuzzing}{36}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Concluding remarks}{40}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Simulation}{41}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}%
-\contentsline {section}{\numberline {4.2}FuzzBench}{42}{section.4.2}%
-\contentsline {section}{\numberline {4.3}FuzzBench Reports}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{48}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Future Works and Conclusions}{52}{chapter.5}%
-\contentsline {chapter}{Bibliography}{53}{chapter*.33}%
-\contentsline {chapter}{\numberline {6}Appendix}{59}{chapter.6}%
-\contentsline {section}{\numberline {6.A}Waffle}{59}{section.1.6.A}%
-\contentsline {subsection}{\numberline {6.A.1}random\_havoc}{59}{subsection.1.6.A.1}%
-\contentsline {section}{\numberline {6.B}FuzzBench}{61}{section.1.6.B}%
-\contentsline {subsection}{\numberline {6.B.1}builder.Dockerfile}{61}{subsection.1.6.B.1}%
-\contentsline {subsection}{\numberline {6.B.2}fuzzer.py}{62}{subsection.1.6.B.2}%
+\contentsline {section}{\numberline {3.4}Fuzzing}{37}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Concluding remarks}{41}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Simulation}{42}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{42}{section.4.1}%
+\contentsline {section}{\numberline {4.2}FuzzBench}{43}{section.4.2}%
+\contentsline {section}{\numberline {4.3}FuzzBench Reports}{46}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Performance Bottlenecks of Waffle}{49}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Future Works and Conclusions}{53}{chapter.5}%
+\contentsline {chapter}{Bibliography}{54}{chapter*.33}%
+\contentsline {chapter}{\numberline {6}Appendix}{60}{chapter.6}%
+\contentsline {section}{\numberline {6.A}Waffle}{60}{section.1.6.A}%
+\contentsline {subsection}{\numberline {6.A.1}random\_havoc}{60}{subsection.1.6.A.1}%
+\contentsline {section}{\numberline {6.B}FuzzBench}{62}{section.1.6.B}%
+\contentsline {subsection}{\numberline {6.B.1}builder.Dockerfile}{62}{subsection.1.6.B.1}%
+\contentsline {subsection}{\numberline {6.B.2}fuzzer.py}{63}{subsection.1.6.B.2}%

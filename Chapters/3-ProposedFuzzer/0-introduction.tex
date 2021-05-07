@@ -1,0 +1,30 @@
+\section{Introduction}
+
+Coverage-based fuzzers investigate the inputs with different code coverages. A coverage-based fuzzer such as AFL spreads the domain of the test cases and saves the inputs with new code coverage, so that vulnerabilities would appear after fuzzing the interesting inputs. On the other hand, AFL scans the queue of test cases and prioritizes the inputs with less execution time and shorter length \ref{eq:afl_fav_fac}. This strategy leads to faster generation of the test cases and chooses a faster test case over a slower one. This makes AFL show interest in generating crashes over hangs.
+
+Performance fuzzing with tools such as SlowFuzz \cite{petsios2017slowfuzz}, MemLock \cite{wen2020memlock}, and PerfFuzz \cite{lemieux2018perffuzz} have showed great enhancement in finding the pathological inputs. SlowFuzz is a LibFuzzer-based performance fuzzer that counts the total number of executed instructions of a specific family type - CMP. Adding a new type of instruction to the list of monitored instructions is cumbersome, and there are no tools for collecting the instructions info from the current version of SlowFuzz. PerfFuzz is based on AFL and counts the total number of all instructions in an execution. In memlock, the fuzzer collects the heap/stack-related memory instructions. PerfFuzz cannot count the memory instructions separately, and MemLock is not capable of considering other types of instructions.
+
+To untangle the above issues, we propose \textbf{Waffle} (\textbf{W}hat \textbf{A}n \textbf{A}mazing \textbf{AFL} - WAAAFL). Waffle is a coverage-guided performance fuzzer, that is developed on top of AFL. In addition to the coverage strategies of AFL, Waffle uses an instrumentation method to \textbf{count the instructions}. Waffle can target \textbf{any custom type of instructions} that is defined using appropriate LLVM libraries. Compared to AFL, Waffle exercises test cases with higher number of instructions, and as a result, generated test cases are run slower. The executions reaching a predefined timeout are revealed as hangs and the corresponding input file is stored as an evidence for a vulnerability.
+
+% ! REF-REQUIRED
+In this chapter, we introduce Waffle in more details. In the next section, we explain the implementation of Waffle, as well as the techniques we used for the purpose of this research. Section \textbf{REF-REQUIRED} concentrates on the applications of Waffle, and we conclude in the last chapter.
+
+
+
+% In this chapter, we introduce \textbf{Waffle} in more details. Waffle is a tool capable of finding the vulnerabilities related to (theoretically) any resource exhaustion. The first section explains a motivating example leading to our proposed fuzzer. This fuzzer is based on AFL and extends its implementation. For monitoring the resources, we use compile-time instrumentation of the target program using LLVM's APIs; we take advantage of \textbf{visiting} APIs that let us keep track of any instructions defined for LLVM. As a result, the instructions related to any resource are counted, and this information is later used in the fuzzing stage.
+
+% AFL is the state-of-the-art in finding vulnerabilities and as it is amazing to be developed, the name of our fuzzer comes after \textit{WAAAFL}!
+
+% \vspace{\baselineskip}
+
+% In this chapter, we are contributing the following topics:
+
+% \begin{itemize}
+%     \item An implementation of a fuzzer for finding the worst-case scenario in an algebraic problem.
+%     \item We use the \textbf{visitor} functions, which are not used in previous works, as we are aware of.
+%     \item A new instrumentation for collecting runtime information about resource usages. In Waffle, we focus on maximising the number of instructions.
+%     \item A new fuzz testing approach for collectively considering the former features of AFL, as well as the features we introduce in Waffle.
+% \end{itemize}
+
+
+% \textbf{Waffle (What An Amazing AFL - WAAAFL)} is a coverage-based whitebox fuzzer that is based on AFL's base code. Waffle leverages \textbf{visitors} to collect the stats of different instructions during the execution. To learn more about Waffle, we study the features we benefit from the LLVM, as well as the current features of AFL that help us in reaching the goals of this thesis.

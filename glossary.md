@@ -3,3 +3,4 @@
 - diagnos / examine / investigate / look into / search / monitor / scan / test
 - evolve / grow / enhance / improve / develop
 - different / several / various / diverse / distinct / other / unlike / contrary / at odds / divergent / nonidentical / inconsistent
+- show / display

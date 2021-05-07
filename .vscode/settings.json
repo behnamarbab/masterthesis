@@ -216,6 +216,25 @@
                     "convince"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/Chapters/3-ProposedFuzzer/0-introduction.tex"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "general",
+                "emotions": [
+                    "confident",
+                    "respectful",
+                    "analytical"
+                ],
+                "goals": [
+                    "describe",
+                    "convince"
+                ]
+            }
         }
     ],
     "cmake.configureOnOpen": true
