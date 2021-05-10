@@ -1,0 +1,17 @@
+\begin{algorithm}[!b]
+  \KwIn{\textbf{$A, N$}}
+  $i \leftarrow N$\;
+  \SetKwRepeat{Do}{do}{while}
+  \Do { $i >= 0$ } {
+    $j \leftarrow 0$\;
+    \Do {$j < i+1$} {
+      \If{$A_j > A_{j+1}$} {
+        $SWAP(A_j, A_{j+1})$\;
+      }
+      $j \leftarrow j+1$\;
+    }
+    $i \leftarrow i-1$\;
+  }
+  \caption{Pseudocode of bubblesort on array $A$ of size $N$}
+  \label{algo:bubble}
+\end{algorithm}

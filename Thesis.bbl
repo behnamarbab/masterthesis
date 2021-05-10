@@ -74,6 +74,11 @@ High-performance binary-only instrumentation for afl-fuzz.
   \url{https://github.com/mirrorer/afl/blob/master/qemu_mode/README.qemu},
   2020.
 
+\bibitem{iso27008}
+Iso 27005, information technology — security techniques — information
+  security risk management (third edition).
+\newblock \url{https://www.iso27001security.com/html/27005.html}, 2018.
+
 \bibitem{miller1990empirical}
 Barton~P Miller, Louis Fredriksen, and Bryan So.
 \newblock An empirical study of the reliability of unix utilities.

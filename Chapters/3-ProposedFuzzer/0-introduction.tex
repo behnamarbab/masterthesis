@@ -9,8 +9,6 @@ To untangle the above issues, we propose \textbf{Waffle} (\textbf{W}hat \textbf{
 % ! REF-REQUIRED
 In this chapter, we introduce Waffle in more details. In the next section, we explain the implementation of Waffle, as well as the techniques we used for the purpose of this research. Section \textbf{REF-REQUIRED} concentrates on the applications of Waffle, and we conclude in the last chapter.
 
-
-
 % In this chapter, we introduce \textbf{Waffle} in more details. Waffle is a tool capable of finding the vulnerabilities related to (theoretically) any resource exhaustion. The first section explains a motivating example leading to our proposed fuzzer. This fuzzer is based on AFL and extends its implementation. For monitoring the resources, we use compile-time instrumentation of the target program using LLVM's APIs; we take advantage of \textbf{visiting} APIs that let us keep track of any instructions defined for LLVM. As a result, the instructions related to any resource are counted, and this information is later used in the fuzzing stage.
 
 % AFL is the state-of-the-art in finding vulnerabilities and as it is amazing to be developed, the name of our fuzzer comes after \textit{WAAAFL}!

@@ -15,45 +15,45 @@ A level-1 auxiliary file: Chapters/6-Appendix/overview.aux
 Database file #1: mybibliography.bib
 Warning--can't use both volume and number fields in stephens2016driller
 Warning--can't use both volume and number fields in godefroid2008grammar
-You've used 48 entries,
+You've used 49 entries,
             1791 wiz_defined-function locations,
-            691 strings with 11400 characters,
-and the built_in function-call counts, 11164 in all, are:
-= -- 1031
-> -- 423
+            694 strings with 11576 characters,
+and the built_in function-call counts, 11268 in all, are:
+= -- 1040
+> -- 424
 < -- 21
-+ -- 165
++ -- 166
 - -- 117
-* -- 605
-:= -- 1538
-add.period$ -- 144
-call.type$ -- 48
-change.case$ -- 46
+* -- 606
+:= -- 1548
+add.period$ -- 146
+call.type$ -- 49
+change.case$ -- 47
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 542
-empty$ -- 1203
+cite$ -- 51
+duplicate$ -- 547
+empty$ -- 1221
 format.name$ -- 117
-if$ -- 2683
+if$ -- 2711
 int.to.chr$ -- 0
-int.to.str$ -- 48
+int.to.str$ -- 49
 missing$ -- 31
-newline$ -- 231
+newline$ -- 235
 num.names$ -- 33
-pop$ -- 256
+pop$ -- 263
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 331
+skip$ -- 335
 stack$ -- 0
 substring$ -- 628
-swap$ -- 208
+swap$ -- 209
 text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
 while$ -- 93
-width$ -- 50
-write$ -- 498
+width$ -- 51
+write$ -- 506
 (There were 2 warnings)

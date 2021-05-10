@@ -4,3 +4,4 @@
 - evolve / grow / enhance / improve / develop
 - different / several / various / diverse / distinct / other / unlike / contrary / at odds / divergent / nonidentical / inconsistent
 - show / display
+- exact / precise / accurate / detailed / careful / true / right / correct / objective / genuine / thorough
