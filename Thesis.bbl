@@ -79,6 +79,12 @@ Iso 27005, information technology — security techniques — information
   security risk management (third edition).
 \newblock \url{https://www.iso27001security.com/html/27005.html}, 2018.
 
+\bibitem{su2016vuldetection}
+Yunfei Su, Mengjun Li, Chaojing Tang, and Rongjun Shen.
+\newblock An overview of software vulnerability detection.
+\newblock {\em International Journal of Computer Science And Technology},
+  7(3):72--76, 2016.
+
 \bibitem{miller1990empirical}
 Barton~P Miller, Louis Fredriksen, and Bryan So.
 \newblock An empirical study of the reliability of unix utilities.
@@ -98,6 +104,12 @@ Michal Zalewski.
 \newblock
   \url{https://lcamtuf.blogspot.com/2014/11/pulling-jpegs-out-of-thin-air.html},
   2014.
+
+\bibitem{woo2013scheduling}
+Maverick Woo, Sang~Kil Cha, Samantha Gottlieb, and David Brumley.
+\newblock Scheduling black-box mutational fuzzing.
+\newblock In {\em Proceedings of the 2013 ACM SIGSAC conference on Computer \&
+  communications security}, pages 511--522, 2013.
 
 \bibitem{banks2006snooze}
 Greg Banks, Marco Cova, Viktoria Felmetsger, Kevin Almeroth, Richard Kemmerer,
@@ -126,6 +138,22 @@ Fabien Duchene, Roland Groz, Sanjay Rawat, and Jean-Luc Richier.
   evolutionary fuzzing.
 \newblock In {\em 2012 IEEE Fifth International Conference on Software Testing,
   Verification and Validation}, pages 815--817. IEEE, 2012.
+
+\bibitem{chen2018iotfuzzer}
+Jiongyi Chen, Wenrui Diao, Qingchuan Zhao, Chaoshun Zuo, Zhiqiang Lin, XiaoFeng
+  Wang, Wing~Cheong Lau, Menghan Sun, Ronghai Yang, and Kehuan Zhang.
+\newblock Iotfuzzer: Discovering memory corruptions in iot through app-based
+  fuzzing.
+\newblock In {\em NDSS}, 2018.
+
+\bibitem{mansur2020detecting}
+Muhammad~Numair Mansur, Maria Christakis, Valentin W{\"u}stholz, and Fuyuan
+  Zhang.
+\newblock Detecting critical bugs in smt solvers using blackbox mutational
+  fuzzing.
+\newblock In {\em Proceedings of the 28th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, pages 701--712, 2020.
 
 \bibitem{king1976symbolic}
 James~C King.

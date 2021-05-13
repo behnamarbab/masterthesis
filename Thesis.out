@@ -12,10 +12,10 @@
 \BOOKMARK [0][-]{chapter.2}{Background}{}% 12
 \BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 13
 \BOOKMARK [1][-]{section.2.2}{Literature Review}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.1}{Knowledge from program}{section.2.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.2.1.1}{Greybox fuzzing}{subsection.2.2.1}% 16
-\BOOKMARK [3][-]{subsubsection.2.2.1.2}{Blackbox fuzzing}{subsection.2.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.2.1.3}{Whitebox fuzzing}{subsection.2.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.2.1}{Program awareness}{section.2.2}% 15
+\BOOKMARK [3][-]{subsubsection.2.2.1.1}{Blackbox fuzzing}{subsection.2.2.1}% 16
+\BOOKMARK [3][-]{subsubsection.2.2.1.2}{Whitebox fuzzing}{subsection.2.2.1}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.1.3}{Greybox fuzzing}{subsection.2.2.1}% 18
 \BOOKMARK [2][-]{subsection.2.2.2}{Generation of inputs}{section.2.2}% 19
 \BOOKMARK [3][-]{subsubsection.2.2.2.1}{Coverage-based fuzzing}{subsection.2.2.2}% 20
 \BOOKMARK [3][-]{subsubsection.2.2.2.2}{Performance fuzzing}{subsection.2.2.2}% 21

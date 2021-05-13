@@ -15,45 +15,45 @@ A level-1 auxiliary file: Chapters/6-Appendix/overview.aux
 Database file #1: mybibliography.bib
 Warning--can't use both volume and number fields in stephens2016driller
 Warning--can't use both volume and number fields in godefroid2008grammar
-You've used 49 entries,
+You've used 53 entries,
             1791 wiz_defined-function locations,
-            694 strings with 11576 characters,
-and the built_in function-call counts, 11268 in all, are:
-= -- 1040
-> -- 424
-< -- 21
-+ -- 166
-- -- 117
-* -- 606
-:= -- 1548
-add.period$ -- 146
-call.type$ -- 49
-change.case$ -- 47
+            714 strings with 12598 characters,
+and the built_in function-call counts, 12567 in all, are:
+= -- 1146
+> -- 498
+< -- 23
++ -- 192
+- -- 139
+* -- 695
+:= -- 1738
+add.period$ -- 158
+call.type$ -- 53
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 547
-empty$ -- 1221
-format.name$ -- 117
-if$ -- 2711
+cite$ -- 55
+duplicate$ -- 610
+empty$ -- 1344
+format.name$ -- 139
+if$ -- 3010
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 31
-newline$ -- 235
-num.names$ -- 33
-pop$ -- 263
+int.to.str$ -- 53
+missing$ -- 35
+newline$ -- 255
+num.names$ -- 37
+pop$ -- 283
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 335
+skip$ -- 373
 stack$ -- 0
-substring$ -- 628
-swap$ -- 209
-text.length$ -- 21
+substring$ -- 711
+swap$ -- 234
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 93
-width$ -- 51
-write$ -- 506
+while$ -- 105
+width$ -- 55
+write$ -- 549
 (There were 2 warnings)
