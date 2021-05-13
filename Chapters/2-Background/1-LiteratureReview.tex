@@ -76,9 +76,8 @@ The introduced fuzzer by Miller \cite{miller1990empirical} was of the very first
 A blackbox fuzzer is unaware of the program's structure and cannot monitor it's execution. The \textbf{benefit} of using a blackbox fuzzer is the speed of test case generation; the genuine compiled target program is being tested and the fuzzer does not put an effort on processing the inputs and executions. In addition, a blackbox fuzzer is featured to target external programs by using the standard interfaces of those programs. For instance, IoTFuzzer \cite{chen2018iotfuzzer} is an Internet of Things (IOT) blackbox fuzzer, \say{which aims at finding memory corruption vulnerabilities in IoT devices without access to their firmware images.} 
 In a recent research by Mansur et al. \cite{mansur2020detecting}, they introduce a blackbox fuzzing method for detecting bugs in Satisfiability Modulo Theories (SMT) problems. As a result, blackbox fuzzing suggests a general solution in diverse domains. On the other hand, one of \textbf{drawbacks} of using blackbox fuzzing is that it finds \textit{shallow} bugs. A shallow vulnerability is an error that appears in the early discovered basic blocks in the CFG of the program. The reason behind this disadvantage is that blackbox fuzzing is \textbf{blind} in understanding the execution, and cannot analyze the CFG.
 
-% 
 % Whitebox fuzzers
-% \vspace{1.5\baselineskip}
+
 \subsubsection{Whitebox fuzzing}
 % !        Rewrite this  |
 % TODO     Rewrite this  V
