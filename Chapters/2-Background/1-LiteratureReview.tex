@@ -2,7 +2,7 @@
 
 Fuzzing searches for software vulnerabilities. "Vulnerability" has different definitions under various organizations and researches. For instance, \textit{International Organization for Standardization (ISO)} defines vulnerability as: \say{A weakness of an asset or group of assets that can be exploited by one or more threats, where an asset is anything that has value to the organization, its business operations and their continuity, including information resources that support the organization's mission.} \cite{iso27008} Yet, the definition needs more details for software. 
 
-\subsection*{Software vulnerability}
+\subsection{Software vulnerability}
 
 According to the \textit{Open Web Application Security Project (OWASP)}: \say{A vulnerability is a hole or a weakness in the application, which can be a design flaw or an implementation bug, that allows attackers cause harm to the stakeholders of an application. Stakeholders include the application owner, application users, and other entities that rely on the application.} The existence of software vulnerabilities may be compromised and may become an attack target for hackers; this makes the software unreliable for its users. 
 
@@ -81,9 +81,33 @@ In a recent research by Mansur et al. \cite{mansur2020detecting}, they introduce
 \subsubsection{Whitebox fuzzing}
 % !        Rewrite this  |
 % TODO     Rewrite this  V
-Whitebox fuzzing works with the source code of the target. In this technique, an \textbf{instrumentation} is applied before the compilation of the program. Whitebox fuzzing is not very practical in the industry as it is very expensive (time-consuming / resource-consuming) and faces many challenges. Symbolic execution \cite{king1976symbolic} is a common whitebox fuzzing strategy that analyzes the source code and runs the program symbolically; the variables and inputs are replaced by symbols that the solution specifies the domain of the content inputs. 
+Whitebox fuzzing works with the source code of the target. The knowledge of the program's logic helps the fuzzing procedure guided by satisfying the conditions resulting in new branches. Symbolic execution \cite{king1976symbolic} is a common whitebox fuzzing strategy that analyzes the source code and runs the program symbolically; the variables and inputs are replaced by symbols that the solution specifies the domain of the content inputs. Whitebox fuzzing leverages on symbolic executions for generating inputs that increase code coverage by discovering new branches after conditional instructions. This method helps the fuzzer detect deep bugs faster due to the powerful constraint solvers \cite{godefroid2008automated}. Despite the symbolic execution theoritically can solve the conditional branching, this technique suffers from \textit{path explosion} problem. For instance, in Figure \ref{fig:pathx} a sample section of a program containing a \texttt{loop} and an \texttt{if} statement within the loop. Figure \ref{fig:pathx3} shows the tree of the actions taken until the program reaches the basix block $X$. Solving the current loop requires an exponentially growing number of paths that the fuzzer needs to visit. Whitebox fuzzing is not very practical in the industry as it is very expensive (time-consuming / resource-consuming) and requires the source code, which may not be available for testers.
 
-SAGE \cite{godefroid2012sage}, a whitebox fuzzer, was developed as an alternative to blackbox fuzzing to cover the lacks of blackbox fuzzers. With the benefit of having the source code and internal knowledge for fuzzing, a whitebox fuzzer can leverage symbolic constraints for symbolic analysis to solve the constraints (such as magic values) in the program \cite{cadar2011symbolic}. It can also use dynamic and concolic execution \cite{stephens2016driller} and use taint analysis to locate the regions of seed files influencing values used by program \cite{ganesh2009taint}. In addition, a whitebox fuzzer can find the grammar for parsing the input files without any prior knowledge \cite{godefroid2008grammar}.
+\begin{figure}[!b]
+  \begin{adjustbox}{center,max width=1.3\textwidth}
+      \begin{subfigure}[t]{0.30\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Chapter2/path-explosion.png}
+          \vspace*{-5mm}
+          \caption{Path explosion}
+          \label{fig:pathx}
+          \vspace*{5mm}
+      \end{subfigure}
+      ~
+      \begin{subfigure}[b]{0.80\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{Chapter2/path-explosion-tree.png}
+          \vspace*{-5mm}
+          \caption{Path explosion tree}
+          \label{fig:pathx3}
+          \vspace*{5mm}
+      \end{subfigure}
+  \end{adjustbox}
+  \caption{Path explosion example}
+  \label{fig:path}
+\end{figure}
+
+SAGE \cite{godefroid2012sage}, a whitebox fuzzer, was developed as an alternative to blackbox fuzzing to cover the lacks of blackbox fuzzers \cite{cadar2011symbolic}. It can also use dynamic and \textit{concolic execution} \cite{stephens2016driller} and use taint analysis to locate the regions of seed files influencing values used by the program \cite{ganesh2009taint}. Concolic execution is an effective combination of symbolic execution and concrete (dynamic) executions; in a dynamic execution the fuzzer executes the program and analyzes the run.Godefroid et al. \cite{godefroid2008grammar} have also introduced a whitebox fuzzer that investigates the grammar for parsing the input files without any prior knowledge.
 
 \subsubsection{Greybox fuzzing}
 
