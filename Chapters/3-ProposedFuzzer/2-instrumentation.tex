@@ -3,6 +3,18 @@
 
 \subsubsection*{waffle-llvm-rt.o.c}
 
+% ! Add visitor functions.
+
+\subsubsection{Visitor functions}
+
+\say{Instruction visitors are used when you want to perform different actions for different kinds of instructions without having to use lots of casts and a big switch statement (in your code, that is). \cite{inst_visitor}} 
+
+\lstinputlisting[language=C++,style=CodeStyle,label={lst:visitors},caption={Visitors example}]{Codes/Chapter2/visitor.cpp}
+
+The specified range can be any two iterators, which can be a Module, Function, BasicBlock, Instruction or any other range between two instruction addresses.
+
+% ! Update the above visitor section in this chapter.
+
 We initialize the instrumentation with setting up the shared memory for Waffle (Listing \ref{lst:llvm-rt}):
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}

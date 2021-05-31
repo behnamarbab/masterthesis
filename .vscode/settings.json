@@ -235,6 +235,25 @@
                     "convince"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/Chapters/2-Background/2-AFL.tex"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "general",
+                "emotions": [
+                    "confident",
+                    "respectful",
+                    "analytical"
+                ],
+                "goals": [
+                    "describe",
+                    "convince"
+                ]
+            }
         }
     ],
     "cmake.configureOnOpen": true,
