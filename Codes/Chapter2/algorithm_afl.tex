@@ -20,7 +20,7 @@
     \KwIn{\textbf{$in\_dir$}, \textbf{$out\_dir$}, $instrumented$ \textbf{$Target$}}
     initialize fuzzer\;
     \While{fuzzing is not terminated} {
-      cull queue and update bitmaps\;
+      $cull\_queue()$\;
       $Entry \leftarrow q.first\_entry()$\;
       $fuzz\_one(Entry)$\;
     }

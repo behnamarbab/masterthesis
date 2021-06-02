@@ -59,32 +59,33 @@ Figure \ref{fig:instrumentation} shows an example of how the instrumentation con
 
 \subsection{AFL Fuzz}
 
-\textit{afl-fuzz.c} has the instructions for fuzzing the target instrumented-program. The Algorithm \ref{algo:afl} illustrates a brief pseudocode of the execution of \textit{afl-fuzz}:
+Fuzzing can be started after the binary with code coverage instrumentations are applied. First, AFL instantiates the environment variables. A queue of test case entries is created, which stores information about the program's executions over the inputs. The fuzzing loop begins after the environmental set up. In each iteration, AFL selects the first entry of the queue as the current entry for fuzzing. This entry is then analyzed and the input is passed to the program for testing. The function \texttt{fuzz\_one()} is responsible for generating and testing new inputs from the current entry. The fuzzing loop ends with \textit{updating the bitmaps scores}, which analyzes the performance of the current fuzz (Algorithm \ref{algo:afl}).
 
 \input{Codes/Chapter2/algorithm_afl.tex}
 
-After the environmental initializations, the fuzzing loop continues until receiving a termination signal. In every iteration of the loop, AFL first culls the corpus of the generated entries. This method assigns a \textbf{favor-factor} (Eq \ref{eq:afl_fav_fac}) to each queue\_entry and marks the \textbf{favorite entries}, as they execute faster and the size of the files are smaller than the rest of the corpus. AFL finds a favorable path for \say{having a minimal set of paths that trigger all the bits seen in the bitmap so far, and focus on fuzzing them at the expense of the rest.} \cite{afl_git} 
-\begin{equation}
-    fav\_factor = e.exec\_time \times e.length
-    \label{eq:afl_fav_fac}
-\end{equation}
-
-An entry is selected after culling the queue. AFL evolves the input corpus by generating new entries out of the selected input entry - \texttt{fuzz\_one()}. 
+At the beginning of the loop, AFL processes the queue to learn about the higher priorities for inputs. This procedure involves scanning the path that was taken in the recent execution and determines if it is a favorable input for fuzzing in the future. This analysis maintains inputs with the highest effectiveness on each path, and if a path with new behavior is seen, it is marked as an \textit{favorable input}. Next, AFL selects the next input in the queue of fuzzing.
 
 \subsubsection{fuzz\_one()}
 
 \input{Codes/Chapter2/algorithm_fuzz.tex}
 
-Fuzzing a single entry requires the calibration of the test-cases; calibration helps AFL in evaluating the stats of the current entry. This evaluation is stored in \texttt{perf\_score}, and the number of trials for generating new inputs from the \textbf{random\_havoc} stage is calculated using the \texttt{perf\_score}. AFL, as a coverage-based fuzzer, assigns higher performance score for the entries that are executed faster and have bigger bitmaps.
+The selected queue entry must be caliberated (if not before) to retreive the performance of the execution and decide on how favorable the input is for fuzzing. AFL checks the favor of an input by calling \texttt{update\_bitmap\_score()} function. This method assigns a \textbf{favor-factor} (Eq \ref{eq:afl_fav_fac}) to each queue\_entry and marks the \textbf{favorite entries}, as they execute faster and the size of the files are smaller than the rest of the corpus. AFL finds a favorable path for \say{having a minimal set of paths that trigger all the bits seen in the bitmap so far, and focus on fuzzing them at the expense of the rest.} \cite{afl_git} 
 
-The evolutionary algorithms for generating new entries are applied in two stages: \textbf{deterministic} and \textbf{random\_havoc} stages. As shown in Algorithm \ref{algo:fuzzone}, AFL initially tries the basic, deterministic algorithms. These algorithms are executed for a specific number of times, in the same order, and once for each fuzzing trial. . Bit-flipping, byte-flipping, simple arithmetic operations, using known integers and values from dictionaries, are a sequence of mutations that AFL applies on an entry in \textbf{deterministic} stage. Each one of the above operations tweak a small portion of the fuzzed input, and does not modify the file in large portions - up to 32 bits changes in each tweak.
+\begin{equation}
+    fav\_factor = e.exec\_time \times e.length
+    \label{eq:afl_fav_fac}
+\end{equation}
 
-The \textbf{havoc} stage is a cycle of stacked random tweaks. AFL assesses the current entry to insert into the queue. Each mutation is selected randomly and with a higher \texttt{perf\_score}, this stage continues more fuzzing over the current entry. The \texttt{random\_havoc} stage consists techniques such as bit flips, overwriting with random and interesting integers, block deletion, block duplication, and (if supplied) assorted dictionary-related operations \cite{afl_userguide}. An abstract implementation of the \texttt{havoc\_stage} can be found in Appendix \ref{app:havoc}.
+% Fuzzing a single entry requires the calibration of the test-cases; calibration helps AFL in evaluating the stats of the current entry. This evaluation is stored in \texttt{perf\_score}, and the number of trials for generating new inputs from the \textbf{random\_havoc} stage is calculated using the \texttt{perf\_score}. AFL, as a coverage-based fuzzer, assigns higher performance score for the entries that are executed faster and have bigger bitmaps.
+
+The evolutionary algorithms for generating new entries are applied in two stages: \textbf{deterministic} and \textbf{random\_havoc} stages. As shown in Algorithm \ref{algo:fuzzone}, AFL initially tries the basic, deterministic algorithms. These algorithms are executed for a specific number of times, in the same order, and once for each fuzzing trial. Bit-flipping, byte-flipping, simple arithmetic operations, using known integers and values from dictionaries, are a sequence of mutations that AFL applies on an entry in \textbf{deterministic} stage. Each one of the above operations tweaks a small portion of the fuzzed input and does not modify the file in large portions - up to 32 bits changes in each tweak.
+
+The \textbf{havoc} stage is a cycle of stacked random tweaks. AFL assesses the current entry to insert into the queue. Each mutation is selected randomly, and with a higher \texttt{perf\_score}, this stage continues more fuzzing over the current entry. The \texttt{random\_havoc} stage consists of techniques such as bit flips, overwriting with random and interesting integers, block deletion, block duplication, and (if supplied) assorted dictionary-related operations \cite{afl_userguide}. An abstract implementation of the \texttt{havoc\_stage} can be found in Appendix \ref{app:havoc}.
 
 \subsubsection{calculate\_score()}
 \label{sub:calc_score}
 
-This function calculates how much AFL desires to iterate in havoc stage, for the current entry. By default, AFL is interested in fuzzing an input with less execution-time, and simultaneously, showing more coverage, and it's generation depth is higher. The depth of a child entry is one more than the depth of it's parent. For more information, check the following abstraction of the function [Listing \ref{lst:calc_score}]: 
+This function calculates how much AFL desires to iterate in havoc stage, for the current entry. By default, AFL is interested in fuzzing an input with less execution-time, and simultaneously, showing more coverage, and it's generation depth is higher. The depth of a child entry is one more than the depth of it's parent [Listing \ref{lst:calc_score}]: 
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:calc_score},caption={An abstract implementation of calculate\_score()}]{Codes/Chapter2/calculate_score.c}
 
@@ -94,13 +95,14 @@ The newly fuzzed (generated) inputs must pass \texttt{common\_fuzz\_stuff()} for
 \lstinputlisting[language=C,style=CodeStyle,label={lst:common_stuff},caption={An abstract implementation of common\_fuzz\_stuff()}]{Codes/Chapter2/common_fuzz_stuff.c}
 
 \subsubsection{has\_new\_bits()}
-AFL calls this function after each execution of the program, and the optimization of this code participates an important role.
+
+AFL checks the last execution and if there are newly visited edges, the input gets higher priority in the queue. This function is called after each execution, and to evade from a bottleneck, AFL implements the function to be executed as fast as possible [Listing \ref{lst:has_new_bits}].
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_bits},caption={The implementation of has\_new\_bits()}]{Codes/Chapter2/has_new_bits.c}
 
 \subsection{Status screen}
 
-The \textbf{status screen} is a UI for the status of the fuzzing procedure. As it is shown in Figure \ref{fig:status_screen}, there are multiple stats provided in real-time updates:
+The \textbf{status screen} is a UI for the status of the fuzzing procedure. As it is shown in Figure \ref{fig:status_screen}, there are various stats provided in real-time updates:
     
 \begin{figure}[!b]
     \includegraphics[width=\textwidth]{Chapter2/afl_screen.png}
@@ -111,31 +113,42 @@ The \textbf{status screen} is a UI for the status of the fuzzing procedure. As i
 
 \begin{enumerate}
     \item \textbf{Process timing}: This section tells about how long the fuzzing process is running.
-    \item \textbf{Overall results}: A simplified information about the progress of AFL in finding paths, hangs, and crashes. 
-    \item \textbf{Cycle progress}: As mentioned before, AFL takes one input and repeats mutating it for a while. This section shows the information about the current cycle that the fuzzer is working on.
-    \item \textbf{Map coverage}: \say{The section provides some trivia about the coverage observed by the instrumentation embedded in the target binary. The first line in the box tells you how many branches we have already hit, in proportion to how much the bitmap can hold. The number on the left describes the current input; the one on the right is the entire input corpus's value. The other line deals with the variability in tuple hit counts seen in the binary. In essence, if every taken branch is always taken a fixed number of times for all the inputs we have tried, this will read "1.00". As we manage to trigger other hit counts for every branch, the needle will start to move toward "8.00" (every bit in the 8-bit map hit) but will probably never reach that extreme. 
     
-    Together, the values can help compare the coverage of several different fuzzing jobs that rely on the same instrumented binary.
-    }
-    \item \textbf{Stage progress}: The information about the current mutation stage is briefly provided here.
-    \item \textbf{Findings in depth}: The crashes and hangs and any other findings (here we have the other information about the coverage) are presented in this section.
-    \item \textbf{Fuzzing strategy yields}: To illustrate more stats about the strategies used since the beginning of fuzzing, and for comparison of those strategies, AFL keeps track of how many paths were explored, in proportion to the number of executions attempted, for each of the fuzzing strategies.
-    \item \textbf{Path geometry}: The information about the inputs and their depths, which says how many generations of different paths were produced in the process. For instance, we call the seeds we provided for fuzzing the "level 1" inputs. Next, a new set of inputs is generated as "level 2", the inputs derived from "level 2" are "level 3," and so on.
+    \item \textbf{Overall results}: A simplified information about the progress of AFL in finding paths, hangs, and crashes. 
+
+    \item \textbf{Cycle progress}: As mentioned before, AFL takes one input and repeats mutating it for a while. This section shows the information about the current cycle that the fuzzer is working with.
+
+    \item \textbf{Map coverage}: The AFL's documentation explains the information in this section as: \say{The section provides some trivia about the coverage observed by the instrumentation embedded in the target binary. The first line in the box tells you how many branches we have already hit, in proportion to how much the bitmap can hold. The number on the left describes the current input; the one on the right is the entire input corpus's value. The other line deals with the variability in tuple hit counts seen in the binary. In essence, if every taken branch is always taken a fixed number of times for all the inputs we have tried, this will read "1.00". As we manage to trigger other hit counts for every branch, the needle will start to move toward "8.00" (every bit in the 8-bit map hit) but will probably never reach that extreme. 
+    
+    Together, the values can help compare the coverage of several different fuzzing jobs that rely on the same instrumented binary.}
+
+    \item \textbf{Stage progress}: The information about the current mutation stage is briefly provided here. This regards to \texttt{fuzz\_one()} function in which the new fuzzed inputs are being generated through mutation stages.
+
+    \item \textbf{Findings in depth}: The number of crashes and hangs and any other findings are presented in this section.
+
+    \item \textbf{Fuzzing strategy yields}: To illustrate more stats about the strategies used since the beginning of fuzzing. For the comparison of those strategies, AFL keeps track of how many paths it has explored, in proportion to the number of executions attempted.
+
+    \item \textbf{Path geometry}: The information about the inputs and their depths, which says how many generations of different paths were produced in the process. The depth of an input referes to which generation the input belongs to. Considering the first input seeds as depth 0, the generated population from these inputs increase the depth by one. This shows how far the fuzzing has progressed.
 \end{enumerate}
 
-\subsection{Start Fuzz Testing}
+\subsection{AFL fuzzing chain}
 
-AFL requires the instrumented binary for execution. To start the instrumentation, AFL uses \textit{afl-clang}, which is built with the coverage recipe included. The following command instruments the sample program \ref{lst:sample_vul}:
+\begin{figure}[!t]
+    \includegraphics[width=\textwidth]{Chapter2/AFL-proc.png}
+    \centering
+    \caption{An overview of the whole fuzzing procedure of AFL}
+    \label{fig:afl-proc}
+\end{figure}
 
-\begin{lstlisting}[language=bash,style=CommandStyle,caption=Instrument $sample\_vul$.c]
-    afl-clang sample_vul.c -o sample_vul_i
+Figure \ref{fig:afl-proc} illustrates the procedure of fuzzing, from static intrumentation to fuzz testing the target and outputing results. To start the procedure, AFL instrumentates the program and configures the target binary for fuzz testing stage. To perform the instrumentation, AFL calls its own compiler, which applies the instrumentation when it's process is finished [Listing \ref{lst:sample_inst}]: 
+
+\begin{lstlisting}[language=bash,style=CommandStyle,label={lst:sample_inst},caption=Instrument $sample\_vul$.c]
+    afl-clang sample.c -o sample_inst
 \end{lstlisting}
 
-Now AFL can run this program in \textit{afl-fuzz} with the coverage instrumentations.
+The result file, \texttt{sample\_inst}, is an executable which contains shared memory for later analysis in fuzzing. Now AFL can start testing the program for probable vulnerabilities. The test requires the input and output directories, as well as the command for executing the program [Listing \ref{lst:fuzz_inst}]. The fuzzing continues until recieving a halt signal (For instance, by pressing \textit{Ctrl+C}). 
 
-\begin{lstlisting}[language=bash,style=CommandStyle,caption=Execute AFL]
+\begin{lstlisting}[language=bash,style=CommandStyle,label={lst:fuzz_inst},caption=Execute AFL]
   # afl-fuzz -i <in_dir> -o <out_dir> [options] -- /path/to/fuzzed/app [params]
-  afl-fuzz -i in_dir -o out_dir -- ./sample_vul_i
+  afl-fuzz -i in_dir -o out_dir -- ./sample_inst
 \end{lstlisting}
-
-The fuzzing continues until the fuzz testing is stopped using a termination signal. Pressing \textit{Ctrl+C} is a common command for this purpose. All of the recorded information are accessed through the output directory \textit{out\_dir}.
