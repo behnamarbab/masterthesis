@@ -254,6 +254,25 @@
                     "convince"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/Chapters/3-ProposedFuzzer/1-waffle.tex"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "general",
+                "emotions": [
+                    "confident",
+                    "respectful",
+                    "analytical"
+                ],
+                "goals": [
+                    "describe",
+                    "convince"
+                ]
+            }
         }
     ],
     "cmake.configureOnOpen": true,

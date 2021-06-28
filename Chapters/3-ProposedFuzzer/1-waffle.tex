@@ -1,77 +1,77 @@
-\section{Instrumentation}
+\section{Waffle}
 \label{sec:3-instr}
 
-\subsubsection*{waffle-llvm-rt.o.c}
+% How does the new features solve the problem?
+% ! Change Instruction to Machine Instruction
 
-% ! Add visitor functions.
+% TODO: change it more if you can
+The key observation for the methodology used in Waffle is that the static analysis and instrumentations collect the required features for the evolutionary search techniques for finding inputs that demonstrate worst-case complexity of a test application in a domain-independent way. However, to enable Waffle to efficiently find such inputs, we need to carefully design effective guidance mechanisms and mutation schemes to drive Waffle's input generation process. We redesign the evolutionary algorithm of AFL with customized guidance mechanisms that are tailored for finding inputs causing worst-case behavior.
 
-\subsubsection{Visitor functions}
+Figure \ref{fig:waffle-phases} specifies the modified modules of AFL that introduce Waffle. The shared memory is designed to be capable of storing the \textit{resource complexity} of execution. After the memory instantiation, Waffle investigates the source code (of instructions) and inserts instructions for saving the performance of the run. In the fuzzing phase, Waffle considers the executed instructions of a run and changes the input generation based on the performance of the program.
 
-\say{Instruction visitors are used when you want to perform different actions for different kinds of instructions without having to use lots of casts and a big switch statement (in your code, that is). \cite{inst_visitor}} 
+\begin{figure}[!b]
+  \includegraphics[width=0.8\textwidth]{Chapter3/waffle-proc.png}
+  \centering
+  \caption{Fuzzing phases of Waffle. The red rectangles specify the changed components.}
+  \label{fig:waffle-phases}
+\end{figure}
+
+% Explain the modified features from AFL to Waffle
+% AFL has become a Waffle :D
+
+% TODO: Rephrase and update this
+
+Next, we will discuss the instrumentation and fuzzing phases of Waffle. To understand the effectiveness of our approach, we first introduce the resource complexity of a program and explain how Waffle pivots on this feature for guiding the input generation. After that, the instrumentation phase is expanded for discussion, which results in generating an instrumentated binary. The binary file is then passed to the fuzzer, and the evaluation of the inputs takes effect during the fuzzing process.
+
+\subsection{Resource complexity of execution}
+
+We define the \textbf{overall resource complexity} (shortened to ORC) of an application as \textit{the amount of resources required to execute a program}. To evaluate the ORC of a program in a concrete execution, each instruction with the involving resources should be monitored. For instance, an instruction such as \texttt{memcpy} takes CPU usage for its execution, and may access the program's available memory; a user may consider both the CPU and memory usages and aggregates of the resource complexities of the executed instructions to conclude the ORC.
+
+% How does waffle use the complexity
+
+Waffle \textit{estimates} the ORC of each run to guide the input generation process. This estimation is based on a custom set of \textbf{Engaging Instruction}s (EI) which specifies the machine instructions that are being involved in ORC calculation. For example, suppose that \texttt{memcpy} is the only selected EI; the resources used by only this instruction are then monitored and the ORC changes for each operation of the instruction. As mentioned in Chapter \ref{chap:ch2}, \texttt{perf\_score} specifies the number of iterations that an input generates fuzzed inputs in havoc mode. Waffle calculates the AFL's \texttt{perf\_score} of a run, and brings in the Engaging Instructions' ORC (EI-ORC) of the execution. The snippet of code \ref{lst:wfl-calc_score} shows the commands that Waffle is using for updating \texttt{perf\_score}, derived from Listing \ref{lst:calc_score}. The value of EI-ORC is computed during the execution with the inserted instructions for incrementing the corresponding indices of the shared array. If the input under fuzzing shows an EI-ORC more than the average EI-ORC of the tests, Waffle increases the iterations for fuzzing the input. The multipliers are set theoretically and they require to be tuned for better results.
+
+\lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wfl-calc_score},caption={The added commands for entailing the ORC in \texttt{perf\_score}}]{Codes/Chapter3/waffle-fuzz/calculate_score.c}
+
+\subsection{Instrumentation}
+\label{subsec:inst}
+
+% Modifications in memory management
+
+Waffle starts its instrumentation by specifying the shared memory region. Waffle uses two memory regions for this purpose:
+
+\begin{itemize}
+  \item An array of 4 bytes cells for tracking the code coverage and the ORC of each basic block. The code coverage works the same as AFL does and the increaments in cells is an attribute for detecting a new path/behavior. The array's length is the same as the AFL's shared array, and as a result, the Waffle's array requires 4x space (Listing \ref{lst:wafl-rt}). Waffle keeps the basic block's ORCs to discover the basic blocks that can contribute more increments in the \texttt{total\_ORC}.
+  
+  \lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wafl-rt},caption={LLVM instrumentation initialization - \texttt{\_\_wafl\_area\_ptr} is the region that is allocated for instruction counters}]{Codes/Chapter3/waffle-llvm-rt.o.c}
+
+  \item To decrease the computational overhead in the fuzzing stage, Waffle stores the summation of all ORCs in an 8 byte integer. As shown in the following code \ref{lst:torc-inst}, function \texttt{addORC} is responsible for adding the value of an ORC to the \texttt{total\_ORC}. The functions \texttt{traceBegin} and \texttt{traceEnd} are assigned with the attributes of constructors and destructors. The constructor is called as this shared library is loaded, and the destructor is called before the file is unloaded. To finilize the storage of \texttt{total\_ORC}, the value is stored in the shared memory when the destructor is being called. 
+  
+  \lstinputlisting[language=C,style=CodeStyle,label={lst:torc-inst},caption={sys\_data in instrumentation}]{Codes/Chapter3/waffle-fuzz/sys_data_inst.c}
+\end{itemize}
+
+% \subsubsection{Visitors}
+
+Waffle uses \textit{LLVM's instruction visitor functions} \cite{inst_visitor} to investigate and count engaging features in the machine code. LLVM provides functions for \texttt{getting} and \texttt{setting} the instructions in a range of address in the code section of the program. This API is applied on the IR of the program and Waffle uses it in the Module Pass of the compilation. Listing \ref{lst:visitors} shows an example of how Waffle implements the counters for instructions; the member function \texttt{visitInstruction(Instruction \&I)} checks if the instruction is of \textbf{any} type, and as a result, an instance of the class \texttt{CountAllVisitor} can contain the occcurences of (any) instructions in a range of instruction pointers.
 
 \lstinputlisting[language=C++,style=CodeStyle,label={lst:visitors},caption={Visitors example}]{Codes/Chapter2/visitor.cpp}
 
-The specified range can be any two iterators, which can be a Module, Function, BasicBlock, Instruction or any other range between two instruction addresses.
+% TODO: Probably explain another example for the counters, like the one checking the memory activities. 
+% * Future work: Using different visitor classes? 
 
-% ! Update the above visitor section in this chapter.
-
-We initialize the instrumentation with setting up the shared memory for Waffle (Listing \ref{lst:llvm-rt}):
-
-\lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}
-
-\texttt{\_\_wafl\_area\_ptr} is the region that is allocated for counting the instructions, and is later shared when the instrumented program is running in fuzz testing.
-
-The size of the bitmap \texttt{\_\_wafl\_icnt\_ptr} is equal to $ICNT\_SIZE=2^{16}$; the size of the bitmaps are equal in both AFL and Waffle.
-
-\subsubsection*{wafl-llvm-pass.so.cc}
-
-Next, we inject our instrumentation into the program. As mentioned in the previous chapter, this stage requires the LLVM modules to analyze and insert the instructions. First, we define the \textbf{visitors}:
-
-\begin{lstlisting}[language=C++,style=CodeStyle,label={lst:wfl-vis}]
-struct CountAllVisitor : public InstVisitor<CountAllVisitor> {
-  unsigned Count;
-  CountAllVisitor() : Count(0) {}
-  void visitMemCpyInst(MemCpyInst &I) { ++Count;}
-};
-\end{lstlisting}
-
-We count the number of memory copies in an execution. The \texttt{CountAll\-Visitor} structure keeps track of the instructions that LLVM considers them as memory copies.
-
-The highest number of instructions is a goal that Waffle follows, so that the new generations of the inputs are executed with more instructions. The hit-counts in the shared array starting from \texttt{\_\_wafl\_area\_ptr}, are the number of times an edge is visited. Each time we visit an edge, we add the counted instructions to the appropriate index. The content of the array tracks the impact of edges in increasing the total number of instructions, and Waffle leverages these values to measures the influence of the changes in each index. [next section: \nameref{sec:3-afl}]
-
-The length of the shared memories are constant, but each time Waffle fuzzes a test-case, it needs to aggregate the content of the array and find the total number of instructions. Instead of calculating this total number in the fuzzing procedure, Waffle stores the total number of instructions in another shared memory region, \texttt{sys\_data} [Listing \ref{lst:sys-data-inst}]. Whenever the function \texttt{instr\_AddInsts()} is called, the \texttt{MaxInstCount} is increased by the provided value. Later, when the program is finishing its execution, the shared memory containing the \texttt{MaxInstCount} is updated. 
-
-\lstinputlisting[language=C,style=CodeStyle,label={lst:sys-data-inst},caption={sys\_data in instrumentation}]{Codes/Chapter3/waffle-fuzz/sys_data_inst.c}
-
-Now we can insert our instructions to the basicblocks:
-
-\lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-pass},caption={LLVM-mode instrumentation pass}]{Codes/Chapter3/mini-wafl-llvm-pass.so.cc}
-
-In Line 6, we locate the shared bitmap. Line 19 loads the pointer to the bitmap and configures the meta-data for storage \cite{nosanitize}.
-
-Same as AFL, Waffle stores the counters in the \textbf{hashed value} of the path we explored (Listing \ref{lst:hash}). The usage of the coverage-guided hashed values, helps Waffle in collecting the coverage information, and at the same time, maximizing the number of instructions in executions. Instructions in lines 23 to 25, load the pointer to the appropriate location on the bitmap.
-
-In each basicblock, the visitors look for the \textbf{memory copies}. In different executions, we could see that the number of instructions increases rapidly, and to control this number, we calculate its $\log$ value (Lines 32-33):
+A snippet of the Module Pass is shown in Listing \ref{lst:llvm-pass}. In line 6 the pointer to the shared array is introduced; Lines 10 to 14 includes the previously defined function for sum of ORCs, \texttt{addORC()}. After the initial set up, Waffle digs into the basic blocks and create and instance of the \texttt{CountAllVisitor} struct. By passing the current basic block to the visitor, the visitation of EI is stored in \texttt{CAV}. The linear increment in \texttt{CAV} has a relatively large variance in effectiveness of each basic block in changing the total ORC. For instance, if Waffle chooses to count all instructions in the execution, the basic blocks contributed an average of $18$ instructions for the ORC \footnote{Tested C++ implementations of QuickSort, MergeSort, and DFS}. To reduce the impact of large numbers in ORC, Waffle calculates the logarithm of the each counter: 
 
 \begin{equation}
   \label{eq:log}
-  CNT = \log_{2}^{CAV} 
+  CNT = \log_{2}^{CAV+1} 
 \end{equation}
 
-Now that we have calculated \texttt{CNT}, we load the pointer on the bitmap and add \texttt{CNT} to the content of the pointer and replaces it with the new summation. (Lines 36-39)
+The EI-ORC of a basic block is then prepared for storage in both of the storages. Waffle inserts instructions for loading the according index in the shared memory, adds the reduced estimation of EI-ORC to the loaded value, and stores the result back in the same index. Finally, Waffle adds \texttt{CNT} to the \texttt{total\_ORC} by calling the function \texttt{addORC} (Line 42).
 
-The last step in instrumenting a basic-block, is to call the \texttt{instr\_AddInsts}. The command in line 42 calls the function with the previously set pointer, and sends \texttt{CNT} as the argument to this function.
+\lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-pass},caption={LLVM-mode instrumentation pass}]{Codes/Chapter3/mini-wafl-llvm-pass.so.cc}
 
-Waffle applies these instrumentations in the compile-time, and when the program is being run, the performance and coverage information are set.
-
-\subsubsection*{Run the instrumentation}
-
-To compile the target program with the adjusted instrumentation, we replace the C/C++ compilers (clang/clang++) with \textbf{\texttt{waffle-clang}}. \say{This program is a drop-in replacement for clang, similar in most respects to ../afl-gcc. It tries to figure out compilation mode, adds a bunch of flags, and then calls the real compiler.} \cite{clang-fast} Except refactoring the filenames and the name of the variables, we did not apply any other modifications on \texttt{waffle-clang.c}.
-
-Same as \ref{lst:gcc-sample}, we can start instrumentation by the command below:
+Waffle builds its own compiler using the above definitions in instrumentation stage. By making (compiling) the files in \texttt{llvm-mode} directory, an executable compiler, \texttt{waffle-clang} is generated. This compiler scans the source code of the program, and creates a binary file with the logic of the program, and the intended instrumentation:
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:wafl-clang}]
-  ./waffle-clang sample_vul.c -o sample_vul_waffle
+  ./waffle-clang target.c -o instr_target.bin
 \end{lstlisting}
-
-Notice that we can insert compilation flags, such as \texttt{-fsanitize=address}, to enhance the performance of Waffle.

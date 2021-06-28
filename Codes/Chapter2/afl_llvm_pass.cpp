@@ -4,7 +4,7 @@ bool AFLCoverage::runOnModule(Module &M) {
   /* Instrument all the things! */
   for (auto &F : M)
     for (auto &BB : F) {
-      BasicBlock::iterator IP = BB.getFirstInsertionPt();
+      basic block::iterator IP = BB.getFirstInsertionPt();
       IRBuilder<> IRB(&(*IP));
 
       if (AFL_R(100) >= inst_ratio) continue;

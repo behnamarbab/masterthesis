@@ -1,23 +1,21 @@
-struct sys_data {
-  int MaxInstCount;
-};
+static int total_ORC = 0;
 
-static int MaxInstCount = 0;
+void __attribute__((constructor)) traceBegin(void) {}
 
 void __attribute__((destructor)) traceEnd(void) {
-  unsigned char *mem_str = getenv(MEM_ENV_VAR);
+  unsigned char *orc_str = getenv(ORC_ENV_VAR);
 
   if (mem_str) {
     unsigned int shm_mem_id = atoi(mem_str);
-    struct sys_data *da;
+    u64 *TORC;
     
-    da = shmat(shm_mem_id, NULL, 0);
-    if (da == (void *)-1) _exit(1);
+    TORC = shmat(shm_mem_id, NULL, 0);
+    if (TORC == (void *)-1) _exit(1);
 
-    da->MaxInstCount = MaxInstCount;
+    *TORC = total_ORC;
   }
 }
 
-void instr_AddInsts(int cnt) {
-  MaxInstCount += cnt;
+void addORC(int cnt) {
+  total_ORC += cnt;
 }

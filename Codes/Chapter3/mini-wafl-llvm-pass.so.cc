@@ -4,42 +4,42 @@
 bool WAFLCoverage::runOnModule(Module &M) {
   // ...
   GlobalVariable *WAFLMapPtr =
-    new GlobalVariable(M, PointerType::get(Int8Ty, 0), false,
+    new GlobalVariable(M, PointerType::get(Int32Ty, 0), false,
     GlobalValue::ExternalLinkage, 0, "__wafl_area_ptr");
     
-  llvm::FunctionType *icntIncrement =
-    llvm::FunctionType::get(builder.getVoidTy(), icnt_args, false);
-  llvm::Function *icnt_Increment =
-    llvm::Function::Create(icntIncrement, 
-      llvm::Function::ExternalLinkage, "instr_AddInsts", &M);
+  llvm::FunctionType *ORCIncrement =
+    llvm::FunctionType::get(builder.getVoidTy(), ORC_args, false);
+  llvm::Function *ORC_Increment =
+    llvm::Function::Create(ORCIncrement, 
+      llvm::Function::ExternalLinkage, "addORC", &M);
   // ...
   for (auto &F : M) {
     for (auto &BB : F) {  
-      // ...
-      LoadInst *IcntPtr = IRB.CreateLoad(WAFLMapPtr);
-      MapPtr->setMetadata(M.getMDKindID("nosanitize"),
-        MDNode::get(C, None));
-      
-      Value* EdgeId = IRB.CreateXor(PrevLocCasted, CurLoc);
-      Value *IcntPtrIdx =
-          IRB.CreateGEP(IcntPtr, EdgeId);
-
       /* Count the instructions */
       CountAllVisitor CAV;
       CAV.visit(BB);
 
-      /* Setup the counter for storage */
-      u8 log_count = (u8) log2(CAV.Count);
-      Value *CNT = IRB.getInt8(log_count);
-    
-      LoadInst *IcntLoad = IRB.CreateLoad(IcntPtrIdx);
-      Value *IcntIncr = IRB.CreateAdd(IcntLoad, CNT);
+      // ...
+      LoadInst *ORCPtr = IRB.CreateLoad(WAFLMapPtr);
+      MapPtr->setMetadata(M.getMDKindID("nosanitize"),
+        MDNode::get(C, None));
+      
+      Value* EdgeId = IRB.CreateXor(PrevLocCasted, CurLoc);
+      Value *ORCPtrIdx =
+          IRB.CreateGEP(ORCPtr, EdgeId);
 
-      IRB.CreateStore(IcntIncr, IcntPtrIdx)
+      /* Setup the counter for storage */
+      u32 log_count = (u32) log2(CAV.Count+1);
+      Value *CNT = IRB.getInt32(log_count);
+    
+      LoadInst *ORCLoad = IRB.CreateLoad(ORCPtrIdx);
+      Value *ORCIncr = IRB.CreateAdd(ORCLoad, CNT);
+
+      IRB.CreateStore(ORCIncr, ORCPtrIdx)
         ->setMetadata(M.getMDKindID("nosanitize"),
         MDNode::get(C, None));
 
-      IRB.CreateCall(icnt_Increment, ArrayRef<Value*>({ CNT }));
+      IRB.CreateCall(ORC_Increment, ArrayRef<Value*>({ CNT }));
 
       inst_blocks++;
     }

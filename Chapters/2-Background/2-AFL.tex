@@ -1,4 +1,4 @@
-\section{American Fuzzy Lopper (AFL)} \label{sec:2.2}
+\section{American Fuzzy Lopper (AFL)} \label{sec:2-afl}
 
 Michal Zalewski developed American Fuzzy Lopper as a coverage-guided greybox fuzzer. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpus produced by the tool help seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american} AFL is designed to perform \textbf{fast} and \textbf{reliable}, and at the same time, benefits from the \textbf{simplicity} and \textbf{chainability} features \cite{about_afl}:
 
@@ -85,7 +85,7 @@ The \textbf{havoc} stage is a cycle of stacked random tweaks. AFL assesses the c
 \subsubsection{calculate\_score()}
 \label{sub:calc_score}
 
-This function calculates how much AFL desires to iterate in havoc stage, for the current entry. By default, AFL is interested in fuzzing an input with less execution-time, and simultaneously, showing more coverage, and it's generation depth is higher. The depth of a child entry is one more than the depth of it's parent [Listing \ref{lst:calc_score}]: 
+This function calculates how much AFL desires to iterate in havoc stage, for the current entry. By default, AFL is interested in fuzzing an input with less execution-time, and simultaneously, showing more coverage, and it's generation depth is higher. The depth of a child entry is one more than the depth of it's parent [Snippet of code \ref{lst:calc_score}]: 
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:calc_score},caption={An abstract implementation of calculate\_score()}]{Codes/Chapter2/calculate_score.c}
 

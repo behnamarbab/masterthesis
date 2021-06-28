@@ -1,5 +1,12 @@
-\section{Fuzzing}
+\subsection{Fuzzing}
 \label{sec:3-afl}
+
+\input{Codes/Chapter3/waffle-fuzz/algorithm.tex}
+
+% ! Define the favorable inputs in the background chapter
+
+Algorithm \ref{algo:waffle-fuzz} illustrates the fuzzing procedure in more details. Waffle processes the front queue's entry to check if the current input is bringing something new to the corpus. The front test case $T$ is first \textit{calibrated} to ensure that the input has been processed correctly. In the caliberation phase, the program is executed with $T$ as input, and the information such as execution time, length of the input file, and the EI-ORC of execution are collected. These values are then passed to the function \texttt{update\_bitmap\_score()} to evaluate if the test case is a favorable one. A favroable test case is a 
+
 % !     Replacement tip:         the \texttt   ->   \texttt
 % \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}
 

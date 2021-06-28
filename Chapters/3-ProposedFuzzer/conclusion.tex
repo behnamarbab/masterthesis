@@ -8,7 +8,7 @@ This chapter introduced the development of Waffle. Waffle extends AFL in two par
     
     AFL only keeps a coverage-bitmap, but in addition to the coverage-finding methodology, Waffle leverages the \textbf{visitor functions} in LLVM for assessing the more resource-exhaustive executions. Visitor functions count the targeted instructions, and Waffle saves the result in an extra \textit{shared\_memory}.
 
-    Waffle counts the instructions in each basic-block, and reduces the counted values for saving into the memory. The size of the \textit{shared\_memory} has increased 4x in Waffle.
+    Waffle counts the instructions in each basic block, and reduces the counted values for saving into the memory. The size of the \textit{shared\_memory} has increased 4x in Waffle.
 
     \item \textbf{Fuzzing}: Waffle uses the coverage bitmap and the instruction-counter bitmap for emphasizing the more beneficial fuzzing entries. The main changes are in the procedures of the functions \texttt{calibrate\_case} and \texttt{calc\_score()}. Generally speaking, an interesting test-case runs faster, has more code coverage, and executes more instructions from a specified set of instructions.
 \end{enumerate}
