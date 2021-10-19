@@ -1,21 +1,12 @@
 \begin{algorithm}
-    \KwIn{\textbf{$queue Entry$}}
-    initialize fuzzer\;
-    \While{fuzzing is not terminated} {
-      cull\_queue()\;
-      $T \leftarrow q.first\_entry()$\;
-      \textcolor{red}{$calibrate(T)$}\;
-      $trim(T)$\;
-      $perf\_score \leftarrow \textcolor{red}{calculate\_score(T)}$\;
-      \If{$deterministic\_mode$}{
-        $deterministic\_stages(T)$\;
-      }
-      $MX \leftarrow calc\_stages(perf\_score, \mathcal{C})$\;
-      \ForEach{element in $ (0, MX)$}{
-        $random\_havoc(T)$\;
-      }
-    }
-
+    \KwIn{\textbf{$Test case$}}
+    INIT environment\;
+    MAP test case into memory\;
+    \textcolor{red}{CALIBRATE case}\;
+    \textcolor{red}{TRIM case}\;
+    CALCULATE performance score \;
+    MUTATE in non-deterministic stage\;
+    MUTATE in determministic stage\;
     \caption{$waffle-fuzz$}
     \label{algo:waffle-fuzz}
 \end{algorithm}

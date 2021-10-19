@@ -280,5 +280,7 @@
         "fuzzer",
         "blackbox",
         "fuzzing"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "Disabled",
+    "latex-workshop.view.pdf.external.viewer.command": "okular"
 }

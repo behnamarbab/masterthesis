@@ -2,57 +2,28 @@
 \label{sec:3-afl}
 
 \input{Codes/Chapter3/waffle-fuzz/algorithm.tex}
+\input{Codes/Chapter3/waffle-fuzz/mutate-alg.tex}
+\input{Codes/Chapter3/waffle-fuzz/save_if_interesting-alg.tex}
 
-% ! Define the favorable inputs in the background chapter
+% ! Define the favorable inputs in the background chapter - Reference the favorable test definition from before
 
-Algorithm \ref{algo:waffle-fuzz} illustrates the fuzzing procedure in more details. Waffle processes the front queue's entry to check if the current input is bringing something new to the corpus. The front test case $T$ is first \textit{calibrated} to ensure that the input has been processed correctly. In the caliberation phase, the program is executed with $T$ as input, and the information such as execution time, length of the input file, and the EI-ORC of execution are collected. These values are then passed to the function \texttt{update\_bitmap\_score()} to evaluate if the test case is a favorable one. A favroable test case is a 
+Algorithm \ref{algo:waffle-fuzz} illustrates the fuzzing procedure in more details. Waffle processes the front queue's entry to check if the current input is bringing something new to the corpus. The front test case $T$ is first \textit{calibrated} to ensure that the input has been processed correctly. In the caliberation phase, the program is executed with $T$ as input, and the information such as execution time, length of the input file, and the EI-ORC of execution are collected. These values are then passed to the function \texttt{update\_bitmap\_score()} \ref{lst:update_bitmap_score} to evaluate and check if the test case is a favorable one. Each \texttt{queue\_entry} now contains three new variables for tracking the ORC of the program and find the most favorable cell (ORCC) of the ORC-array. A favorable input is either an indicator of a new code coverage, or it has an \textit{elite ORCC} which represents a new ORC for a path. 
 
-% !     Replacement tip:         the \texttt   ->   \texttt
-% \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-rt},caption={LLVM instrumentation bootstrap}]{Codes/Chapter3/waffle-llvm-rt.o.c}
+\begin{definition}[Elite ORCC]
+  An elite ORCC specifies the feature for which Waffle tries to maximize it. To minimize the memory space used in each \texttt{queue\_entry} and reduce the load in analyzing each entry, Waffle stores only one ORCC and ignores the rest of ORCCs. The selection of an elite ORCC is figured out in a function named \texttt{find\_elite()} \ref{lst:find_elite}. This function scans every non-zero ORCC and selects the elite ORCC based on one of these two conditions:
+\end{definition}
 
-Waffle extends the instrumentation and the fuzzing procedure of AFL. The instrumented binary from the previous stage is given to the \textit{waffle-fuzz}, and Waffle develops the new features in \textit{waffle-fuzz.c}.
+\begin{enumerate}
+  \item The ORCC is not tracked by Waffle before.
+  \item The already tracked ORCC is increased with a higher ratio compared to other ORCCs.
+\end{enumerate}
 
-To analyze the implementation of Waffle, we merge the algorithm \ref{algo:afl} and algorithm \ref{algo:fuzzone}:
+\lstinputlisting[language=C,style=CodeStyle,label={lst:find_elite},caption={Find elite}]{Codes/Chapter3/waffle-fuzz/find_elite.c}
 
-\input{Codes/Chapter3/waffle-fuzz/algorithm.tex}
+\lstinputlisting[language=C,style=CodeStyle,label={lst:update_bitmap_score},caption={Update bitmap score}]{Codes/Chapter3/waffle-fuzz/update_bitmap_score.c}
 
-The lines in red are the instructions that were modified in Waffle.
-
-\subsubsection*{Calibration}
-
-Each entry of the queue is calibrated in order to collect the execution stats. Besides the execution-time and the bitmap-coverage information, Waffle runs the target program and collects the added \textbf{instruction counters}. Each instruction counter is monitored in the shared\_memory, \texttt{icnt\_bits[]}, and \texttt{top\_rated\_icnt[]} tracks the changes on \texttt{icnt\_bits[]} in an \texttt{struct} of type \texttt{queue\_entries}, .
-
-Waffle collects the instrumentation's data after running the binary. The values of \texttt{icnt\_bits} and \texttt{trace\_bits} track the performance and the coverage-instrumentation. As described in Section \nameref{sec:3-instr}, \texttt{sys\_data} stores the sum of the instruction counters.
-
-AFL checks the uniqueness of an execution by keeping a hashed value of \texttt{trace\_bits[]}, representing a unique ID for a path-coverage. Within the discovery of a new coverage, Waffle analyzes both the \textit{coverage} array and \textit{instruction counters} to process the new hit-counts:
-
-\begin{itemize}
-    \item \texttt{has\_new\_bits()}: AFL keeps the hit-counts of \texttt{trace\_bits[]}, for identifying the new edges appeared in the execution of the current test-case. \texttt{trace\_bits[]} is a sparse array, and AFL tracks the modified indices for better performance.
-    \item \texttt{has\_new\_icnt()}: In addition to the previous method, Waffle searches for the highest values in \texttt{icnt\_bits[]}. Each cell in \texttt{icnt\_bits} contains 4 bytes of information. We saw in Listing \ref{lst:llvm-pass} that in an index, such as \texttt{i}, \texttt{icnt\_bits[i]} is added with \texttt{CNT}, while the increments in \texttt{trace\_bits[]} are always by one. An analysis on \texttt{./sample\_vul\_instr} showed that the average value for \texttt{CNT}s is more than 3. As a result, the variance for the values in \texttt{icnt\_bits[]} is higher than \texttt{trace\_bits[]}'s. To decrease this variance and enhance the performance of Waffle, it leverages a constant float number, \texttt{MAX\_CNT\_MULT}:
-    
-    \lstinputlisting[language=C,style=CodeStyle,label={lst:has_new_icnt},caption={has\_new\_icnt()}]{Codes/Chapter3/waffle-fuzz/has_new_icnt.c}
-
-    By default, Waffle sets $MAX\_CNT\_MULT=1.05$, which means it expects at least 5\% increase for \texttt{icnt\_bits[i]} before updating the content of index $i$.
-    % !                     ----!
-    % TODO: Explain unlikely()hood!
-    % ! --- compare the performance of the has_new_bits and has_new_icnts functions
-    % !                     ----!
-
-    The length of both \texttt{icnt\_bits[]} and \texttt{trace\_bits[]} is the same, but \texttt{icnt\_bits} consumes 4x more of the memory:
-    \lstinputlisting[language=C,style=CodeStyle,label={lst:bitmaps},caption={Configurations of the bitmaps}]{Codes/Chapter3/waffle-fuzz/bitmaps.c}
-\end{itemize}
-
-After analyzing the execution information, the calibration stage updates the undefined or old values of the current \texttt{queue\_entry}.
-
-\subsubsection*{Calculate performance score}
-
-The most favorable entries for Waffle, are the inputs with the highest \texttt{total\_icnt}. In addition to the calculations of AFL, Waffle also compares the \texttt{q->total\_icnt} with the average \texttt{total\_icnt} of all previous entries, \texttt{avg\_total\_icnt}.
+Each newly generated input passes the caliberation phase, and as a result, it's favorablility is checked in this phase. In the fuzzing phase, after the caliberation is finished, Waffle calculates the \texttt{perf\_score} of the current entry. To increase the \texttt{perf\_score} of an entry, Waffle examines the \textbf{execution time}, \textbf{\texttt{bitmap\_size}}, and \textbf{TORC} of running the input (Listing \ref{lst:wcalc_score}).
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:wcalc_score},caption={The modifications of Waffle in \texttt{calc\_score()}}]{Codes/Chapter3/waffle-fuzz/calculate_score.c}
 
-With all these modifications, Waffle can start it's fuzzing. The only difference between the execution of Waffle and AFL, is the name of the fuzzer.
-
-\begin{lstlisting}[language=bash,style=CommandStyle,caption=Execute AFL]
-  # waffle-fuzz -i <in_dir> -o <out_dir> [options] -- /path/to/fuzzed/app [params]
-  waffle-fuzz -i in_dir -o out_dir -- ./sample_vul_waffle
-\end{lstlisting}
+The remaining parts of the transition from AFL's build to Waffles' applies the above modifications in \textbf{Instrumentation} and \textbf{Fuzzing} sections. These changes maintain the program-agnostic feature of AFL in whitebox fuzzing; the domain of the programs that Waffle can test stay as it was in AFL. To validate the above implementation on a real-world program, we choose QuickSort as the testing program.

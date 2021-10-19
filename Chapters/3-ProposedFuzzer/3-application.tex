@@ -1,0 +1,11 @@
+\section{Application: Quicksort}
+\label{sec:3-3}
+
+Quicksort \cite{hoare1962quicksort} is a well-known fast algorithm for sorting a list of numbers. This divide-and-conquer algorithm selects an index as pivot and locates the pivot to the position is will appear in the sorted list. After setting the pivot, without the loss of generality, the other numbers of the list are swapped until all numbers less than the pivot are on one side and the rest are on the other side of the pivot. Then Quicksort is called on each side of the list, and this continues until no more number is displaced from it's position in the sorted list.
+
+This algorithm has a best-case scenario with $\mathcal{O}(n\log{}n)$ for the time complexity, and the worst-case occurs in $\mathcal{O}(n^2)$. The worst-case scenario is when the relocation of the pivot does not affect the order in the list. The best-case scenario happens when the pivot splits the list into two partitions with a difference of less than or equal to one. The average time complexity is $\mathcal{O}(n\log{}n)$. We test Waffle with an implementation of Quicksort in C language (Listing \ref{lst:qsort}). 
+
+% TODO: Move to appendix
+
+\lstinputlisting[language=C,style=CodeStyle,label={lst:qsort},caption={Quicksort}]{Codes/Chapter3/quicksort.c}
+
