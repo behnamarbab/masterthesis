@@ -1,10 +1,36 @@
 \section{Waffle}
 \label{sec:3-instr}
 
+% Done: The key idea is that I should talk about my solution to the program with more details.
+% Done: I have explained that there is another way of resolving the problem.
+% Now it's time to explain what is the difference in the guidance defined in Waffle
+% Definitions?!:
+% Resource complexity, Overall resource complexity (ORC), Elites, Visitors
+% OR: Shared memory, instrumentation, fuzzing
+
 % How does the new features solve the problem?
 % ! Change Instruction to Machine Instruction
 
-% TODO: change it more if you can
+% Tasks
+% -T1: Explain the way AFL works
+% -T2: Explain an overview of the additional properties added to AFL by Waffle
+% Keywords 
+% -K1: NP-Hard problem
+% -K2: exploration vs exploitation
+% -K3: performance-guided fuzzing vs coverage-guided fuzzing
+
+Exploring the entire possible inputs for detecting vulnerabilities is an NP-Hard problem, and genetic algorithm helps in ignoring most cases of the problem and reduce the problem space. The code coverage used in AFL maintains the cases which discover more regions of the code, and guides the exploration to contain extra regions of code to test. On the other hand, AFL follows the inputs with less execution time and less file sizes, and it prefers finding crashes compared to hangs. Waffle \textit{exploits} the coverage-guided findings for more resource usages. The key idea is to count the number instructions executed in an execution, and provide this information for the fuzzing phase to generate resource exhaustive inputs. 
+
+% Tasks
+% -T1: Explain an overview of the modifications on AFL, no need to go deep
+% -T2: Instrumentation stage
+
+Waffle modifies the recipe for llvm-based instrumentation to collect the new execution features, as well as changing the fuzzing stage for exploiting this feature. Waffle analyzes each basic block, and inserts the new instructions beside the coverage instructions from AFL. The extracted information is stored in a new list of 64bit integers, while Waffle has the access to process the result in fuzzing. Later, in fuzz testing, Waffle performs additional calculations for saving interesting entries, and evaluating queue entries for new favarable characteristics. 
+
+% Tasks
+% -T1: Explain an overview of the modifications on AFL, no need to go deep
+% -T2: Fuzzing stage
+
 The key observation for the methodology used in Waffle is that the static analysis and instrumentations collect the required features for evolutionary search techniques in finding inputs that demonstrate worst-case complexity of a test application in a domain-independent way. However, to enable Waffle to efficiently find such inputs, we need to carefully design effective guidance mechanisms to drive Waffle's input generation process. We redesign the evolutionary algorithm of AFL with customized guidance mechanisms that are tailored for finding inputs causing worst-case behavior.
 
 % TODO: Check this out
