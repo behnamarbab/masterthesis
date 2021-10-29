@@ -15,26 +15,15 @@
 % -T1: Explain the way AFL works
 % -T2: Explain an overview of the additional properties added to AFL by Waffle
 % Keywords 
-% -K1: NP-Hard problem
-% -K2: exploration vs exploitation
-% -K3: performance-guided fuzzing vs coverage-guided fuzzing
+% -K1: exploration vs exploitation
+% -K2: performance-guided fuzzing vs coverage-guided fuzzing
 
-Exploring the entire possible inputs for detecting vulnerabilities is an NP-Hard problem, and genetic algorithm helps in ignoring most cases of the problem and reduce the problem space. The code coverage used in AFL maintains the cases which discover more regions of the code, and guides the exploration to contain extra regions of code to test. On the other hand, AFL follows the inputs with less execution time and less file sizes, and it prefers finding crashes compared to hangs. Waffle \textit{exploits} the coverage-guided findings for more resource usages. The key idea is to count the number instructions executed in an execution, and provide this information for the fuzzing phase to generate resource exhaustive inputs. 
-
-% Tasks
-% -T1: Explain an overview of the modifications on AFL, no need to go deep
-% -T2: Instrumentation stage
-
-Waffle modifies the recipe for llvm-based instrumentation to collect the new execution features, as well as changing the fuzzing stage for exploiting this feature. Waffle analyzes each basic block, and inserts the new instructions beside the coverage instructions from AFL. The extracted information is stored in a new list of 64bit integers, while Waffle has the access to process the result in fuzzing. Later, in fuzz testing, Waffle performs additional calculations for saving interesting entries, and evaluating queue entries for new favarable characteristics. 
+The exponential search space for different inputs with a specific behavior, such as a crash or hang, is approached by evolutionary algorithms of AFL to investigate the possible solutions for producing such events. AFL leverages on code coverage, file size, and execution time to guide the Genetic Algorithm to maintain the cases which discover more regions of the code, in a fast fasion. Waffle \textit{exploits} the coverage-guided findings for more resource usages. The key idea is to measure the performance in an execution, and provide this information in fuzzing phase to generate resource exhaustive inputs. 
 
 % Tasks
-% -T1: Explain an overview of the modifications on AFL, no need to go deep
-% -T2: Fuzzing stage
+% -T: Explain the waffle-proc.png
 
-The key observation for the methodology used in Waffle is that the static analysis and instrumentations collect the required features for evolutionary search techniques in finding inputs that demonstrate worst-case complexity of a test application in a domain-independent way. However, to enable Waffle to efficiently find such inputs, we need to carefully design effective guidance mechanisms to drive Waffle's input generation process. We redesign the evolutionary algorithm of AFL with customized guidance mechanisms that are tailored for finding inputs causing worst-case behavior.
-
-% TODO: Check this out
-Figure \ref{fig:waffle-phases} specifies the modules of AFL, in which we made major modifications for intruducing Waffle. The shared memory is designed to be capable of storing the \textit{resource complexity} of an execution. After the memory instantiation, Waffle investigates the source code (of instructions) and inserts instructions for saving performance of a run. In the fuzzing phase, Waffle collects the code coverage and resource usage of the runtime, and utilizes this information for selecting and shrinking the first entry of the queue.
+As illustrated in Figure \ref{fig:waffle-phases}, Waffle has major modifications on AFL in instrumentation phase (shared memory allocation and instructions insertion) and fuzzing phase. The shared memory is designed to be capable of storing the \textit{resource complexity} of an execution. Waffle also extends AFL's Coverage Pass to collect performance features as well. In the fuzzing phase, Waffle evaluates the code coverage and resource usage of the execution, and based on this information culls the queue of entries to consider the new performance measurements. In the following sections we inspect the changes and assess the effectiveness of the work.
 
 \begin{figure}[!b]
   \includegraphics[width=0.8\textwidth]{Chapter3/waffle-proc.png}
@@ -43,49 +32,42 @@ Figure \ref{fig:waffle-phases} specifies the modules of AFL, in which we made ma
   \label{fig:waffle-phases}
 \end{figure}
 
-% Explain the modified features from AFL to Waffle
-% AFL has become a Waffle :D
-
-% TODO: Rephrase and update this
-
-Next, we will discuss the instrumentation and fuzzing phases of Waffle in more details. To understand the effectiveness of our approach, we first introduce resource complexity of a program and explain how Waffle pivots on this feature for guiding the input generation. After that, the instrumentation phase is extended for discussion, which results in generating an instrumentated binary. The binary file is then passed to the fuzzer, and the evaluation of the inputs takes effect during the fuzzing procedure.
-
 \subsection{Resource complexity of execution}
 
-We define the \textbf{overall resource complexity} (shortened to ORC) of an application as \textit{the amount of resources required to execute a program}. To evaluate the ORC of a program in a concrete execution, each instruction which uses the \textit{engaging resources} should be monitored. For instance, an instruction such as \texttt{memcpy} takes CPU usage for its execution, and may access the program's available memory. A user may track both the CPU and memory usages, and Waffle aggregates the specified resource complexities of the executed instructions to conclude the ORC.
+% Tasks
+% -T: What the resource complexity is and how it is measured
 
-% How does waffle use the complexity
+To address resource usage of an execution, we estimate the engaged resources in an execution. Waffle does not analyse the source code for finding the resource complexities, such as time and space complexity, however, it records the instructions responsible for resource consumptions. For instance, an instruction such as \texttt{memcpy} takes CPU usage (and time) for its execution, and may access the program's available memory. To bring in the involved instructions in a complete run of a program, Waffle selects a set of instructions and monitors the program's execution of such instructions. The accumulation of the executed instructions is then stored partially in the shared memory.
 
-Waffle \textit{estimates} the ORC of each run to guide the input generation process. This estimation is based on a custom set of \textbf{Engaging Instructions} (EI) which represents the machine instructions that are being involved in ORC calculation. For example, suppose that \texttt{memcpy} is the only selected EI; the resources used by only this instruction are then monitored, and the ORC increases for each execution of \texttt{memcpy}. Later, in the fuzzing phase, Waffle uses the ORCs (of EI) to choose the \textit{favored} entries of queue. In AFL, a favored entry is an input which brings something new, in this case \textit{code coverage}. Waffle uses the same technique for detecting code coverages, and additionally, checks the \textit{elite} ORCs of the entries. 
+% Tasks
+% -T1: Estimated Resource Usage
 
+We define the \textbf{Estimated Resource Usage} (shortened to ERU) of an application for \textit{an estimation of the resources required to execute a program}. To evaluate the ERU of a program in a concrete execution, each instruction which uses the \textit{engaging resources} should be monitored. For instance, an instruction such as \texttt{memcpy} takes CPU usage for its execution, and may access the program's available memory.  
 
+% Tasks
+% -T1: How waffle uses the ERU through entire fuzzing chain
 
-that keeps track of the \textit{most efficient} ORCs that were produced in execution. Waffle updates the content of elite ORCs after culling the queue entries. 
+Waffle replicates AFL's coverage-discovery techniques with modifications to calculate and leverage ERU for performance-guidance. Waffle selects a set of instructions and counts their executions to get ERU. The ERU is then stored in an array of the same size as the AFL's coverage map, and for each hit on the coverage map, Waffle changes the same index of it's performance array. As a result, the hitmaps of both of the arrays are the same, and they both can represent the code-coverage; each index is found based on the taken edge of the CFG. Later, in the fuzzing phase, Waffle uses ERU to choose the \textit{favored} entries of queue. In AFL, a favored entry is relates to the input which brings something new, that is, a better code coverage or a faster execution. Instead, Waffle finds the \textit{favor} in any entry which is either AFL-guided or Waffle-guided; a better code coverage or a more exhaustive execution.
 
-As mentioned in Chapter \ref{chap:ch2}, \texttt{perf\_score} specifies the number of iterations that an input generates fuzzed inputs in havoc mode. Waffle calculates the AFL's \texttt{perf\_score} of a run, and brings in the Engaging Instructions' ORC (EI-ORC) of the execution. The snippet of code \ref{lst:wfl-calc_score} shows the commands that Waffle is using for updating \texttt{perf\_score}, derived from Listing \ref{lst:calc_score}. The value of EI-ORC is computed during the execution with the inserted instructions for incrementing the corresponding indices of the shared array. If the input under fuzzing shows an EI-ORC more than the average EI-ORC of the tests, Waffle increases the iterations for fuzzing the input. The multipliers are set theoretically and they require to be tuned for better results.
-
-\lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wfl-calc_score},caption={The added commands for entailing the ORC in \texttt{perf\_score}}]{Codes/Chapter3/waffle-fuzz/calculate_score.c}
-
+% !     Subsection 1: Instrumentation
 \subsection{Instrumentation}
 \label{subsec:inst}
 
-% Modifications in memory management
+% Tasks
+% -T1: Generally define and explain the added and modified modules in Instrumentation
 
-Waffle starts its instrumentation by specifying the shared memory region. Waffle uses two memory regions for this purpose:
-
-\begin{itemize}
-  \item An array of 4 bytes cells for tracking the code coverage and the ORC of each basic block. The code coverage works the same as AFL does and the increaments in cells is an attribute for detecting a new path/behavior. The array's length is the same as the AFL's shared array, and as a result, the Waffle's array requires 4x space (Listing \ref{lst:wafl-rt}). Waffle keeps the basic block's ORCs to discover the basic blocks that can contribute more increments in the \texttt{total\_ORC}.
+Waffle starts its instrumentation by specifying the shared memory region. Waffle maintains an array of 4bytes integers for tracking the ERU of each basic block. This array's length is the same as the AFL's shared array, and as a result, the Waffle's array requires 4x more memory space (Listing \ref{lst:wafl-rt}). This array is set to hold the counts of the edges according to the paths explored. When the initial setups are completed, the next instrumentation step, taking the Module Pass starts.
   
-  \lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wafl-rt},caption={LLVM instrumentation initialization - \texttt{\_\_wafl\_area\_ptr} is the region that is allocated for instruction counters}]{Codes/Chapter3/waffle-llvm-rt.o.c}
+\lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wafl-rt},caption={LLVM instrumentation initialization - \texttt{\_\_wafl\_area\_ptr} is the region that is allocated for instruction counters}]{Codes/Chapter3/waffle-llvm-rt.o.c}  
 
-  \item To decrease the computational overhead in the fuzzing stage, Waffle stores the summation of all ORCs in an 8 byte integer. As shown in the following code \ref{lst:torc-inst}, function \texttt{addORC} is responsible for adding the value of an ORC to the \texttt{total\_ORC}. The functions \texttt{traceBegin} and \texttt{traceEnd} are assigned with the attributes of constructors and destructors. The constructor is called as this shared library is loaded, and the destructor is called before the file is unloaded. To finilize the storage of \texttt{total\_ORC}, the value is stored in the shared memory when the destructor is being called. 
-  
-  \lstinputlisting[language=C,style=CodeStyle,label={lst:torc-inst},caption={sys\_data in instrumentation}]{Codes/Chapter3/waffle-fuzz/sys_data_inst.c}
-\end{itemize}
+
+% Tasks:
+% -T1: Explain LLVM visitor functions
+% -T2: Explain the implementation of the visitor functions
 
 % \subsubsection{Visitors}
 
-Waffle uses \textit{LLVM's instruction visitor functions} \cite{inst_visitor} to investigate and count engaging features in the machine code. LLVM provides functions for \texttt{getting} and \texttt{setting} the instructions in a range of address in the code section of the program. This API is applied on the IR of the program and Waffle uses it in the Module Pass of the compilation. Listing \ref{lst:visitors} shows an example of how Waffle implements the counters for instructions; the member function \texttt{visitInstruction(Instruction \&I)} checks if the instruction is of \textbf{any} type, and as a result, an instance of the class \texttt{CountAllVisitor} can contain the occcurences of (any) instructions in a range of instruction pointers.
+Waffle uses \textit{LLVM's instruction visitor functions} \cite{inst_visitor} to investigate and count engaging features in the machine code. LLVM provides functions for \texttt{getting} and \texttt{setting} the instructions in a range of address in the code section of the program. This API is applied on the IR of the program and Waffle uses it in the Module Pass of the compilation. Listing \ref{lst:visitors} shows an example of how Waffle implements the counters for instructions; the member function \texttt{visitInstruction(Instruction \&I)} checks if the instruction is of \textbf{any} type, and as a result, an instance of the class \texttt{CountAllVisitor} can contain the occurences of (any) instructions in a range of instruction pointers.
 
 \lstinputlisting[language=C++,style=CodeStyle,label={lst:visitors},caption={Visitors example}]{Codes/Chapter2/visitor.cpp}
 
