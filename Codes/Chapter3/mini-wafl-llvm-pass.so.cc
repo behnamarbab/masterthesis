@@ -7,11 +7,6 @@ bool WAFLCoverage::runOnModule(Module &M) {
     new GlobalVariable(M, PointerType::get(Int32Ty, 0), false,
     GlobalValue::ExternalLinkage, 0, "__wafl_area_ptr");
     
-  llvm::FunctionType *ORCIncrement =
-    llvm::FunctionType::get(builder.getVoidTy(), ORC_args, false);
-  llvm::Function *ORC_Increment =
-    llvm::Function::Create(ORCIncrement, 
-      llvm::Function::ExternalLinkage, "addORC", &M);
   // ...
   for (auto &F : M) {
     for (auto &BB : F) {  
@@ -20,26 +15,24 @@ bool WAFLCoverage::runOnModule(Module &M) {
       CAV.visit(BB);
 
       // ...
-      LoadInst *ORCPtr = IRB.CreateLoad(WAFLMapPtr);
+      LoadInst *ERUPtr = IRB.CreateLoad(WAFLMapPtr);
       MapPtr->setMetadata(M.getMDKindID("nosanitize"),
         MDNode::get(C, None));
       
       Value* EdgeId = IRB.CreateXor(PrevLocCasted, CurLoc);
-      Value *ORCPtrIdx =
-          IRB.CreateGEP(ORCPtr, EdgeId);
+      Value *ERUPtrIdx =
+          IRB.CreateGEP(ERUPtr, EdgeId);
 
       /* Setup the counter for storage */
       u32 log_count = (u32) log2(CAV.Count+1);
       Value *CNT = IRB.getInt32(log_count);
     
-      LoadInst *ORCLoad = IRB.CreateLoad(ORCPtrIdx);
-      Value *ORCIncr = IRB.CreateAdd(ORCLoad, CNT);
+      LoadInst *ERULoad = IRB.CreateLoad(ERUPtrIdx);
+      Value *ERUIncr = IRB.CreateAdd(ERULoad, CNT);
 
-      IRB.CreateStore(ORCIncr, ORCPtrIdx)
+      IRB.CreateStore(ERUIncr, ERUPtrIdx)
         ->setMetadata(M.getMDKindID("nosanitize"),
         MDNode::get(C, None));
-
-      IRB.CreateCall(ORC_Increment, ArrayRef<Value*>({ CNT }));
 
       inst_blocks++;
     }
