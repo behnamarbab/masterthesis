@@ -1,25 +1,25 @@
 static void update_bitmap_score(struct queue_entry* q) {
   u32 i;
-  const u32 MULTIPLIER = 1.10;
   u64 fav_factor = q->exec_us * q->len;
-  
-  find_elite(q);
 
-  /* For every byte set in ORC_list[], see if there is a previous winner,
+  /* For every byte set in ERU_list[], see if there is a previous winner,
      and how it compares to us. */
   for (i = 0; i < MAP_SIZE; i++){
-    if(trace_bits[i]){
-      if (top_rated[i]) {
-        /* ORC: check if the path brings something new */
-        if(q->elite_index == i) {
-          if (fav_factor * MULTIPLIER > top_rated[i]->exec_us * top_rated[i]->len) continue;
-          if (top_rated[i].elite_ORC * MULTIPLIER > q->elite_ORC) continue;
+    if(trace_bits[i][0]){
+      if (top_rated[i][0]) {
+        if (fav_factor > top_rated[i][0]->exec_us * top_rated[i][0]->len) {
+          if(top_rated[i][1]) {
+            // Ignore the fav_factor
+            if(!var_bytes[i] || top_rated[i][1]->TERU >= q->TERU) {
+              continue;
+            }
+          }
+          top_rated[i][1] = q;
+          score_changed = 2;
+          continue;
         }
-        /* Coverage: Faster-executing or smaller test cases are favored. */
-        else if (fav_factor > top_rated[i]->exec_us * top_rated[i]->len) continue;
-      
         // ...
-        top_rated[i] = q;
+        top_rated[i][0] = q;
         score_changed = 1;
       }
     }

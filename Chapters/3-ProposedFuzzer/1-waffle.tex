@@ -117,3 +117,21 @@ Waffle follows the same fuzzing procedure with modifications in processing the i
 
 % -T: Explain the data structures used and developed for fuzzing
 
+Besides the initial configurations for starting a fuzz testing, Waffle adds a new shared memory to the system. \texttt{trace\_ERU} is an array in which each cell represents the ERU of an edge - or more than one edge, in case of collisions. The shared memory is then passed to the program for execution, and before each execution, it is cleared of any prior information. The structure of \texttt{queue\_entry}'s is changed by adding a new variable (i.e. \texttt{TERU}) for tracking the total ERU after execution of entry. In addition, the \texttt{top\_rated} array for tracking the winners of each edge is extended to maintain both the coverage and the performance winners (Figure \ref{fig:waffle-top_rated}). To track the performance measurements, Waffle first checks if an edge is in the coverage map, and then processes the performance info, and if a more resource exhaustive value is retrieved of execution, the second cell of the according index points to the winner \texttt{queue\_entry}. 
+
+\begin{figure}[!b]
+  \includegraphics[width=0.8\textwidth]{Chapter3/waffle-top_rated.png}
+  \centering
+  \caption{\texttt{top\_rated} array: Waffle keeps track of the relevant coverage and performance features}
+  \label{fig:waffle-top_rated}
+\end{figure}
+
+% -T: Dry run, Calibrate case, update bitmap score
+
+Before starting the fuzzing loop, Waffle performs a dry run on the uploaded seeds to define an initial overview of the program; each execution fills the according \texttt{top\_rated[]}'s indices with the entries with a highest score. This score is based on two main factors: i) the \texttt{fav\_factor} of the execution as it was in AFL, and ii) maximizing the TERU of the corresponding execution. To investigate these execution's info, Waffle understands the paths and ERUs through the \textit{caliberation} of each test case. Waffle utilizes \texttt{update\_bitmap\_score} function with the power to analyze the new performance feature (i.e. ERUs) to update the information about the current state of queue entries \ref{lst:wafl-update-score}. The sparsness of the shared memories (\texttt{trace\_bits[]} and \texttt{ERUs[]}), and an expectation based on the fact that the repitition of same edges increases the TERU of execution, it is suitable to check the \texttt{var\_bytes[]} array, an array specifying the edges with variable number of visitation in an execution (Line 13). Briefly speaking, Waffle stores the pointer to the current entry of queue (i.e. $i_{th}$ index) in \texttt{top\_rated}, if it shows a higher TERU, the second index of the \texttt{top\_rated[i]} is assigned to this entry, else, it updates the first index for explaining a faster (and a smaller input size) execution \ref{fig:waffle-top_rated}. When the score is evaluated and the fitness of the entries are evaluated based on the information stored in \texttt{top\_rated}, the calibration phase continues, and Waffle stores the results for future use - that is when it culls the queue. 
+
+\lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wafl-update-score},caption={\texttt{update\_bitmap\_score}: Waffle ignores the fav\_factor in case of a long lasting execution}]{Codes/Chapter3/waffle-fuzz/update_bitmap_score.c}
+
+% -T: Cull queue
+
+Waffle culls the queue after verifying the \texttt{top\_rated} entries for their favorness. Waffle first looks at the the entries which introduce new coverage, and if there was an 
