@@ -43,17 +43,17 @@
                 <mxCell id="8" value="" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Georgia;fillColor=#FFE8E8;" parent="1" vertex="1">
                     <mxGeometry x="120" y="290" width="350" height="320" as="geometry"/>
                 </mxCell>
-                <mxCell id="87" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Georgia;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;startSize=6;strokeWidth=1;" edge="1" parent="1" source="10" target="12">
+                <mxCell id="89" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Georgia;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;startSize=6;strokeWidth=2;" edge="1" parent="1" source="10" target="11">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Trim&lt;br&gt;Case" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Georgia;strokeColor=#FF2008;strokeWidth=3;" parent="1" vertex="1">
-                    <mxGeometry x="260" y="320" width="70" height="40" as="geometry"/>
+                <mxCell id="10" value="Trim&lt;br&gt;Case" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Georgia;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="320" width="70" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Georgia;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;startSize=6;strokeWidth=1;" edge="1" parent="1" source="11" target="10">
+                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Georgia;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;startSize=6;strokeWidth=2;" edge="1" parent="1" source="11" target="12">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="Calculate&lt;br&gt;Score" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Georgia;" parent="1" vertex="1">
-                    <mxGeometry x="150" y="320" width="70" height="40" as="geometry"/>
+                    <mxGeometry x="260" y="320" width="70" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;gradientColor=#ffffff;fontFamily=Georgia;" parent="1" vertex="1">
                     <mxGeometry x="150" y="380" width="290" height="200" as="geometry"/>

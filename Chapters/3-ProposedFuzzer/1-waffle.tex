@@ -104,6 +104,10 @@ The enumeration of the instructions is applied before the insertion of the AFL's
 % !     Subsection 2: Fuzzing
 \subsection{Fuzzing}
 
+% !   #########################################################################
+% !                You need to change it as illustration changed
+% !   #########################################################################
+
 % -T: Explain the waffle-fuzz-proc illustration
 
 \begin{figure}[!b]
@@ -147,4 +151,8 @@ which indicates the position of the leftmost bit in the integeral representation
 
 % -T: Fuzz one
 
-% The first favored entry of the queue is selected for fuzzing. The calibration phase ensures and recovers the performance of the program. 
+The first favored entry of the queue is selected for fuzzing. First, Waffle keeps the \textit{trimming} procedure same as AFL's, and does not consider the changes in the \texttt{ERUs[]}. This is because of the fact that the trimming procedure maintains the values of the \texttt{trace\_bits[]} to remain the same, which their changes also modifies the cells of \texttt{ERUs[]}. Before the mutation loop, Waffle determines the effort it wants to take for the current case, and calculates \texttt{perf\_score} for this purpose.
+
+% -T: Mutation (not modified), Execution
+
+
