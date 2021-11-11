@@ -144,3 +144,7 @@ The generated queue of entries is checked to assign the priorities of the entrie
 which indicates the position of the leftmost bit in the integeral representation of ERU. The classes are used to remove the edges of the same class, and as a result, each edge is processes maximum of 32 times (for 32bit ERU integers). The outcome of the for loop on \texttt{top\_rated} holds the values of 0, for being not favored, 1 for being favored, and 2 to specify an entry representing its class. Yet, as Waffle is trying to increase the resource exhaustion, by iterating over the list of entries, we select the class and its representative entry with the highest ERU and change its favored value to 1. The rest of the entries with $favored == 2$ are set to redundant ($ favored \leftarrow 0 $). An snippet of the code is shown in Listing \ref{lst:cull-queue}.
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:cull-queue},caption={Waffle \texttt{cull\_queue}}]{Codes/Chapter3/waffle-fuzz/cull_queue.c}
+
+% -T: Fuzz one
+
+% The first favored entry of the queue is selected for fuzzing. The calibration phase ensures and recovers the performance of the program. 
