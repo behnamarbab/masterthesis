@@ -1,10 +1,13 @@
 \begin{algorithm}
     \KwIn{\textbf{$in-memory test case$}}
-    CALL has\_new\_bits RETURNING hnb\;
-    \textcolor{green}{CALL has\_better\_elite RETURNING hbe}\;
-    \If{hnb or hbe}{
-        SAVE case to file\;
-    } 
-    \caption{save\_if\_interesting}
-    \label{algo:ifi-waffle}
+    \If{\textcolor{red}{is\_exhaustive()} OR has\_new\_bits()}{
+        SAVE the case into queue directory
+    }
+    \If{hanged}{
+        SAVE the case into hangs directory
+    }
+    \If{crashed}{
+        SAVE the case into crashes directory
+    }
+    \label{algo:waffle-save-if-interesting}
 \end{algorithm}
