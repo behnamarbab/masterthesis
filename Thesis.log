@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  25 NOV 2021 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  26 NOV 2021 18:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -981,8 +981,8 @@ File: ./Images/Chapter3/waffle-proc.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-proc.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-proc.png  used on input line 16.
 (pdftex.def)             Requested size: 343.48299pt x 311.15187pt.
- [32] [33 <./Images/Chapter3/waffle-proc.png>] [34] (./Codes/Chapter3/waffle-llvm-rt.o.c) [35] (./Codes/Chapter2/visitor.cpp) [36] (./Codes/Chapter3/mini-wafl-llvm-pass.so.cc) [37]
-<./Images/Chapter3/waffle-fuzz-proc.png, id=852, 452.69125pt x 683.55376pt>
+ [32] [33 <./Images/Chapter3/waffle-proc.png>] [34] (./Codes/Chapter3/waffle-llvm-rt.o.c) [35] (./Codes/Chapter2/visitor.cpp) [36] (./Codes/Chapter3/mini-wafl-llvm-pass.so.cc [37])
+<./Images/Chapter3/waffle-fuzz-proc.png, id=842, 452.69125pt x 683.55376pt>
 File: ./Images/Chapter3/waffle-fuzz-proc.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-fuzz-proc.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-fuzz-proc.png  used on input line 108.
@@ -993,24 +993,24 @@ File: ./Images/Chapter3/waffle-top_rated.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-top_rated.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-top_rated.png  used on input line 121.
 (pdftex.def)             Requested size: 343.48299pt x 231.23573pt.
- [40 <./Images/Chapter3/waffle-top_rated.png>] (./Codes/Chapter3/waffle-fuzz/update_bitmap_score.c) [41] (./Codes/Chapter3/waffle-fuzz/cull_queue.c [42]) [43] (./Codes/Chapter3/waffle-fuzz/save_if_interesting-alg.tex) (./Codes/Chapter3/waffle-fuzz/is_exhaustive.c [44])) (./Chapters/3-ProposedFuzzer/2-application.tex
-<./Images/Chapter3/fuzzgoat-inst.png, id=996, 586.19pt x 715.67375pt>
+ [40] (./Codes/Chapter3/waffle-fuzz/update_bitmap_score.c) [41 <./Images/Chapter3/waffle-top_rated.png>] [42] (./Codes/Chapter3/waffle-fuzz/cull_queue.c [43]) (./Codes/Chapter3/waffle-fuzz/save_if_interesting-alg.tex) (./Codes/Chapter3/waffle-fuzz/is_exhaustive.c [44])) (./Chapters/3-ProposedFuzzer/2-application.tex [45]
+<./Images/Chapter3/fuzzgoat-inst.png, id=1010, 586.19pt x 715.67375pt>
 File: ./Images/Chapter3/fuzzgoat-inst.png Graphic file (type png)
 <use ./Images/Chapter3/fuzzgoat-inst.png>
 Package pdftex.def Info: ./Images/Chapter3/fuzzgoat-inst.png  used on input line 22.
 (pdftex.def)             Requested size: 429.3521pt x 524.18474pt.
- [45] [46 <./Images/Chapter3/fuzzgoat-inst.png>]
+ [46 <./Images/Chapter3/fuzzgoat-inst.png>]
 <./Images/Chapter3/statusScreen-wfl.png, id=1021, 728.7225pt x 465.74pt>
 File: ./Images/Chapter3/statusScreen-wfl.png Graphic file (type png)
 <use ./Images/Chapter3/statusScreen-wfl.png>
 Package pdftex.def Info: ./Images/Chapter3/statusScreen-wfl.png  used on input line 44.
 (pdftex.def)             Requested size: 429.3521pt x 274.40756pt.
-) (./Chapters/3-ProposedFuzzer/conclusion.tex [47]
+ [47]) (./Chapters/3-ProposedFuzzer/3-conclusion.tex [48 <./Images/Chapter3/statusScreen-wfl.png>]
 Overfull \hbox (8.0977pt too wide) in paragraph at lines 7--8
 \OT1/cmr/m/n/12 tion in Waf-fle. As we ex-plained in this chap-ter, \OT1/cmtt/m/n/12 llvm[]mode/waffle-llvm-rt.o.c
  []
 
-[48 <./Images/Chapter3/statusScreen-wfl.png>])) [49]
+)) [49]
 \openout2 = `Chapters/4-Simulation/overview.aux'.
 
  (./Chapters/4-Simulation/overview.tex
@@ -1219,14 +1219,14 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  27225 strings out of 481239
- 486208 string characters out of 5920378
- 1162419 words of memory out of 5000000
+ 486216 string characters out of 5920378
+ 1162420 words of memory out of 5000000
  41070 multiletter control sequences out of 15000+600000
  544950 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,105p,1876b,2321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Thesis.pdf (86 pages, 1792661 bytes).
+Output written on Thesis.pdf (86 pages, 1793820 bytes).
 PDF statistics:
  1668 PDF objects out of 1728 (max. 8388607)
  1476 compressed objects within 15 object streams

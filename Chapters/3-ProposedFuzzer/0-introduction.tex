@@ -1,40 +1,11 @@
 \section{Problem Statement}
 
-A time consuming and recourse consuming execution can be used for attacking a server. For instance, suppose that a server is using an API and it also prevents excessive number of requests to defend against attacks such as DoS or DDoS. In such scenario, to attack the server, one may ask the server to call heavy executions and put pressure on server for responding the requests. As a result, finding such executions may help with stopping the server from responding appropriately. 
+A time consuming and recourse consuming execution can be used for attacking a server. For instance, suppose that a server is using an API and it also prevents excessive number of requests to defend against attacks such as DoS or DDoS. In such a scenario, to attack the server, one may request the server to call heavy executions and put pressure on server for responding the requests. As a result, finding such executions may help with stopping the server from responding appropriately.
 
-Performance-guided fuzzing technique utilizes the fuzzer to discover the worst-case complexities of a program. Memory-guided fuzzing targets data structures and memory usage in execution, revealing vulnerable memory consumptions. On the other hand, fuzzers such as SlowFuzz and PerfFuzz monitor the performance-related instructions to detect excessive CPU-usages. Hence, the set of the resources under investigation in each fuzzer do not include both CPU and Memory usages together. To investigate the resources which can get compromised for revealing hidden resource-usage vulnerabilities, we suggest two solutions:
+Performance-guided fuzzing technique utilizes the fuzzer to discover the worst-case complexities of a program. Memory-guided fuzzing targets data structures and memory usage in execution, revealing vulnerable memory consumptions. On the other hand, fuzzers such as SlowFuzz and PerfFuzz monitor the performance-related instructions to detect excessive CPU-usages. Hence, the set of resources under investigation in each fuzzer does not include both CPU and Memory usages together. To investigate the resources which can get compromised for revealing hidden resource-usage vulnerabilities, we suggest two solutions:
 
 \begin{enumerate}
     \item Parallel fuzzing: The corpus of the queued test cases contains the latest findings of a fuzzer. A coverage-based fuzzer seeks for new code coverages, and eventually, the corpus evolves with coverage-guided inputs. In a performance-guided fuzzing, the inputs gradually produce fuzzed data which use more resources. Concurrent fuzzing suggests that if the corpora of parallel fuzzers is shared with rest of the fuzzers, the outcome is a corpus which tracks guiding features of all fuzzers. This approach generates vulnerabilities guided by considering both coverage and performance measurements. The synchronization of the fuzzers is simplified in various state-of-the-art fuzzers; for instance, AFL-based and LibFuzzer-based fuzzers can communicate with each other using the provided APIs \cite{afl_par}.
     
-    \item Waffle: Waffle is a whitebox performance-guided AFL-based fuzzer for guiding the corpus generation based on coverage and performance features. Waffle stands for What An Amazing AFL (WAAAFL)! The introduced fuzzer is designed to collect the usages of any type of instruction in a run. Waffle can focus on a set of one or more instructions, and searches for the inputs maximizing the occurrences of the targeted instructions. The coverage information derived from AFL maintains the exploration characteristic of AFL, and exploits the discovered regions by finding excessive resource usages.
+    \item Waffle: Waffle is a whitebox performance-guided AFL-based fuzzer for guiding the corpus-generation based on coverage and performance features. Waffle stands for What An Amazing AFL (WAAAFL)! The introduced fuzzer is designed to collect the usages of any type of instruction in a run. Waffle can focus on a set of one or more instructions, and searches for the inputs which maximizes the occurrences of the targeted instructions. The coverage information derived from AFL remains the exploration methology of AFL, and the performance-guidance exploits the discovered regions by finding excessive resource usages.
 \end{enumerate}
-
-
-
-% Coverage-based fuzzers investigate the inputs with different code coverages. A coverage-based fuzzer such as AFL spreads the domain of the test cases and saves the inputs with new code coverage, so that vulnerabilities would appear after fuzzing the interesting inputs. On the other hand, AFL scans the queue of test cases and prioritizes the inputs with less execution time and shorter length \ref{eq:afl_fav_fac}. This strategy leads to faster generation of the test cases and chooses a faster test case over a slower one. This makes AFL show interest in generating crashes over hangs.
-
-% Performance fuzzing with tools such as SlowFuzz \cite{petsios2017slowfuzz}, MemLock \cite{wen2020memlock}, and PerfFuzz \cite{lemieux2018perffuzz} have showed great enhancement in finding the pathological inputs. SlowFuzz is a LibFuzzer-based performance fuzzer that counts the total number of executed instructions of a specific family type - CMP. Adding a new type of instruction to the list of monitored instructions is cumbersome, and there are no tools for collecting the instructions info from the current version of SlowFuzz. PerfFuzz is based on AFL and counts the total number of all instructions in an execution. In memlock, the fuzzer collects the heap/stack-related memory instructions. PerfFuzz cannot count the memory instructions separately, and MemLock is not capable of considering other types of instructions.
-
-% To untangle the above issues, we propose \textbf{Waffle} (\textbf{W}hat \textbf{A}n \textbf{A}mazing \textbf{AFL} - WAAAFL). Waffle is a coverage-guided performance fuzzer, that is developed on top of AFL. In addition to the coverage strategies of AFL, Waffle uses an instrumentation method to \textbf{count the instructions}. Waffle can target \textbf{any custom type of instructions} that is defined using appropriate LLVM libraries. Compared to AFL, Waffle exercises test cases with higher number of instructions, and as a result, generated test cases are run slower. The executions reaching a predefined timeout are revealed as hangs and the corresponding input file is stored as an evidence for a vulnerability.
-
-% ! REF-REQUIRED
-% In this chapter, we introduce Waffle in more details. In the next section, we explain the implementation of Waffle, as well as the techniques we used for the purpose of this research. Section \textbf{REF-REQUIRED} concentrates on the applications of Waffle, and we conclude in the last chapter.
-
-% In this chapter, we introduce \textbf{Waffle} in more details. Waffle is a tool capable of finding the vulnerabilities related to (theoretically) any resource exhaustion. The first section explains a motivating example leading to our proposed fuzzer. This fuzzer is based on AFL and extends its implementation. For monitoring the resources, we use compile-time instrumentation of the target program using LLVM's APIs; we take advantage of \textbf{visiting} APIs that let us keep track of any instructions defined for LLVM. As a result, the instructions related to any resource are counted, and this information is later used in the fuzzing stage.
-
-% AFL is the state-of-the-art in finding vulnerabilities and as it is amazing to be developed, the name of our fuzzer comes after \textit{WAAAFL}!
-
-% \vspace{\baselineskip}
-
-% In this chapter, we are contributing the following topics:
-
-% \begin{itemize}
-%     \item An implementation of a fuzzer for finding the worst-case scenario in an algebraic problem.
-%     \item We use the \textbf{visitor} functions, which are not used in previous works, as we are aware of.
-%     \item A new instrumentation for collecting runtime information about resource usages. In Waffle, we focus on maximising the number of instructions.
-%     \item A new fuzz testing approach for collectively considering the former features of AFL, as well as the features we introduce in Waffle.
-% \end{itemize}
-
-
-% \textbf{Waffle (What An Amazing AFL - WAAAFL)} is a coverage-based whitebox fuzzer that is based on AFL's base code. Waffle leverages \textbf{visitors} to collect the stats of different instructions during the execution. To learn more about Waffle, we study the features we benefit from the LLVM, as well as the current features of AFL that help us in reaching the goals of this thesis.
