@@ -40,7 +40,7 @@ We define the \textbf{Estimated Resource Usage} (shortened to ERU) of an applica
 % ?   #########################################################################
 % -T1: How waffle uses the ERU through entire fuzzing chain
 
-Waffle replicates AFL's coverage-discovery techniques with modifications to calculate and leverage ERU for performance-guidance. While fuzzing the inputs, ERU of the executions is stored in an array of the same size as AFL's coverage map, and for each hit on the coverage map, Waffle updates the same index of it's performance array (As a result, the hitmaps of both of the arrays are the same, and they both can represent the code-coverage). The index is calculated by tracing the taken edge on the program's CFG. In AFL, a favored entry poinst to an input which suggests something \textit{interesting}, that is, a better code coverage or a faster execution. Instead, Waffle finds the \textit{favor} in any entry which is either coverage-guided (better code coverage) or performance-guided (more exhaustive execution).
+Waffle replicates AFL's coverage-discovery techniques with modifications to calculate and leverage ERU for performance-guidance. While fuzzing the inputs, ERU of the executions is stored in an array of the same size as AFL's coverage map, and for each hit on the coverage map, Waffle updates the same index of it's performance array (As a result, the hitmaps of both of the arrays are the same, and they both can represent the code-coverage). The target index is calculated by tracing the taken edge on the program's CFG. In AFL, a favored entry points to an input which suggests something \textit{interesting}, that is, a better code coverage or a faster (and with a smaller input size) execution. Furthermore, Waffle finds the \textit{favor} in any entry which is either coverage-guided (better code coverage) or performance-guided (more exhaustive execution).
 
 % !     Subsection 1: Instrumentation
 \subsection{Instrumentation}
@@ -48,6 +48,8 @@ Waffle replicates AFL's coverage-discovery techniques with modifications to calc
 
 % ?   #########################################################################
 % -T1: Generally define and explain the added and modified modules in Instrumentation
+
+The \texttt{llvm-mode} subproject under Waffle's directory contains the recipe for building a clang-based compiler with the aforementioned instrumentations. The resulting compiler, i.e. \texttt{./waffle-clang}, has the capability for inserting the guidance-instructions into the program. Waffle initiates the compilation by locating the shared memory to pass the measurements out of execution's procedure. Waffle includes an (extra to AFL) array of 4-bytes integers for tracking the ERU of each basic block. As a result, Waffle requires $5\times2^{16}=320KBs$ of memory space in addition to the genuine program's memory consumption (Listing \ref{lst:wafl-rt}). Correspondingly, instrumented program leaves a trace of the ERUs (collected by the \textit{visitor} functions) of the basic blocks on array of ERUs. After the initial configurations for instrumentation, the compilation recipe is applied to the compilation procedure, and the generated compiler follows the instructions (as seen in psudocode \ref{lst:hash}) for instrumentation during the compilation of any given source code.
 
 \begin{lstlisting}[language=C++,style=CodeStyle,label={lst:hash},caption={Select element and update in shared\_mem}]
   counter = lg(count_instructions())
@@ -59,8 +61,6 @@ Waffle replicates AFL's coverage-discovery techniques with modifications to calc
 
   prev_location = cur_location >> 1;
 \end{lstlisting}
-
-The \texttt{llvm-mode} subproject under Waffle's directory contains the recipe for building a clang-based compiler with the aforementioned instrumentatoins. The resulting compiler, i.e. \texttt{./waffle-clang}, has the capability for inserting the guidance-instructions into the program. Waffle initiates the compilation by locating the shared memory to pass the logs out of the execution's procedure. The fuzz tester includes an (extra to AFL) array of 4-bytes integers for tracking the ERU of each basic block. As a result, Waffle requires an extra $5\times2^{16}=320KBs$ of memory space in addition to the genuine program's memory consumption (Listing \ref{lst:wafl-rt}). As a result, instrumented program leaves a trace of the ERUs of the basic blocks on the ERU array. After the initial configurations for instrumentation, the compilation recipe is applied to the .
   
 \lstinputlisting[language=C,style=CodeStyle,float=tb,label={lst:wafl-rt},caption={LLVM instrumentation initialization - \texttt{\_\_wafl\_area\_ptr} is the region that is allocated for instruction counters}]{Codes/Chapter3/waffle-llvm-rt.o.c}  
 
@@ -70,26 +70,36 @@ The \texttt{llvm-mode} subproject under Waffle's directory contains the recipe f
 
 \subsubsection{Visitors}
 
-Waffle uses \textit{LLVM's instruction visitor functions} \cite{inst_visitor} to investigate and count the instances of the instructions used in an execution. LLVM provides functions for \texttt{getting} and \texttt{setting} the instructions in a range of the code section of program. This API is applied on the IR of the program and Waffle uses it in the Module Pass of the compilation. Listing \ref{lst:visitors} shows an example of how Waffle implements the counters for instructions; the member function \texttt{visitInstruction(Instruction \&I)} checks if the instruction is of \textbf{any} type, and as a result, an instance of the class \texttt{CountAllVisitor} can contain the occurrences of (any) instructions in a specific range, that is, the basicblocks.
+The implementation of \textit{LLVM's instruction visitor functions} \cite{inst_visitor} helps Waffle in searching and counting the instances of the instructions used in an execution. LLVM provides functions for \texttt{getting} and \texttt{setting} the instructions in a range of the code section of program. Listing \ref{lst:visitors} shows an example of how Waffle uses the visitor counters; the exampled member function \texttt{visitInstruction(Instruction \&I)} checks if an instruction is of \textbf{any} type - which can be set to detect other specific types, such as \texttt{memcpy} - and Waffle uses an instance of the class \texttt{CountAllVisitor} containing the occurrences of (any) instructions in a specific range of the code section. As mentioned before, this code section is selected from the first instruction of a basic block, to the last instruction before leaving the according basic block.
 
 \lstinputlisting[language=C++,style=CodeStyle,label={lst:visitors},caption={Visitors example}]{Codes/Chapter2/visitor.cpp}
 
 % ?   #########################################################################
 % -T1: Explain the procedure of the module pass 
 
-A snippet of the Module Pass is shown in Listing \ref{lst:llvm-pass}. In line 6 the pointer to the shared array is introduced to the scope. After this initial setup, Waffle digs into the basic blocks and creates an instance of the \texttt{CountAllVisitor} struct. By passing the current basicblock to the visitor module, the counter for executed instructions of our purpose, is stored in \texttt{CAV} variable. The linear increment in \texttt{CAV} has a relatively large variance for the counters in each basicblock. For instance, if Waffle chooses to count all instructions in the execution, the basicblocks contributed an average of $18$ instructions for the ERU \footnote{Tested C++ implementations of QuickSort, MergeSort, and DFS}. To reduce the impact of large numbers in ERU, Waffle maintains the logarithm of each counter: 
-
-\begin{equation}
-  \label{eq:log}
-  CNT = \log_{2}^{CAV+1} 
-\end{equation}
+Listing \ref{lst:llvm-pass} shows a snippet of Waffle's Module Pass procedure. In line 6, a pointer to the shared array is introduced to the scope of the program. After this initial setup, Waffle digs into the basic blocks and creates an instance of the \texttt{CountAllVisitor} struct. By passing the current basic block to the visitor module, the result of the counting is returned and is stored in \texttt{CAV} variable.
 
 \lstinputlisting[language=C,style=CodeStyle,label={lst:llvm-pass},caption={LLVM-mode instrumentation pass}]{Codes/Chapter3/mini-wafl-llvm-pass.so.cc}
 
+% -T1: Explain why the log function is used
+
+The linear increment in \texttt{CAV} has a relatively large variance for the counters in each basic block. For instance, if Waffle chooses to count all instructions in an execution, the basic blocks contributed an average of $18$ instructions for the ERU \footnote{Tested C++ implementations of QuickSort, MergeSort, and DFS}. To prevent overflows of the ERU cells in long executions, Waffle maintains the logarithm of each counter (Equation \ref{eq:log}). This modified counter is then set as a constant value for increasing the corresponding edge-index of the ERU array (Formula \ref{eq:ERU-log}). It is noticeable that the content of each cell may be increased by more than one edge; this is caused by the conflicts in the hashing procedure of edges.
+
+\begin{equation}
+  \label{eq:log}
+  CNT = \log_{2}^{CAV+1}
+\end{equation}
+
+\begin{equation}
+  \label{eq:ERU-log}
+  ERU[edge] += \sum_{visit} \log_{2}^{CAV_{visit}+1} \approx \sum_{visit} \log_{2}^{CAV_{visit}} = visits \times \log_{2}^{CAV_{visit}}
+\end{equation}
+
 % ?   #########################################################################
+
 % -T1: Explain how the instrumentation is applied
 
-The enumeration of the instructions is applied before the insertion of the AFL's code-coverage instructions, and only considers the usage of instructions of the program itself. To instrument the program, Waffle builds and applies the instrumentation recipe into the customized version of clang, we call it \textit{waffle-clang}. Then, Waffle can compile the program with the provided compiler using the command \ref{lst:wafl-clang}. When the program is given to the compiler, it's source code is analyzed and the appropriate are added based on the code.
+After applying the above recipe for instrumentation, the obtained \texttt{waffle-clang} compiler is then used for generating an executable with the mentioned features. To use this compiler, the following command creates the binary file we are looking for:
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:wafl-clang}]
   ./waffle-clang target.c -o instr_target.bin
