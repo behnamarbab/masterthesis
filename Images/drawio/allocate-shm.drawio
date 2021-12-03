@@ -31,7 +31,7 @@
                 <mxCell id="17" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;fontFamily=Georgia;" vertex="1" parent="1">
                     <mxGeometry x="110" y="110" width="20" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="ORCs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontFamily=Georgia;" vertex="1" parent="1">
+                <mxCell id="18" value="ERUs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontFamily=Georgia;" vertex="1" parent="1">
                     <mxGeometry x="70" y="160" width="40" height="20" as="geometry"/>
                 </mxCell>
             </root>

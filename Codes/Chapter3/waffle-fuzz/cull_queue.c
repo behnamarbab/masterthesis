@@ -27,7 +27,7 @@ static void cull_queue(void) {
       u32 j = MAP_SIZE;
       /* Remove all bits belonging to the current entry from temp_vv. */
       while (j--)
-        if(var_bytes[j] && top_rated[j][1])
+        if(top_rated[j][1])
           if(top_rated[i][1]->nTERU == top_rated[j][1]->nTERU)
             temp_vv[j] = 0;
       top_rated[i][1]->favored = 2;

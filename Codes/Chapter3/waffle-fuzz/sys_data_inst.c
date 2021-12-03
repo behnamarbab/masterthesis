@@ -1,21 +1,21 @@
-static int total_ORC = 0;
+static int total_ERU = 0;
 
 void __attribute__((constructor)) traceBegin(void) {}
 
 void __attribute__((destructor)) traceEnd(void) {
-  unsigned char *orc_str = getenv(ORC_ENV_VAR);
+  unsigned char *orc_str = getenv(ERU_ENV_VAR);
 
   if (mem_str) {
     unsigned int shm_mem_id = atoi(mem_str);
-    u64 *TORC;
+    u64 *TERU;
     
-    TORC = shmat(shm_mem_id, NULL, 0);
-    if (TORC == (void *)-1) _exit(1);
+    TERU = shmat(shm_mem_id, NULL, 0);
+    if (TERU == (void *)-1) _exit(1);
 
-    *TORC = total_ORC;
+    *TERU = total_ERU;
   }
 }
 
-void addORC(int cnt) {
-  total_ORC += cnt;
+void addERU(int cnt) {
+  total_ERU += cnt;
 }

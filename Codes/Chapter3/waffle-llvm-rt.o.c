@@ -1,9 +1,9 @@
 // snippet of wafl-llvm-rt.o.c
 
-#define ORC_SIZE (1 << 16)
+#define ERU_SIZE (1 << 16)
 
-u32  __wafl_ORC_initial[ORC_SIZE];
-u32* __wafl_area_ptr = __wafl_ORC_initial;
+u32  __wafl_ERU_initial[ERU_SIZE];
+u32* __wafl_area_ptr = __wafl_ERU_initial;
 
 static void __afl_map_shm(void) {
   u8 *id_str = getenv(SHM_ENV_VAR);
@@ -14,6 +14,6 @@ static void __afl_map_shm(void) {
     
     if (__wafl_area_ptr == (void *)-1) _exit(1);
 
-    memset(__wafl_area_ptr, 0, sizeof __wafl_ORC_ptr);
+    memset(__wafl_area_ptr, 0, sizeof __wafl_ERU_ptr);
   }
 }
