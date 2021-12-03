@@ -1,16 +1,13 @@
 \newpage
 \section{Concluding remarks}
 
-This chapter introduced the development of Waffle. Waffle extends AFL in two parts:
+The guidance in coverage-guided fuzzers such as AFL, generates variable inputs with different execution paths. Hence, the input generation would escape from creating resource exhaustive procedures. Our solution to this problem is implemented in Waffle. Waffle measures the number of instructions which are under our investigation, and utilizes the trace of the measurements to search for exhaustive vulnerabilities. Our approach contains the following steps: 
 
 \begin{enumerate}
-    \item \textbf{Instrumentation}: \textbf{llvm\_mode} directory is responsible for the instrumentation in Waffle. As we explained in this chapter, \texttt{llvm\_mode/waffle-llvm-rt.o.c} contains the recipe for instrumenting the program in the compilation.
-    
-    AFL only keeps a coverage-bitmap, but in addition to the coverage-finding methodology, Waffle leverages the \textbf{visitor functions} in LLVM for assessing the more resource-exhaustive executions. Visitor functions count the targeted instructions, and Waffle saves the result in an extra \textit{shared\_memory}.
-
-    Waffle counts the instructions in each basic block, and reduces the counted values for saving into the memory. The size of the \textit{shared\_memory} has increased 4x in Waffle.
-
-    \item \textbf{Fuzzing}: Waffle uses the coverage bitmap and the instruction-counter bitmap for emphasizing the more beneficial fuzzing entries. The main changes are in the procedures of the functions \texttt{calibrate\_case} and \texttt{calc\_score()}. Generally speaking, an interesting test-case runs faster, has more code coverage, and executes more instructions from a specified set of instructions.
+    \item To effectively count the instructions, Waffle enhances the instrumentation phase with the capability of exporting the instructions' information to the fuzzer. Waffle changes AFL's Module Pass for these considerations. With the benefit of Visitor functions, the instructions in basic blocks of a program are counted and defined as static values to the program. Every time a basic block is executed, the Estimated Resource Usage of the basic block is stored in an edge corresponding to the explored execution path.
+    \item The prior step configures a clang compiler which can get a C program and outputs a binary with the proper instrumentations.
+    \item The instrumented program is passed to the fuzzer, and the testing begins. Everytime the program is executed with an input, the coverage and ERU information are stored in seperate shared memories. Waffle pursues the coverage information to explore the code, and exploits the ERU data to eventually increase the resource usages of the executions.
+    \item The performance of the analysis of each execution required a careful implementation of both instrumentation and fuzzing phases. We will investigate the performance of the executions in the next section.
 \end{enumerate}
 
-We also reviewed some of the modifications in the source code to Waffle's project. The project is located on github, in a public repository \cite{wafl_git}.
+In the last section of this chapter, we also tested a predesigned vulnerable program to confirm the initial performance of Waffle. In the next chapter, we compare the performance of Waffle with state-of-the-art fuzzers such as AFL, AFLFast, and Libfuzzer.

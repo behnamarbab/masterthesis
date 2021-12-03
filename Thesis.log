@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  3 DEC 2021 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  3 DEC 2021 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1005,12 +1005,7 @@ File: ./Images/Chapter3/statusScreen-wfl.png Graphic file (type png)
 <use ./Images/Chapter3/statusScreen-wfl.png>
 Package pdftex.def Info: ./Images/Chapter3/statusScreen-wfl.png  used on input line 44.
 (pdftex.def)             Requested size: 429.3521pt x 274.40756pt.
-) (./Chapters/3-ProposedFuzzer/3-conclusion.tex [47]
-Overfull \hbox (8.0977pt too wide) in paragraph at lines 7--8
-\OT1/cmr/m/n/12 tion in Waf-fle. As we ex-plained in this chap-ter, \OT1/cmtt/m/n/12 llvm[]mode/waffle-llvm-rt.o.c
- []
-
-[48 <./Images/Chapter3/statusScreen-wfl.png>])) [49]
+) (./Chapters/3-ProposedFuzzer/3-conclusion.tex [47] [48 <./Images/Chapter3/statusScreen-wfl.png>])) [49]
 \openout2 = `Chapters/4-Simulation/overview.aux'.
 
  (./Chapters/4-Simulation/overview.tex
@@ -1020,7 +1015,7 @@ Chapter 4.
 
 
 ]
-<./Images/Chapter4/FuzzBench-service.png, id=1062, 963.6pt x 722.7pt>
+<./Images/Chapter4/FuzzBench-service.png, id=1063, 963.6pt x 722.7pt>
 File: ./Images/Chapter4/FuzzBench-service.png Graphic file (type png)
 <use ./Images/Chapter4/FuzzBench-service.png>
 Package pdftex.def Info: ./Images/Chapter4/FuzzBench-service.png  used on input line 9.
@@ -1048,42 +1043,42 @@ LaTeX Warning: Text page 56 contains only floats.
 Overfull \vbox (6.49455pt too high) has occurred while \output is active []
 
  [56]
-<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png, id=1131, 843.90282pt x 327.47343pt>
+<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png, id=1132, 843.90282pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png  used on input line 84.
 (pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
-<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png, id=1132, 856.70062pt x 327.47343pt>
+<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png, id=1133, 856.70062pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png  used on input line 93.
 (pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png, id=1133, 843.90282pt x 327.47343pt>
+<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png, id=1134, 843.90282pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png  used on input line 104.
 (pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
-<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png, id=1134, 856.70062pt x 327.47343pt>
+<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png, id=1135, 856.70062pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png  used on input line 113.
 (pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png, id=1135, 856.70062pt x 327.47343pt>
+<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png, id=1136, 856.70062pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png  used on input line 124.
 (pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png, id=1136, 869.49844pt x 327.47343pt>
+<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png, id=1137, 869.49844pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png  used on input line 133.
 (pdftex.def)             Requested size: 236.14496pt x 88.93867pt.
-<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png, id=1137, 850.67813pt x 327.47343pt>
+<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png, id=1138, 850.67813pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png  used on input line 144.
 (pdftex.def)             Requested size: 236.14496pt x 90.90244pt.
-<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png, id=1138, 850.67813pt x 327.47343pt>
+<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png, id=1139, 850.67813pt x 327.47343pt>
 File: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png  used on input line 153.
@@ -1092,42 +1087,42 @@ Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_c
 
 LaTeX Warning: Reference `fig:report-box' on page 57 undefined on input line 164.
 
-<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png, id=1139, 435.12563pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png, id=1140, 435.12563pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png  used on input line 170.
 (pdftex.def)             Requested size: 214.67604pt x 168.25323pt.
-<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png, id=1140, 419.31656pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png, id=1141, 419.31656pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png  used on input line 179.
 (pdftex.def)             Requested size: 214.67604pt x 177.67451pt.
-<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png, id=1141, 419.31656pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png, id=1142, 419.31656pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png  used on input line 190.
 (pdftex.def)             Requested size: 214.67604pt x 174.59123pt.
-<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png, id=1142, 419.31656pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png, id=1143, 419.31656pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png  used on input line 199.
 (pdftex.def)             Requested size: 214.67604pt x 177.67451pt.
-<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png, id=1143, 432.11438pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png, id=1144, 432.11438pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png  used on input line 214.
 (pdftex.def)             Requested size: 214.67604pt x 169.41885pt.
-<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png, id=1144, 432.11438pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png, id=1145, 432.11438pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png  used on input line 223.
 (pdftex.def)             Requested size: 214.67604pt x 172.4108pt.
-<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png, id=1145, 425.33907pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png, id=1146, 425.33907pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png  used on input line 235.
 (pdftex.def)             Requested size: 214.67604pt x 172.12473pt.
-<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png, id=1146, 425.33907pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png, id=1147, 425.33907pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png  used on input line 244.
@@ -1218,18 +1213,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27230 strings out of 481239
- 486304 string characters out of 5920378
+ 27232 strings out of 481239
+ 486318 string characters out of 5920378
  1162421 words of memory out of 5000000
  41070 multiletter control sequences out of 15000+600000
  544950 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,105p,1939b,2321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Thesis.pdf (86 pages, 1802918 bytes).
+Output written on Thesis.pdf (86 pages, 1802977 bytes).
 PDF statistics:
- 1682 PDF objects out of 1728 (max. 8388607)
- 1489 compressed objects within 15 object streams
- 683 named destinations out of 1000 (max. 500000)
+ 1685 PDF objects out of 1728 (max. 8388607)
+ 1492 compressed objects within 15 object streams
+ 685 named destinations out of 1000 (max. 500000)
  602 words of extra memory for PDF output out of 10000 (max. 10000000)
 
