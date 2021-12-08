@@ -1,5 +1,8 @@
 \section{Introduction}
+\label{sec:ch4-intro}
 
-We developed Waffle to analyze the executables, with experimental instrumentation, to enhance the performance of AFL in finding test-cases exposing vulnerabilities due to resource-exhaustion. In this chapter, we compare the performance of Waffle with state-of-the-art coverage-based fuzzers, \textbf{AFL} \cite{afl_git}, and \textbf{libfuzzer} \cite{serebryany2015libfuzzer}. To evaluate the performance of Waffle, we use \textbf{fuzzbench} \cite{metzman2020fuzzbench} comparing the fuzzers on different programs.
+% -T: Overview: Explain the details of this chapter
 
-In the next section, we briefly describe the \textbf{fuzzbench} project, and explain how we utilize this service in this thesis. Next, we evaluate our work, and we continue with a discussion on the performance of Waffle.
+In this chapter we explore the benchmarking and evaluation of our developed fuzzer. \texttt{FuzzBench} \cite{metzman2020fuzzbench}, is an automated benchmarking tool which selects a set of fuzzers and predefined benchmarks for fuzzing, and evaluates the performance of each fuzzer on each of the benchmarks in seperate trials. In each trial, a fuzzer-specific binary with the according instrumentations is generated, and the fuzzer performs its testing until its time limit is ended. We can modify the amount of testing time in advance, and in this experiment, we have chosen 3 trials for each pair of (fuzzer, benchmark), which distinctively perform 12 hours testing.
+
+In the next sections we first explain the configurations for comparing the performance of Waffle with other selected fuzzers. Next, an overview of the benchmarking is illustrated, and we analyze the results after. The results of the trials are reported by fuzzbench itself, but as the reports do not contain execution times, we analyze the generated queue entries of each of fuzzers, with the appropriate binaries. In the end, we contribute our resolutions of the tests.
