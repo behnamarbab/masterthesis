@@ -1,18 +1,20 @@
 \section{Evaluation metrics}
 \label{sec:ch4-metrics}
 
+% -T: Define the metrics: code coverage
+
 Fuzzbench implements a Clang-based fuzzer-independent code coverage measurer, which calculates the code coverage of the benchmarks after completion of each trial. Same as mentioned in AFL's code coverage measurement, the taken edges exhibit the covered regions in an execution. Table \ref{table:benchmarks} shows the benchmarks used in our tests (within fuzzbench); the last column of the table shows the total number of edges for each of the benchmarks. Other columns indicate if the provided benchmark is supported by a dictionary for the syntax of the inputs, the format of the inputs, and the number of provided seeds for fuzzing the programs. 
 
 \begin{table}[]
     \centering
-    \resizebox{\textwidth}{!}{%
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{|c|c|c|c|c|}
     \hline
     \rowcolor{lightgray}
     Benchmark             & Dictionary & Format         & Seeds & Edges \\
     \hline
     freetype2-2017        & \xmark     & TTF, OTF, WOFF & 2     & 19056 \\
-    \hline
+    \hline q
     libjpeg-turbo-07-2017 & \xmark     & JPEG           & 1     & 9586  \\
     \hline
     libpng-1.2.56         & \cmark     & PNG            & 1     & 2991  \\
@@ -25,3 +27,6 @@ Fuzzbench implements a Clang-based fuzzer-independent code coverage measurer, wh
     \label{table:benchmarks}
 \end{table}
 
+% -T: Define the metrics: execution time, and explain how we collect it
+
+The main metric for fuzzbench's comparisons is the code coverage, but as we intended to evaluate the execution times as well, we developed a post-processing module for checking the execution times of the generated entries of the trials of fuzzbench. Benchmarks are built within fuzzbench Docker containers, and instead of rebuilding the benchmarks seperately, we investigate the execution times within the container with an uninstrumented binary of the target. The measurment of the execution times is implemented in Python 3.

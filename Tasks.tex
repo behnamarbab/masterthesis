@@ -10,167 +10,79 @@
 % -K1: NP-Hard problem
 % -K2: exploration vs exploitation
 % -K3: performance-guided fuzzing vs coverage-guided fuzzing
-
 % ? //---------------------------------------------------------------------------
-
 % ? Done
 % Tasks
 % -T: Explain the waffle-proc.png
-
-% //---------------------------------------------------------------------------
-% // Tasks
-% // -T1: Explain an overview of the modifications on AFL, no need to go deep
-% // -T2: Instrumentation stage
-
-% // Waffle modifies the recipe for llvm-based instrumentation to collect the new execution features, as well as changing the fuzzing stage for exploiting this feature. Waffle analyzes each basic block, and inserts the new instructions beside the coverage instructions from AFL. The extracted information is stored in a new list of 64bit integers, while Waffle has the access to process the result in fuzzing. Later, in fuzz testing, Waffle performs additional calculations for saving interesting entries, and evaluating queue entries for new favarable characteristics. 
-
-% // Tasks
-% // -T1: Explain an overview of the modifications on AFL, no need to go deep
-% // -T2: Fuzzing stage
-
-% // Tasks
-% // -T: Talk about the remainder of this section
-
-% // The key observation for the methodology used in Waffle is that the static analysis and instrumentations collect the required features for evolutionary search techniques in finding inputs that demonstrate worst-case complexity of a test application in a domain-independent way. However, to enable Waffle to efficiently find such inputs, we need to carefully design effective guidance mechanisms to drive Waffle's input generation process. We redesign the evolutionary algorithm of AFL with customized guidance mechanisms that are tailored for finding inputs causing worst-case behavior.
-
-% //Next, we will discuss the instrumentation and fuzzing phases of Waffle in more details. To understand the effectiveness of our approach, we first introduce resource complexity of a program and explain how Waffle pivots on this feature for guiding the input generation. After that, the instrumentation phase is extended for discussion, which results in generating an instrumentated binary. The binary file is then passed to the fuzzer, and the evaluation of the inputs takes effect during the fuzzing procedure.
-
 % ? //=========================================================================
-
 % Tasks
 % -T1: Estimated Resource Usage
-
 % ? //=========================================================================
-
 % Tasks
 % -T1: How waffle uses the ERU through entire fuzzing chain
-
 % //---------------------------------------------------------------------------
 
 % !     Subsection 1: Instrumentation
-
 % ? //=========================================================================
-
 % Tasks
 % -T1: Generally define and explain the added and modified modules in Instrumentation
-
-% //---------------------------------------------------------------------------
-
-% // Tasks
-% // -T1: Explain the added array and it's usage
-% // Keywords
-% // -K: total_ERU, 4x space, storage
-
-% //---------------------------------------------------------------------------
-
-% // Tasks
-% // -T1: Explain the "addition" module for storing the counts
-% // Keywords
-% // -K1: traceEnd function
-% // -K2: TERU, total_ERU
-
 % ? //=========================================================================
-
 % Tasks:
 % -T1: Explain LLVM visitor functions
 % -T2: Explain the implementation of the visitor functions
-
 % ? //=========================================================================
-
 % Tasks:
 % -T1: Explain the procedure of the module pass
-
 % ? //=========================================================================
-
 % Tasks:
 % -T1: Explain how the instrumentation is applied
-
 % ? //=========================================================================
 
 % !     Subsection 2: Fuzzing
-
 % ? //=========================================================================
-
 % -T: Explain the waffle-fuzz-proc illustration
-
 % ? //=========================================================================
-
 % -T: Explain the data structures used and developed for fuzzing
-
 % ? //=========================================================================
-
 % -T: Dry run, Calibrate case, update bitmap score
-
 % ? //=========================================================================
-
 % -T: Cull queue
-
 % ? //=========================================================================
-
 % -T: Fuzz one
-
 % ? //=========================================================================
-
 % -T: Mutation (not modified), Execution
-
 % ? //=========================================================================
 
 % !     Subsection 3: Application
-
-% //---------------------------------------------------------------------------
-% //---------------------------------------------------------------------------
-
 % Tasks:
 % -T: Introduce fuzzgoat and it's details
-
 % ? //=========================================================================
-
 % -T: Apply instrumentation, explain radare2 and it's application on fuzzgoat
-
 % ? //=========================================================================
-
 % -T: Investigate the binary and it's updates
-
 % ? //=========================================================================
-
 % -T: Explain the new status screen
-
 % ? //=========================================================================
-
 % -T: Explain the fuzzing procedure and it's performance on fuzzgoat
-
 % ? //=========================================================================
-
 % -T: Wrap up
-
 % ? //=========================================================================
 
 % ! Chapter 4
-
 % -T: Overview: Explain the details of this chapter
-
 % ? //=========================================================================
-
 % -T: Explain fuzzbench
-
 % ? //=========================================================================
-
 % -T: Explain the setup
-
 % ? //=========================================================================
-
 % -T: Specify the fuzzers and benchmarks we are investigating
-
 % ? //=========================================================================
-
-% // -T: Explain the fuzzers used in the experiment
-
 % -T: Define the metrics: code coverage
-
+% ? //=========================================================================
 % -T: Generate the table of Benchmarks
-
+% ? //=========================================================================
 % -T: Define the metrics: execution time, and explain how we collect it
-
+% ? //=========================================================================
 % -T: Explain the evaluation methodologies: using the statistical metrics
 
 % -T: Present the figures generated by Fuzzbench
@@ -185,6 +97,7 @@
 
 % !/---------------------------------------------------------------------------
 % !/---------------------------- Side tasks -----------------------------------
+% !/--------------------------- Future Works ----------------------------------
 
 % Tasks:
 % -T: Enhance the code for:
@@ -194,7 +107,7 @@
 % ?     Check update_bitmap_score
 % ?     Check calibrate_case
 % ?     Check save_if_interesting
-% ?     Collect execution times after each trial, while testing
-% ?     Extend the Trial duration, and perform more number of trials
+% *     Collect execution times after each trial, while testing
+% *     Extend the Trial duration, and perform more number of trials
 
 % !/___________________________________________________________________________
