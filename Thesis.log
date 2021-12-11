@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  7 DEC 2021 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.8)  10 DEC 2021 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,57 +381,71 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen164
+\ar@mcellbox=\box51
+\extrarowheight=\dimen165
+\NC@list=\toks32
+\extratabsurround=\skip67
+\backup@length=\skip68
+\ar@cellbox=\box52
+)
+\everycr=\toks33
+\minrowclearance=\skip69
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count299
-\algocf@hangindent=\skip67
+\algocf@hangindent=\skip70
  (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count300
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\skiptotal=\skip68
-\skiplinenumber=\skip69
-\skiprule=\skip70
-\skiphlne=\skip71
-\skiptext=\skip72
-\skiplength=\skip73
-\algomargin=\skip74
-\skipalgocfslide=\skip75
-\algowidth=\dimen164
-\inoutsize=\dimen165
-\inoutindent=\dimen166
-\interspacetitleruled=\dimen167
-\interspacealgoruled=\dimen168
-\interspacetitleboxruled=\dimen169
-\algocf@ruledwidth=\skip76
-\algocf@inoutbox=\box51
-\algocf@inputbox=\box52
-\AlCapSkip=\skip77
-\AlCapHSkip=\skip78
-\algoskipindent=\skip79
-\algocf@nlbox=\box53
-\algocf@hangingbox=\box54
-\algocf@untilbox=\box55
-\algocf@skipuntil=\skip80
-\algocf@capbox=\box56
-\algocf@lcaptionbox=\skip81
-\algoheightruledefault=\skip82
-\algoheightrule=\skip83
-\algotitleheightruledefault=\skip84
-\algotitleheightrule=\skip85
+\skiptotal=\skip71
+\skiplinenumber=\skip72
+\skiprule=\skip73
+\skiphlne=\skip74
+\skiptext=\skip75
+\skiplength=\skip76
+\algomargin=\skip77
+\skipalgocfslide=\skip78
+\algowidth=\dimen166
+\inoutsize=\dimen167
+\inoutindent=\dimen168
+\interspacetitleruled=\dimen169
+\interspacealgoruled=\dimen170
+\interspacetitleboxruled=\dimen171
+\algocf@ruledwidth=\skip79
+\algocf@inoutbox=\box53
+\algocf@inputbox=\box54
+\AlCapSkip=\skip80
+\AlCapHSkip=\skip81
+\algoskipindent=\skip82
+\algocf@nlbox=\box55
+\algocf@hangingbox=\box56
+\algocf@untilbox=\box57
+\algocf@skipuntil=\skip83
+\algocf@capbox=\box58
+\algocf@lcaptionbox=\skip84
+\algoheightruledefault=\skip85
+\algoheightrule=\skip86
+\algotitleheightruledefault=\skip87
+\algotitleheightrule=\skip88
 \c@algocfline=\count301
 \c@algocfproc=\count302
 \c@algocf=\count303
-\algocf@algoframe=\box57
-\algocf@algobox=\box58
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks32
-\pgfutil@tempdima=\dimen170
-\pgfutil@tempdimb=\dimen171
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen172
+\pgfutil@tempdimb=\dimen173
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box59
+\pgfutil@abb=\box61
  (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -441,30 +455,30 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks33
-\pgfkeys@temptoks=\toks34
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks35
+\pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen172
-\pgf@y=\dimen173
-\pgf@xa=\dimen174
-\pgf@ya=\dimen175
-\pgf@xb=\dimen176
-\pgf@yb=\dimen177
-\pgf@xc=\dimen178
-\pgf@yc=\dimen179
-\pgf@xd=\dimen180
-\pgf@yd=\dimen181
+\pgf@x=\dimen174
+\pgf@y=\dimen175
+\pgf@xa=\dimen176
+\pgf@ya=\dimen177
+\pgf@xb=\dimen178
+\pgf@yb=\dimen179
+\pgf@xc=\dimen180
+\pgf@yc=\dimen181
+\pgf@xd=\dimen182
+\pgf@yd=\dimen183
 \w@pgf@writea=\write4
 \r@pgf@reada=\read4
 \c@pgf@counta=\count304
 \c@pgf@countb=\count305
 \c@pgf@countc=\count306
 \c@pgf@countd=\count307
-\t@pgf@toka=\toks36
-\t@pgf@tokb=\toks37
-\t@pgf@tokc=\toks38
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
 \pgf@sys@id@count=\count308
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
@@ -483,52 +497,52 @@ File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen182
+\pgfmath@dimen=\dimen184
 \pgfmath@count=\count311
-\pgfmath@box=\box60
-\pgfmath@toks=\toks39
-\pgfmath@stack@operand=\toks40
-\pgfmath@stack@operation=\toks41
+\pgfmath@box=\box62
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count312
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen183
-\pgf@picmaxx=\dimen184
-\pgf@picminy=\dimen185
-\pgf@picmaxy=\dimen186
-\pgf@pathminx=\dimen187
-\pgf@pathmaxx=\dimen188
-\pgf@pathminy=\dimen189
-\pgf@pathmaxy=\dimen190
-\pgf@xx=\dimen191
-\pgf@xy=\dimen192
-\pgf@yx=\dimen193
-\pgf@yy=\dimen194
-\pgf@zx=\dimen195
-\pgf@zy=\dimen196
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen197
-\pgf@path@lasty=\dimen198
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen199
-\pgf@shorten@start@additional=\dimen256
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box61
-\pgf@hbox=\box62
-\pgf@layerbox@main=\box63
+\pgfpic=\box63
+\pgf@hbox=\box64
+\pgf@layerbox@main=\box65
 \pgf@picture@serial@count=\count313
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen257
+\pgflinewidth=\dimen259
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen258
-\pgf@pt@y=\dimen259
-\pgf@pt@temp=\dimen260
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -537,17 +551,17 @@ File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen261
+\pgfarrowsep=\dimen263
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen262
+\pgf@max=\dimen264
 \pgf@sys@shading@range@num=\count314
 \pgf@shadingcount=\count315
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box64
+\pgfexternal@startupbox=\box66
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -558,41 +572,41 @@ File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box65
+\pgfnodeparttextbox=\box67
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen263
-\pgf@nodesepend=\dimen264
+\pgf@nodesepstart=\dimen265
+\pgf@nodesepend=\dimen266
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen265
-\pgffor@skip=\dimen266
-\pgffor@stack=\toks42
-\pgffor@toks=\toks43
+\pgffor@iter=\dimen267
+\pgffor@skip=\dimen268
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@plot@mark@count=\count316
-\pgfplotmarksize=\dimen267
+\pgfplotmarksize=\dimen269
 )
-\tikz@lastx=\dimen268
-\tikz@lasty=\dimen269
-\tikz@lastxsaved=\dimen270
-\tikz@lastysaved=\dimen271
-\tikz@lastmovetox=\dimen272
-\tikz@lastmovetoy=\dimen273
-\tikzleveldistance=\dimen274
-\tikzsiblingdistance=\dimen275
-\tikz@figbox=\box66
-\tikz@figbox@bg=\box67
-\tikz@tempbox=\box68
-\tikz@tempbox@bg=\box69
+\tikz@lastx=\dimen270
+\tikz@lasty=\dimen271
+\tikz@lastxsaved=\dimen272
+\tikz@lastysaved=\dimen273
+\tikz@lastmovetox=\dimen274
+\tikz@lastmovetoy=\dimen275
+\tikzleveldistance=\dimen276
+\tikzsiblingdistance=\dimen277
+\tikz@figbox=\box68
+\tikz@figbox@bg=\box69
+\tikz@tempbox=\box70
+\tikz@tempbox@bg=\box71
 \tikztreelevel=\count317
 \tikznumberofchildren=\count318
 \tikznumberofcurrentchild=\count319
@@ -609,10 +623,10 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count325
-\float@exts=\toks44
-\float@box=\box70
-\@float@everytoks=\toks45
-\@floatcapt=\box71
+\float@exts=\toks46
+\float@box=\box72
+\@float@everytoks=\toks47
+\@floatcapt=\box73
 ) (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count326
@@ -623,13 +637,13 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
  (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen276
-\captionmargin@=\dimen277
-\captionwidth=\dimen278
-\caption@tempdima=\dimen279
-\caption@indent=\dimen280
-\caption@parindent=\dimen281
-\caption@hangindent=\dimen282
+\captionmargin=\dimen278
+\captionmargin@=\dimen279
+\captionwidth=\dimen280
+\caption@tempdima=\dimen281
+\caption@indent=\dimen282
+\caption@parindent=\dimen283
+\caption@hangindent=\dimen284
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count329
@@ -646,8 +660,8 @@ Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
  (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
  (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
 )
 \XKV@depth=\count333
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -657,55 +671,74 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-
 Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
  (/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box72
+\collectedbox=\box74
 )
-\tc@llx=\dimen283
-\tc@lly=\dimen284
-\tc@urx=\dimen285
-\tc@ury=\dimen286
+\tc@llx=\dimen285
+\tc@lly=\dimen286
+\tc@urx=\dimen287
+\tc@ury=\dimen288
 Package trimclip Info: Using driver 'tc-pdftex.def'.
  (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen287
-\adjbox@Height=\dimen288
-\adjbox@Depth=\dimen289
-\adjbox@Totalheight=\dimen290
-\adjbox@pwidth=\dimen291
-\adjbox@pheight=\dimen292
-\adjbox@pdepth=\dimen293
-\adjbox@ptotalheight=\dimen294
+\adjbox@Width=\dimen289
+\adjbox@Height=\dimen290
+\adjbox@Depth=\dimen291
+\adjbox@Totalheight=\dimen292
+\adjbox@pwidth=\dimen293
+\adjbox@pheight=\dimen294
+\adjbox@pdepth=\dimen295
+\adjbox@ptotalheight=\dimen296
  (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box73
+\@vwid@box=\box75
 \sift@deathcycles=\count334
-\@vwid@loff=\dimen295
-\@vwid@roff=\dimen296
-)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen297
-\ar@mcellbox=\box74
-\extrarowheight=\dimen298
-\NC@list=\toks48
-\extratabsurround=\skip86
-\backup@length=\skip87
-\ar@cellbox=\box75
-) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\@vwid@loff=\dimen297
+\@vwid@roff=\dimen298
+)) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen299
 \WF@size=\dimen300
 \c@WF@wrappedlines=\count335
 \WF@box=\box76
-\WF@everypar=\toks49
+\WF@everypar=\toks50
 Package: wrapfig 2003/01/31  v 3.6
-) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen301
+\lightrulewidth=\dimen302
+\cmidrulewidth=\dimen303
+\belowrulesep=\dimen304
+\belowbottomsep=\dimen305
+\aboverulesep=\dimen306
+\abovetopsep=\dimen307
+\cmidrulesep=\dimen308
+\cmidrulekern=\dimen309
+\defaultaddspace=\dimen310
+\@cmidla=\count336
+\@cmidlb=\count337
+\@aboverulesep=\dimen311
+\@belowrulesep=\dimen312
+\@thisruleclass=\count338
+\@lastruleclass=\count339
+\@thisrulewidth=\dimen313
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+)) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 ))
-\c@theorem=\count336
-\c@definition=\count337
-\c@lemma=\count338
-\c@notation=\count339
+\c@theorem=\count340
+\c@definition=\count341
+\c@lemma=\count342
+\c@notation=\count343
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -717,22 +750,22 @@ LaTeX Warning: Label `lst:hash' multiply defined.
 ) (./Chapters/4-Simulation/overview.aux) (./Chapters/5-Conclusion/overview.aux) (./Chapters/6-Appendix/overview.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -770,26 +803,26 @@ LaTeX Font Info:    ... okay on input line 160.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count340
-\scratchdimen=\dimen301
+\scratchcounter=\count344
+\scratchdimen=\dimen314
 \scratchbox=\box77
-\nofMPsegments=\count341
-\nofMParguments=\count342
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count343
-\MPscratchDim=\dimen302
-\MPnumerator=\count344
-\makeMPintoPDFobject=\count345
-\everyMPtoPDFconversion=\toks51
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen315
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count346
+\c@lstlisting=\count350
 \AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring OFF on input line 160.
+Package hyperref Info: Link coloring OFF on input line 165.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -797,11 +830,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count347
+\c@section@level=\count351
 )
-LaTeX Info: Redefining \ref on input line 160.
-LaTeX Info: Redefining \pageref on input line 160.
-LaTeX Info: Redefining \nameref on input line 160.
+LaTeX Info: Redefining \ref on input line 165.
+LaTeX Info: Redefining \pageref on input line 165.
+LaTeX Info: Redefining \nameref on input line 165.
  (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write5
 \openout5 = `Thesis.out'.
@@ -810,11 +843,11 @@ LaTeX Info: Redefining \nameref on input line 160.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 161.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 166.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 161.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 166.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -883,7 +916,7 @@ Chapter 1.
  (./Chapters/2-Background/overview.tex
 Chapter 2.
 (./Chapters/2-Background/0-Introduction.tex
-<./Images/Chapter2/fuzz_articles.png, id=416, 1401.235pt x 754.82pt>
+<./Images/Chapter2/fuzz_articles.png, id=423, 1401.235pt x 754.82pt>
 File: ./Images/Chapter2/fuzz_articles.png Graphic file (type png)
 <use ./Images/Chapter2/fuzz_articles.png>
 Package pdftex.def Info: ./Images/Chapter2/fuzz_articles.png  used on input line 12.
@@ -897,18 +930,18 @@ Package pdftex.def Info: ./Images/Chapter2/fuzz_articles.png  used on input line
 LaTeX Warning: Reference `sec:2.3' on page 6 undefined on input line 31.
 
 ) (./Chapters/2-Background/1-LiteratureReview.tex [6] (./Codes/Chapter2/bubble.tex) [7]
-<./Images/Chapter2/cfg.png, id=480, 382.42876pt x 834.11626pt>
+<./Images/Chapter2/cfg.png, id=488, 382.42876pt x 834.11626pt>
 File: ./Images/Chapter2/cfg.png Graphic file (type png)
 <use ./Images/Chapter2/cfg.png>
 Package pdftex.def Info: ./Images/Chapter2/cfg.png  used on input line 22.
 (pdftex.def)             Requested size: 150.27585pt x 327.76045pt.
-<./Images/Chapter2/heatmap-cfg.png, id=483, 229.85875pt x 362.35374pt>
+<./Images/Chapter2/heatmap-cfg.png, id=491, 229.85875pt x 362.35374pt>
 File: ./Images/Chapter2/heatmap-cfg.png Graphic file (type png)
 <use ./Images/Chapter2/heatmap-cfg.png>
 Package pdftex.def Info: ./Images/Chapter2/heatmap-cfg.png  used on input line 32.
 (pdftex.def)             Requested size: 150.27585pt x 236.90941pt.
  [8] [9 <./Images/Chapter2/cfg.png> <./Images/Chapter2/heatmap-cfg.png>]
-<./Images/Chapter2/FuzzingPhases.png, id=518, 623.32875pt x 261.97874pt>
+<./Images/Chapter2/FuzzingPhases.png, id=525, 623.32875pt x 261.97874pt>
 File: ./Images/Chapter2/FuzzingPhases.png Graphic file (type png)
 <use ./Images/Chapter2/FuzzingPhases.png>
 Package pdftex.def Info: ./Images/Chapter2/FuzzingPhases.png  used on input line 59.
@@ -920,30 +953,30 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ) [12]
-<./Images/Chapter2/path-explosion.png, id=566, 229.85875pt x 417.56pt>
+<./Images/Chapter2/path-explosion.png, id=573, 229.85875pt x 417.56pt>
 File: ./Images/Chapter2/path-explosion.png Graphic file (type png)
 <use ./Images/Chapter2/path-explosion.png>
 Package pdftex.def Info: ./Images/Chapter2/path-explosion.png  used on input line 106.
 (pdftex.def)             Requested size: 128.80693pt x 234.00401pt.
-<./Images/Chapter2/path-explosion-tree.png, id=567, 632.3625pt x 301.125pt>
+<./Images/Chapter2/path-explosion-tree.png, id=574, 632.3625pt x 301.125pt>
 File: ./Images/Chapter2/path-explosion-tree.png Graphic file (type png)
 <use ./Images/Chapter2/path-explosion-tree.png>
 Package pdftex.def Info: ./Images/Chapter2/path-explosion-tree.png  used on input line 115.
 (pdftex.def)             Requested size: 343.48299pt x 163.56538pt.
  [13] [14 <./Images/Chapter2/path-explosion.png> <./Images/Chapter2/path-explosion-tree.png>] [15] [16] [17]) (./Chapters/2-Background/2-AFL.tex [18]
-<./Images/Chapter2/AFL-io.png, id=632, 440.64626pt x 211.79124pt>
+<./Images/Chapter2/AFL-io.png, id=639, 440.64626pt x 211.79124pt>
 File: ./Images/Chapter2/AFL-io.png Graphic file (type png)
 <use ./Images/Chapter2/AFL-io.png>
 Package pdftex.def Info: ./Images/Chapter2/AFL-io.png  used on input line 13.
 (pdftex.def)             Requested size: 429.3521pt x 206.3712pt.
  [19 <./Images/Chapter2/AFL-io.png>]
-<./Images/Chapter2/instrumentation.png, id=642, 651.43375pt x 603.25375pt>
+<./Images/Chapter2/instrumentation.png, id=649, 651.43375pt x 603.25375pt>
 File: ./Images/Chapter2/instrumentation.png Graphic file (type png)
 <use ./Images/Chapter2/instrumentation.png>
 Package pdftex.def Info: ./Images/Chapter2/instrumentation.png  used on input line 37.
 (pdftex.def)             Requested size: 429.3521pt x 397.6056pt.
  [20] [21 <./Images/Chapter2/instrumentation.png>]
-<./Images/Chapter2/llvm.png, id=659, 1369.40474pt x 410.5234pt>
+<./Images/Chapter2/llvm.png, id=666, 1369.40474pt x 410.5234pt>
 File: ./Images/Chapter2/llvm.png Graphic file (type png)
 <use ./Images/Chapter2/llvm.png>
 Package pdftex.def Info: ./Images/Chapter2/llvm.png  used on input line 50.
@@ -951,13 +984,13 @@ Package pdftex.def Info: ./Images/Chapter2/llvm.png  used on input line 50.
  [22 <./Images/Chapter2/llvm.png (PNG copy)>] [23] [24]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 99.
-<./Images/Chapter2/afl_screen.png, id=689, 722.7pt x 361.35pt>
+<./Images/Chapter2/afl_screen.png, id=696, 722.7pt x 361.35pt>
 File: ./Images/Chapter2/afl_screen.png Graphic file (type png)
 <use ./Images/Chapter2/afl_screen.png>
 Package pdftex.def Info: ./Images/Chapter2/afl_screen.png  used on input line 121.
 (pdftex.def)             Requested size: 429.3521pt x 214.67786pt.
  [25] [26 <./Images/Chapter2/afl_screen.png>]
-<./Images/Chapter2/AFL-proc.png, id=704, 532.99126pt x 482.80376pt>
+<./Images/Chapter2/AFL-proc.png, id=711, 532.99126pt x 482.80376pt>
 File: ./Images/Chapter2/AFL-proc.png Graphic file (type png)
 <use ./Images/Chapter2/AFL-proc.png>
 Package pdftex.def Info: ./Images/Chapter2/AFL-proc.png  used on input line 150.
@@ -976,31 +1009,31 @@ Chapter 3.
 
 
 ]) (./Chapters/3-ProposedFuzzer/1-waffle.tex
-<./Images/Chapter3/waffle-proc.png, id=742, 532.99126pt x 482.80376pt>
+<./Images/Chapter3/waffle-proc.png, id=750, 532.99126pt x 482.80376pt>
 File: ./Images/Chapter3/waffle-proc.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-proc.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-proc.png  used on input line 16.
 (pdftex.def)             Requested size: 343.48299pt x 311.15187pt.
  [32] [33 <./Images/Chapter3/waffle-proc.png>] [34] [35] (./Codes/Chapter3/waffle-llvm-rt.o.c) (./Codes/Chapter2/visitor.cpp [36]) (./Codes/Chapter3/mini-wafl-llvm-pass.so.cc [37])
-<./Images/Chapter3/waffle-fuzz-proc.png, id=856, 452.69125pt x 683.55376pt>
+<./Images/Chapter3/waffle-fuzz-proc.png, id=863, 452.69125pt x 683.55376pt>
 File: ./Images/Chapter3/waffle-fuzz-proc.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-fuzz-proc.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-fuzz-proc.png  used on input line 119.
 (pdftex.def)             Requested size: 343.48299pt x 518.65099pt.
  [38] [39 <./Images/Chapter3/waffle-fuzz-proc.png>] (./Codes/Chapter3/waffle-fuzz/update_bitmap_score.c) [40]
-<./Images/Chapter3/waffle-top_rated.png, id=895, 718.685pt x 483.8075pt>
+<./Images/Chapter3/waffle-top_rated.png, id=902, 718.685pt x 483.8075pt>
 File: ./Images/Chapter3/waffle-top_rated.png Graphic file (type png)
 <use ./Images/Chapter3/waffle-top_rated.png>
 Package pdftex.def Info: ./Images/Chapter3/waffle-top_rated.png  used on input line 136.
 (pdftex.def)             Requested size: 343.48299pt x 231.23573pt.
  [41] (./Codes/Chapter3/waffle-fuzz/cull_queue.c [42 <./Images/Chapter3/waffle-top_rated.png>]) [43] (./Codes/Chapter3/waffle-fuzz/save_if_interesting-alg.tex) (./Codes/Chapter3/waffle-fuzz/is_exhaustive.c [44])) (./Chapters/3-ProposedFuzzer/2-application.tex
-<./Images/Chapter3/fuzzgoat-inst.png, id=1022, 586.19pt x 715.67375pt>
+<./Images/Chapter3/fuzzgoat-inst.png, id=1029, 586.19pt x 715.67375pt>
 File: ./Images/Chapter3/fuzzgoat-inst.png Graphic file (type png)
 <use ./Images/Chapter3/fuzzgoat-inst.png>
 Package pdftex.def Info: ./Images/Chapter3/fuzzgoat-inst.png  used on input line 22.
 (pdftex.def)             Requested size: 429.3521pt x 524.18474pt.
  [45] [46 <./Images/Chapter3/fuzzgoat-inst.png>]
-<./Images/Chapter3/statusScreen-wfl.png, id=1046, 728.7225pt x 465.74pt>
+<./Images/Chapter3/statusScreen-wfl.png, id=1053, 728.7225pt x 465.74pt>
 File: ./Images/Chapter3/statusScreen-wfl.png Graphic file (type png)
 <use ./Images/Chapter3/statusScreen-wfl.png>
 Package pdftex.def Info: ./Images/Chapter3/statusScreen-wfl.png  used on input line 44.
@@ -1015,126 +1048,130 @@ Chapter 4.
 
 
 ]
-<./Images/Chapter4/FuzzBench-service.png, id=1080, 963.6pt x 722.7pt>
+<./Images/Chapter4/FuzzBench-service.png, id=1089, 963.6pt x 722.7pt>
 File: ./Images/Chapter4/FuzzBench-service.png Graphic file (type png)
 <use ./Images/Chapter4/FuzzBench-service.png>
 Package pdftex.def Info: ./Images/Chapter4/FuzzBench-service.png  used on input line 11.
 (pdftex.def)             Requested size: 429.3521pt x 322.014pt.
- [52 <./Images/Chapter4/FuzzBench-service.png>] [53]) (./Chapters/4-Simulation/3-report.tex
+ [52] [53 <./Images/Chapter4/FuzzBench-service.png>]) (./Chapters/4-Simulation/3-metrics.tex [54]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 6.
+
+) (./Chapters/4-Simulation/4-evaluations.tex
 Overfull \hbox (29.98723pt too wide) in paragraph at lines 6--7
 \OT1/cmr/m/n/12 fail to fin-ish. Each ex-per-i-ment con-tains \OT1/cmr/bx/n/12 3 \OT1/cmr/m/n/12 tri-als for each pair of $\OML/cmm/m/it/12 < FuzzerX; Benchmark >$\OT1/cmr/m/n/12 ,
  []
 
-[54]
-
-LaTeX Warning: Reference `fig:report-box' on page 55 undefined on input line 23.
-
-
-LaTeX Warning: Reference `fig:report-unq' on page 55 undefined on input line 23.
-
 [55]
-<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png, id=1119, 843.90282pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png  used on input line 84.
-(pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
-<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png, id=1120, 856.70062pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png  used on input line 93.
-(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png, id=1121, 843.90282pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png  used on input line 104.
-(pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
-<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png, id=1122, 856.70062pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png  used on input line 113.
-(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png, id=1123, 856.70062pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png  used on input line 124.
-(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
-<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png, id=1124, 869.49844pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png  used on input line 133.
-(pdftex.def)             Requested size: 236.14496pt x 88.93867pt.
-<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png, id=1125, 850.67813pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png  used on input line 144.
-(pdftex.def)             Requested size: 236.14496pt x 90.90244pt.
-<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png, id=1126, 850.67813pt x 327.47343pt>
-File: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png Graphic file (type png)
-<use ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png>
-Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png  used on input line 153.
-(pdftex.def)             Requested size: 236.14496pt x 90.90244pt.
+
+LaTeX Warning: Reference `fig:report-box' on page 56 undefined on input line 23.
 
 
-LaTeX Warning: Reference `fig:report-box' on page 56 undefined on input line 164.
+LaTeX Warning: Reference `fig:report-unq' on page 56 undefined on input line 23.
 
 [56]
 
 LaTeX Warning: Text page 57 contains only floats.
 
 
-Overfull \vbox (6.49455pt too high) has occurred while \output is active []
+Overfull \vbox (6.49438pt too high) has occurred while \output is active []
 
  [57]
-<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png, id=1138, 435.12563pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png, id=1140, 843.90282pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png  used on input line 84.
+(pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
+<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png, id=1141, 856.70062pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png  used on input line 93.
+(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
+<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png, id=1142, 843.90282pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png  used on input line 104.
+(pdftex.def)             Requested size: 236.14496pt x 91.63197pt.
+<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png, id=1143, 856.70062pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png  used on input line 113.
+(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
+<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png, id=1144, 856.70062pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png  used on input line 124.
+(pdftex.def)             Requested size: 236.14496pt x 90.26283pt.
+<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png, id=1145, 869.49844pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png  used on input line 133.
+(pdftex.def)             Requested size: 236.14496pt x 88.93867pt.
+<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png, id=1146, 850.67813pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png  used on input line 144.
+(pdftex.def)             Requested size: 236.14496pt x 90.90244pt.
+<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png, id=1147, 850.67813pt x 327.47343pt>
+File: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png Graphic file (type png)
+<use ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png>
+Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png  used on input line 153.
+(pdftex.def)             Requested size: 236.14496pt x 90.90244pt.
+
+
+LaTeX Warning: Reference `fig:report-box' on page 58 undefined on input line 164.
+
+<./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png, id=1148, 435.12563pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png  used on input line 170.
 (pdftex.def)             Requested size: 214.67604pt x 168.25323pt.
-<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png, id=1139, 419.31656pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png, id=1149, 419.31656pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png  used on input line 179.
 (pdftex.def)             Requested size: 214.67604pt x 177.67451pt.
-<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png, id=1140, 419.31656pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png, id=1150, 419.31656pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png  used on input line 190.
 (pdftex.def)             Requested size: 214.67604pt x 174.59123pt.
-<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png, id=1141, 419.31656pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png, id=1151, 419.31656pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png  used on input line 199.
 (pdftex.def)             Requested size: 214.67604pt x 177.67451pt.
-<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png, id=1142, 432.11438pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png, id=1152, 432.11438pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png  used on input line 214.
 (pdftex.def)             Requested size: 214.67604pt x 169.41885pt.
-<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png, id=1143, 432.11438pt x 347.04657pt>
+<./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png, id=1153, 432.11438pt x 347.04657pt>
 File: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png  used on input line 223.
 (pdftex.def)             Requested size: 214.67604pt x 172.4108pt.
-<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png, id=1144, 425.33907pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png, id=1154, 425.33907pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png  used on input line 235.
 (pdftex.def)             Requested size: 214.67604pt x 172.12473pt.
-<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png, id=1145, 425.33907pt x 341.02406pt>
+<./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png, id=1155, 425.33907pt x 341.02406pt>
 File: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png Graphic file (type png)
 <use ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png>
 Package pdftex.def Info: ./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png  used on input line 244.
 (pdftex.def)             Requested size: 214.67604pt x 172.12473pt.
-) (./Chapters/4-Simulation/4-bottlenecks.tex [58 <./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png> <./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png> <./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png> <./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png> <./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png> <./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png> <./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png> <./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png>]) [59 <./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png> <./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png> <./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png> <./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png>]) [60 <./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png> <./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png> <./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png> <./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png>]
+) (./Chapters/4-Simulation/5-bottlenecks.tex [58] [59 <./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_coverage_growth.png> <./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_coverage_growth.png> <./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_coverage_growth.png> <./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_coverage_growth.png> <./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_coverage_growth.png> <./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_coverage_growth.png> <./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_coverage_growth.png> <./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_coverage_growth.png>]) [60 <./Images/Chapter4/experimental/WA-lib/libpng-1.2.56_boxplot.png> <./Images/Chapter4/experimental/WL-lib/libpng-1.2.56_boxplot.png> <./Images/Chapter4/experimental/WA-thr/openthread-2019-12-23_boxplot.png> <./Images/Chapter4/experimental/WL-thr/openthread-2019-12-23_boxplot.png>]) [61 <./Images/Chapter4/experimental/WA-php/php_php-fuzz-execute_boxplot.png> <./Images/Chapter4/experimental/WL-php/php_php-fuzz-execute_boxplot.png> <./Images/Chapter4/experimental/WA-cur/curl_curl_fuzzer_http_boxplot.png> <./Images/Chapter4/experimental/WA-sql/sqlite3_ossfuzz_boxplot.png>]
 \openout2 = `Chapters/5-Conclusion/overview.aux'.
 
  (./Chapters/5-Conclusion/overview.tex
 Chapter 5.
-) [61
+) [62
 
 
 
-] (./Thesis.bbl [62
+] (./Thesis.bbl [63
 
 
 ]
@@ -1147,24 +1184,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--91
 \OT1/cmtt/m/n/12 software . intel . com / content / www / us / en / develop / articles /
  []
 
-[63] [64] [65] [66] [67]
+[64] [65] [66] [67] [68]
 Underfull \hbox (badness 2495) in paragraph at lines 307--309
 []\OT1/cmr/m/n/12 Fuzzgoat: Vul-ner-a-ble c pro-gram.  []$\OT1/cmtt/m/n/12 https : / / github . com / fuzzstati0n /
  []
 
-) [68]
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
+[]\OT1/cmr/m/n/12 Afl driver for con-trol-ling the fuzzing pro-ce-dure.  []$\OT1/cmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
+\OT1/cmtt/m/n/12 / / raw . githubusercontent . com / llvm / llvm-[]project /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
+\OT1/cmtt/m/n/12 5feb80e748924606531ba28c97fe65145c65372e / compiler-[]rt / lib / fuzzer /
+ []
+
+) [69]
 \openout2 = `Chapters/6-Appendix/overview.aux'.
 
  (./Chapters/6-Appendix/overview.tex
 Chapter 6.
-(./Codes/Chapter2/havoc.c [69
+(./Codes/Chapter2/havoc.c [70
 
 
-]) [70] (./Codes/Chapter4/builder.Dockerfile
+]) [71] (./Codes/Chapter4/builder.Dockerfile
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [71])
+) [72])
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 31.
 LaTeX Font Info:    No file OMScmtt.fd. on input line 31.
 
@@ -1175,14 +1227,14 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (./Codes/Chapter4/fuzzer.py [72] [73])) [74]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
+) (./Codes/Chapter4/fuzzer.py [73] [74])) [75]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./Thesis.aux (./SideChapters/01-abstract.aux) (./SideChapters/02-dedication.aux) (./SideChapters/03-acknowledgments.aux) (./SideChapters/07-abbreviations.aux) (./Chapters/1-Introduction/overview.aux) (./Chapters/2-Background/overview.aux) (./Chapters/3-ProposedFuzzer/overview.aux) (./Chapters/4-Simulation/overview.aux) (./Chapters/5-Conclusion/overview.aux) (./Chapters/6-Appendix/overview.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2D13BC13063A6EC82CA6BA92B1FE3B4A;3633.
+(rerunfilecheck)             Checksum: 87E8B8DE29867CC83EBEA06D3EB17FDE;3697.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1195,18 +1247,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27186 strings out of 481239
- 485714 string characters out of 5920378
- 1161155 words of memory out of 5000000
- 41045 multiletter control sequences out of 15000+600000
- 544653 words of font info for 73 fonts, out of 8000000 for 9000
+ 27352 strings out of 481239
+ 488098 string characters out of 5920378
+ 1164460 words of memory out of 5000000
+ 41183 multiletter control sequences out of 15000+600000
+ 545343 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,18n,105p,1939b,2321s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Thesis.pdf (86 pages, 1795493 bytes).
+ 60i,18n,105p,1939b,2322s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on Thesis.pdf (87 pages, 1801318 bytes).
 PDF statistics:
- 1663 PDF objects out of 1728 (max. 8388607)
- 1471 compressed objects within 15 object streams
- 669 named destinations out of 1000 (max. 500000)
- 626 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1690 PDF objects out of 1728 (max. 8388607)
+ 1496 compressed objects within 15 object streams
+ 674 named destinations out of 1000 (max. 500000)
+ 634 words of extra memory for PDF output out of 10000 (max. 10000000)
 

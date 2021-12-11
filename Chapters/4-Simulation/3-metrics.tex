@@ -1,0 +1,27 @@
+\section{Evaluation metrics}
+\label{sec:ch4-metrics}
+
+Fuzzbench implements a Clang-based fuzzer-independent code coverage measurer, which calculates the code coverage of the benchmarks after completion of each trial. Same as mentioned in AFL's code coverage measurement, the taken edges exhibit the covered regions in an execution. Table \ref{table:benchmarks} shows the benchmarks used in our tests (within fuzzbench); the last column of the table shows the total number of edges for each of the benchmarks. Other columns indicate if the provided benchmark is supported by a dictionary for the syntax of the inputs, the format of the inputs, and the number of provided seeds for fuzzing the programs. 
+
+\begin{table}[]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \rowcolor{lightgray}
+    Benchmark             & Dictionary & Format         & Seeds & Edges \\
+    \hline
+    freetype2-2017        & \xmark     & TTF, OTF, WOFF & 2     & 19056 \\
+    \hline
+    libjpeg-turbo-07-2017 & \xmark     & JPEG           & 1     & 9586  \\
+    \hline
+    libpng-1.2.56         & \cmark     & PNG            & 1     & 2991  \\
+    \hline
+    libxml2-v2.9.2        & \cmark     & XML            & 0     & 50461 \\
+    \hline    
+    \end{tabular}%
+    }
+    \caption{List of benchmarks used in evaluation}
+    \label{table:benchmarks}
+\end{table}
+
