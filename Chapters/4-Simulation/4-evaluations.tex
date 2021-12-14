@@ -83,39 +83,39 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \label{fig:cov-growth-uniq}
 \end{figure}
 
-\subsubsection{Vargha-Delaney's A12 measurements}
+% \subsubsection{Vargha-Delaney's A12 measurements}
 
-\begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.475\linewidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{Experiments/freetype2-2017_varga_delaney_a12_plot.png}
-        \caption{freetype2-2017}
-        \label{fig:sub:freetype-vda12}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.475\linewidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{Experiments/libjpeg-turbo-07-2017_varga_delaney_a12_plot.png}
-        \caption{libjpeg-turbo-07-2017}
-        \label{fig:sub:libjpeg-vda12}
-    \end{subfigure}
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}[b]{0.475\linewidth}
+%         \centering
+%         \includegraphics[width=0.95\linewidth]{Experiments/freetype2-2017_varga_delaney_a12_plot.png}
+%         \caption{freetype2-2017}
+%         \label{fig:sub:freetype-vda12}
+%     \end{subfigure}
+%     \begin{subfigure}[b]{0.475\linewidth}
+%         \centering
+%         \includegraphics[width=0.95\linewidth]{Experiments/libjpeg-turbo-07-2017_varga_delaney_a12_plot.png}
+%         \caption{libjpeg-turbo-07-2017}
+%         \label{fig:sub:libjpeg-vda12}
+%     \end{subfigure}
 
-    \begin{subfigure}[b]{0.475\linewidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{Experiments/libpng-1.2.56_varga_delaney_a12_plot.png}
-        \caption{libpng-1.2.56}
-        \label{fig:sub:libpng-vda12}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.475\linewidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{Experiments/libxml2-v2.9.2_varga_delaney_a12_plot.png}
-        \caption{libxml2-v2.9.2}
-        \label{fig:sub:libxml-vda12}
-    \end{subfigure}
+%     \begin{subfigure}[b]{0.475\linewidth}
+%         \centering
+%         \includegraphics[width=0.95\linewidth]{Experiments/libpng-1.2.56_varga_delaney_a12_plot.png}
+%         \caption{libpng-1.2.56}
+%         \label{fig:sub:libpng-vda12}
+%     \end{subfigure}
+%     \begin{subfigure}[b]{0.475\linewidth}
+%         \centering
+%         \includegraphics[width=0.95\linewidth]{Experiments/libxml2-v2.9.2_varga_delaney_a12_plot.png}
+%         \caption{libxml2-v2.9.2}
+%         \label{fig:sub:libxml-vda12}
+%     \end{subfigure}
 
-    \caption{Unique coverage findings - The table summarizes the A12 values from the pairwise Vargha-Delaney A measure of effect size. Green cells indicate the probability the fuzzer in the row will outperform the fuzzer in the column.}
-    \label{fig:vda12}
-\end{figure}
+%     \caption{Unique coverage findings - The table summarizes the A12 values from the pairwise Vargha-Delaney A measure of effect size. Green cells indicate the probability the fuzzer in the row will outperform the fuzzer in the column.}
+%     \label{fig:vda12}
+% \end{figure}
 
 \begin{table}[!t]
     \begin{tabular}{|l|c|c|c|c|} 
@@ -147,6 +147,141 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \label{table:all-cov}
 \end{table}
 
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/freetype2-2017-waffle.png}
+        \caption{}
+        \label{fig:sub:freetype-hist-waffle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/freetype2-2017-afl.png}
+        \caption{}
+        \label{fig:sub:freetype-hist-afl}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/freetype2-2017-aflfast.png}
+        \caption{}
+        \label{fig:sub:freetype-hist-aflfast}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/freetype2-2017-aflplusplus.png}
+        \caption{}
+        \label{fig:sub:freetype-hist-aflplusplus}
+    \end{subfigure}
+
+    \caption{Histogram of execution times: freetype2-2017}
+    \label{fig:exe-freetype}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libjpeg-turbo-07-2017-waffle.png}
+        \caption{}
+        \label{fig:sub:libjpeg-hist-waffle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libjpeg-turbo-07-2017-afl.png}
+        \caption{}
+        \label{fig:sub:libjpeg-hist-afl}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libjpeg-turbo-07-2017-aflfast.png}
+        \caption{}
+        \label{fig:sub:libjpeg-hist-aflfast}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libjpeg-turbo-07-2017-aflplusplus.png}
+        \caption{}
+        \label{fig:sub:libjpeg-hist-aflplusplus}
+    \end{subfigure}
+
+    \caption{Histogram of execution times: libjpeg-turbo-07-2017}
+    \label{fig:exe-libjpeg}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libpng-1.2.56-waffle.png}
+        \caption{}
+        \label{fig:sub:libpng-hist-waffle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libpng-1.2.56-afl.png}
+        \caption{}
+        \label{fig:sub:libpng-hist-afl}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libpng-1.2.56-aflfast.png}
+        \caption{}
+        \label{fig:sub:libpng-hist-aflfast}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libpng-1.2.56-aflplusplus.png}
+        \caption{}
+        \label{fig:sub:libpng-hist-aflplusplus}
+    \end{subfigure}
+
+    \caption{Histogram of execution times: libpng-1.2.56}
+    \label{fig:exe-libpng}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libxml2-v2.9.2-waffle.png}
+        \caption{}
+        \label{fig:sub:libxml2-hist-waffle}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libxml2-v2.9.2-afl.png}
+        \caption{}
+        \label{fig:sub:libxml2-hist-afl}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libxml2-v2.9.2-aflfast.png}
+        \caption{}
+        \label{fig:sub:libxml2-hist-aflfast}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.475\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Experiments/execs/libxml2-v2.9.2-aflplusplus.png}
+        \caption{}
+        \label{fig:sub:libxml2-hist-aflplusplus}
+    \end{subfigure}
+
+    \caption{Histogram of execution times: libxml2-v2.9.2}
+    \label{fig:exe-libxml2}
+\end{figure}
 
 \begin{table}[!t]
     \begin{tabular}{|l|c|c|c|c|c|c|} 
