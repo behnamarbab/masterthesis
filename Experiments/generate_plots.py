@@ -1,4 +1,5 @@
 import os
+import csv
 import json
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,10 +34,31 @@ def find_max(data):
         maxes[d] = mx
     return maxes
 
+def generate_csv(data):
+    file_name = 'exec_stats.csv'
+    columns = data[0].keys()
+    with open(file_name, 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=columns)
+        writer.writeheader()
+        for d in data:
+            writer.writerow(d)
+
 if __name__=='__main__':
     data = load_data()
     maxes = find_max(data)
     mn = 0
+    statistical_data = []
     for d in data:
         for f in data[d]:
-            find_histogram(data[d][f]['exec_times'], 0, maxes[d], d+'-'+f)
+            sdata = {'Benchmark': d, 'Fuzzer': f}
+            # find_histogram(data[d][f]['exec_times'], 0, maxes[d], d+'-'+f)
+
+            sdata['min'] = data[d][f]['min']
+            sdata['max'] = data[d][f]['max']
+            sdata['mean'] = data[d][f]['mean']
+            sdata['median'] = data[d][f]['median']
+            sdata['std'] = data[d][f]['std']
+
+            statistical_data.append(sdata)
+
+    generate_csv(statistical_data)
