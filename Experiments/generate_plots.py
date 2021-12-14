@@ -53,11 +53,11 @@ if __name__=='__main__':
             sdata = {'Benchmark': d, 'Fuzzer': f}
             # find_histogram(data[d][f]['exec_times'], 0, maxes[d], d+'-'+f)
 
-            sdata['min'] = data[d][f]['min']
-            sdata['max'] = data[d][f]['max']
-            sdata['mean'] = data[d][f]['mean']
-            sdata['median'] = data[d][f]['median']
-            sdata['std'] = data[d][f]['std']
+            sdata['min'] = data[d][f]['min']/1000
+            sdata['max'] = data[d][f]['max']/1000
+            sdata['mean'] = data[d][f]['mean']/1000
+            sdata['median'] = data[d][f]['median']/1000
+            sdata['std'] = data[d][f]['std']/1000
 
             statistical_data.append(sdata)
 

@@ -117,19 +117,17 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \label{fig:vda12}
 \end{figure}
 
-
-
 \begin{table}[!t]
     \begin{tabular}{|l|c|c|c|c|} 
         \hline
-        \textbf{Fuzzer}         & \textbf{Benchmarks} & \textbf{Coverage STD} & \textbf{Mean Coverage} & \textbf{Max Coverage} \\
+        \textbf{Fuzzer}         & \textbf{Benchmarks} & \begin{tabular}[c]{@{}c@{}}\textbf{Coverage}\\ \textbf{STD}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Mean}\\ \textbf{Coverage}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Max}\\ \textbf{Coverage}\end{tabular} \\
         \hline
         \rowcolor{gray!20}      & freetype2 & 673.115 & 18968.3 & 19745.0 \\ \cline{2-5}
                                 & libjpeg   & 155.094 &  3454.6 &  3628.0 \\ \cline{2-5}
                                 \rowcolor{gray!20} & libpng    &  	0.577 &  1941.6 &  1942.0 \\ \cline{2-5}
                                 & libxml    & 225.646 & 11246.3 & 11504.0 \\ \cline{2-5}
         \hline
-        \rowcolor{gray!20}{4} \multirow{4}{*}{AFL}    & freetype2 & 146.550 & 18520.0 & 18612.0 \\ \cline{2-5}
+        \rowcolor{gray!20} \multirow{4}{*}{AFL}    & freetype2 & 146.550 & 18520.0 & 18612.0 \\ \cline{2-5}
                                 & libjpeg   &  51.156 &  3352.0 &  3411.0 \\ \cline{2-5}
                                 & libpng    &   2.645 &  1943.0 &  1945.0 \\ \cline{2-5}
                                 & libxml    & 355.017 & 11456.3 & 11851.0 \\ \cline{2-5}
@@ -145,10 +143,40 @@ Based on the results collected after each trial, fuzzbench also measures the uni
                                 & libxml    & 84.571  & 11334.3 & 11431.0 \\ \cline{2-5}
         \hline
     \end{tabular}
-    \caption{Fuzzers and benchmarks}
-    \label{table:all}
+    \caption{Coverage stats}
+    \label{table:all-cov}
 \end{table}
 
+
+\begin{table}[!t]
+    \begin{tabular}{|l|c|c|c|c|c|c|} 
+        \hline
+        $Fuzzer$                            & $Benchmarks$ & $Min_{(ms)}$ & $Max_{(ms)}$ & $Mean_{(ms)}$ & $Median_{(ms)}$ & $STD$ \\
+        \hline
+        \rowcolor{gray!20} \multirow{4}{*}{Waffle} & freetype2           & 4.2      & 155.0      & 5.7       & 5.2                & 5.647 \\ \cline{2-7}
+                                & libjpeg   & 3.1 &  81.3 &  4.6 & 3.9 & 2.884 \\ \cline{2-7}
+                                & libpng    & 2.8 &  295.1 & 12.1 & 3.9 & 31.245 \\ \cline{2-7}
+                                & libxml    & 5.2 & 188.0 & 8.3 & 6.2 & 13.071\\ \cline{2-7}
+        \hline
+        \rowcolor{gray!20} \multirow{4}{*}{AFL}    & freetype2 & 4.3 & 12.7 & 5.2 & 5.0 & 0.668 \\ \cline{2-7}
+                                & libjpeg   &  3.3 &  38.2 &  4.7 & 3.9 & 2.674 \\ \cline{2-7}
+                                & libpng    &   2.7 & 34.8 &  5.0 & 3.8 & 3.882 \\ \cline{2-7}
+                                & libxml    & 6.0 & 85.0 & 7.7 & 7.5 & 1.551 \\ \cline{2-7}
+        \hline
+        \rowcolor{gray!20} \multirow{4}{*}{AFLFast}& freetype2 &  5.4 & 14.3 & 6.7 & 6.5 & 0.831 \\ \cline{2-7}
+                                & libjpeg   &  3.3 &  71.6 &  5.3 & 4.1 & 4.374 \\ \cline{2-7}
+                                & libpng    &  2.9 &  64.9 &  4.9 & 3.8 & 3.967 \\ \cline{2-7}
+                                & libxml    &  5.2 & 67.5 & 6.2   & 6.0 & 1.064 \\ \cline{2-7}
+        \hline
+        \rowcolor{gray!20} \multirow{4}{*}{AFL++}  & freetype2 & 3.9 & 23.1 & 5.7 & 4.9 & 1.682 \\ \cline{2-7}
+                                & libjpeg   & 3.0 &  258.8 &  4.4 & 3.7 & 6.025 \\ \cline{2-7}
+                                & libpng    & 2.8 &  65.1 &  4.1  & 3.5 & 3.003 \\ \cline{2-7}
+                                & libxml    & 5.0  & 100.8 & 6.1  & 5.9 & 1.781 \\ \cline{2-7}
+        \hline
+    \end{tabular}
+    \caption{Execution times stats}
+    \label{table:all-exe}
+\end{table}
 
 
 
