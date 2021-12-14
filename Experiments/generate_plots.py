@@ -14,9 +14,13 @@ def load_data(json_file='parsed_data_nobucket.json'):
 def find_histogram(lst, mn, mx, title):
     # arr = np.array(lst)
     plt.clf()
+    lst=[l//1000 for l in lst]
+    mx //= 1000
+    mn //= 1000
     plt.hist(lst, range=[mn, mx], bins=150)
-    plt.xlabel('Execution times')
+    plt.xlabel('Execution times (ms)')
     plt.ylabel('Frequency')
+    plt.yscale('log')
     plt.title(title)
     plt.savefig(os.path.join('execs', title+'.png'))
 
