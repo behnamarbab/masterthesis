@@ -18,11 +18,13 @@ def find_histogram(lst, mn, mx, title):
     lst=[l//1000 for l in lst]
     mx //= 1000
     mn //= 1000
+    fig, ax = plt.subplots()
     plt.hist(lst, range=[mn, mx], bins=150)
     plt.xlabel('Execution times (ms)')
     plt.ylabel('Frequency')
     plt.yscale('log')
     plt.title(title)
+    plt.text(0.87, 0.92, 'Total: ' + str(len(lst)), horizontalalignment='center', verticalalignment='center', transform = ax.transAxes, fontsize=12)
     plt.savefig(os.path.join('execs', title+'.png'))
 
 def find_max(data):
@@ -51,7 +53,7 @@ if __name__=='__main__':
     for d in data:
         for f in data[d]:
             sdata = {'Benchmark': d, 'Fuzzer': f}
-            # find_histogram(data[d][f]['exec_times'], 0, maxes[d], d+'-'+f)
+            find_histogram(data[d][f]['exec_times'], 0, maxes[d], d+'-'+f)
 
             sdata['min'] = data[d][f]['min']/1000
             sdata['max'] = data[d][f]['max']/1000
