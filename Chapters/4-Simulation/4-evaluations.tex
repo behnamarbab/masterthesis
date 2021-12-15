@@ -45,7 +45,7 @@ Figure \ref{fig:cov-growth} shows the code coverage growth of the fuzzers, while
 
 \subsubsection{Unique code coverage findings}
 
-Based on the results collected after each trial, fuzzbench also measures the uniqueness of the fuzzer's findings. Figure \ref{fig:cov-growth-uniq} shows the number of code regions which were uniquely covered in a pairwise fashion. The coloring specifies the significance of the differences; the darker the color is, the more findings are uniquely found by the fuzzer on bottom.
+Based on the results collected after each trial, fuzzbench also measures the uniqueness of the fuzzer's findings. Figure \ref{fig:cov-uniq} shows the number of code regions which were uniquely covered in a pairwise fashion. The coloring specifies the significance of the differences; the darker the color is, the more findings are uniquely found by the fuzzer on bottom.
 
 % ! Should explain more?
 
@@ -80,7 +80,7 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \end{subfigure}
 
     \caption{Unique coverage findings}
-    \label{fig:cov-growth-uniq}
+    \label{fig:cov-uniq}
 \end{figure}
 
 % \subsubsection{Vargha-Delaney's A12 measurements}
@@ -189,7 +189,7 @@ Table \ref{table:all-cov} contains the coverage stats of the experiments. These 
 
 \subsection{Execution time}
 
-The performance of the fuzzers, based on execution time, is compared with one (out of three) histogram of an instance of the tests (\cref{Figure:exe-freetype,Figure:exe-libjpeg,Figure:exe-libpng,Figure:exe-libxml}).
+The performance of the fuzzers, based on execution times, is shown in histograms of instances of the tests (\cref{Figure:exe-freetype,Figure:exe-libjpeg,Figure:exe-libpng,Figure:exe-libxml}). In \cref{Figure:exe-freetype,Figure:exe-libpng,Figure:exe-libxml}, although the total number of findings in Waffle is less than AFL's, the Waffle's findings are spread more toward higher execution times.
 
 \begin{figure}
     \centering
@@ -328,6 +328,8 @@ The performance of the fuzzers, based on execution time, is compared with one (o
     \label{Figure:exe-libxml}
 \end{figure}
 
+Table \ref{table:all-exe} has the performance of \textbf{one} trial of each test, based on the execution time. 
+
 \begin{table}[!t]
     \begin{adjustbox}{angle=90}
         {\setlength{\extrarowheight}{1ex}%
@@ -365,4 +367,3 @@ The performance of the fuzzers, based on execution time, is compared with one (o
     \caption{Execution times stats}
     \label{table:all-exe}
 \end{table}
-
