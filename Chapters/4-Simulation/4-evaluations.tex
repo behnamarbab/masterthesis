@@ -147,33 +147,36 @@ Based on the results collected after each trial, fuzzbench also measures the uni
 %     \label{table:all-cov}
 % \end{table}
 
+Table \ref{table:all-cov} contains the coverage stats of the experiments. These stats describe an average coverage performance (on three trials) for each fuzzer on benchmarks. 
+
 \begin{table}[!t]
+    \centering
     \begin{tabular}{|c|c|c|c|c|} 
         \hline
         \textbf{Fuzzer}         & \textbf{Benchmarks} & \begin{tabular}[c]{@{}c@{}}\textbf{Coverage}\\ \textbf{STD}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Mean}\\ \textbf{Coverage}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Max}\\ \textbf{Coverage}\end{tabular} \\
         \hline
-        \rowcolor{gray!20} \multirow{4}{*}{freetype}     
+        \multirow{4}{*}{freetype}     
         & Waffle & 673.115 & 18968.3 & 19745.0 \\ \cline{2-5}
         & AFL & 146.550 & 18520.0 & 18612.0 \\ \cline{2-5}
         & AFLFast &  59.732 & 17508.0 & 17576.0 \\ \cline{2-5}
         & AFL++ & 694.859 & 20961.3 & 21625.0 \\ \cline{2-5}
         
         \hline
-        \rowcolor{gray!20} \multirow{4}{*}{libjpeg}    
+        \multirow{4}{*}{libjpeg}    
         & Waffle   & 155.094 &  3454.6 &  3628.0 \\ \cline{2-5}
         & AFL   &  51.156 &  3352.0 &  3411.0 \\ \cline{2-5}
         & AFLFast   &  41.761 &  3354.0 &  3402.0 \\ \cline{2-5}
         & AFL++   & 195.438 &  3634.6 &  3749.0 \\ \cline{2-5}
         
         \hline
-        \rowcolor{gray!20} \multirow{4}{*}{libpng}
+        \multirow{4}{*}{libpng}
         & Waffle    &  	0.577 &  1941.6 &  1942.0 \\ \cline{2-5}
         & AFL    &   2.645 &  1943.0 &  1945.0 \\ \cline{2-5}
         & AFLFast    &   0.577 &  1942.3 &  1943.0 \\ \cline{2-5}
         & AFL++    &  16.258 &  2092.6 &  2111.0 \\ \cline{2-5}
         
         \hline
-        \rowcolor{gray!20} \multirow{4}{*}{libxml}  
+        \multirow{4}{*}{libxml}  
         & Waffle    & 225.646 & 11246.3 & 11504.0 \\ \cline{2-5}
         & AFL    & 355.017 & 11456.3 & 11851.0 \\ \cline{2-5}
         & AFLFast    & 152.346 & 10953.6 & 11093.0 \\ \cline{2-5}
@@ -184,7 +187,9 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \label{table:all-cov}
 \end{table}
 
+\subsection{Execution time}
 
+The performance of the fuzzers, based on execution time, is compared with one (out of three) histogram of an instance of the tests (\cref{Figure:exe-freetype,Figure:exe-libjpeg,Figure:exe-libpng,Figure:exe-libxml}).
 
 \begin{figure}
     \centering
@@ -217,7 +222,7 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \end{subfigure}
 
     \caption{Histogram of execution times: freetype2-2017}
-    \label{fig:exe-freetype}
+    \label{Figure:exe-freetype}
 \end{figure}
 
 
@@ -252,7 +257,7 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \end{subfigure}
 
     \caption{Histogram of execution times: libjpeg-turbo-07-2017}
-    \label{fig:exe-libjpeg}
+    \label{Figure:exe-libjpeg}
 \end{figure}
 
 \begin{figure}
@@ -286,7 +291,7 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \end{subfigure}
 
     \caption{Histogram of execution times: libpng-1.2.56}
-    \label{fig:exe-libpng}
+    \label{Figure:exe-libpng}
 \end{figure}
 
 \begin{figure}
@@ -320,7 +325,7 @@ Based on the results collected after each trial, fuzzbench also measures the uni
     \end{subfigure}
 
     \caption{Histogram of execution times: libxml2-v2.9.2}
-    \label{fig:exe-libxml2}
+    \label{Figure:exe-libxml}
 \end{figure}
 
 \begin{table}[!t]

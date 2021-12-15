@@ -1,6 +1,0 @@
-\section{Performance Bottlenecks of Waffle}
-\label{sec:neck}
-
-As we explained in Chapter \ref{chap:3}, after each execution of the target program, Waffle runs the function \texttt{has\_new\_icnt()} after \texttt{has\_new\_bits()}, for detecting the changes of the instruction counters on each edge. \texttt{has\_new\_icnt()} helps Waffle prioritize the edges that their instruction counters increase faster.
-
-To investigate the performance changes for the insertion of \texttt{has\_new\_icnt()}, we ran this function on a sparse array of 32bit integers. On the other hand, we ran the function \texttt{has\_new\_bits()} on a sparse array of 8bit integers, for the same number of iterations. The results showed that the trial of \texttt{has\_new\_icnt()} takes \textbf{$~15000$} milliseconds, while the mentioned execution of \texttt{has\_new\_bits()} takes ~1500 milliseconds, on the local computer. As a result, the execution of both of the functions consecutively, takes \textbf{11x} longer.
