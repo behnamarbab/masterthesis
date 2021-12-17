@@ -1,14 +1,10 @@
 \section{Summary of contributions}
 \label{sec:1.2}
 
-The fundamental goal of this thesis is to suggest a technique developed on AFL to identify the vulnerabilities related to excessive resource usages. The summary of our contributions follows:
-
-% Improve fuzzing using llvm visitors.
+In this thesis, we introduce a fuzzer which searches for states of program with a high load on available resources. The main contributions of our work are as follows:
 
 \begin{itemize}
-    \item For \textbf{instrumentations}, we have proposed a technique of instrumenting a program to log the usage of resources in runtime. To collect the information, we leverage the \textit{visitor} functions that LLVM project provides. We have empirically proved that the new instrumentation does not bring a noticeable overhead.
-    
-    \item We have changed the fuzzing procedure to consider the new instrumentations and enhance the generations of inputs with a higher number of executions of the specified visited instructions.
-    
-    \item We integerate the instrumentations and fuzzing procedure on top of AFL. Our experiments have shown an improvement in the code coverage of AFL. As the current version of our fuzz testing has introduced new bottlenecks, we may improve the code coverage more significantly. The source code is available on github \cite{wafl_git}.
+    \item Injecting fuzzing-dependent instructions for monitoring the loads of a targeted program.
+    \item An algorithm for increasing the resource usages, and as a result causing exhaustive executions.
+    \item Testing our work with state-of-the-art fuzzers, and evaluate the benefit of using our fuzzer. 
 \end{itemize}
