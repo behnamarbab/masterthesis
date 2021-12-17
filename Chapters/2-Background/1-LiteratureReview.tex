@@ -9,9 +9,11 @@ According to the \textit{Open Web Application Security Project (OWASP)}: \say{A 
 
 To exploit a vulnerability, an attacker calls an execution containing the bug and redirects the program's flow with appropriate inputs. An exploitable vulnerability may escalate privileges, leak information, modify/destroy protected data, stop services, execute malicious code, etc. \cite{chang2011trend}. An analysis of the program may prevent the exposure of vulnerabilities and stop further harm. Various techniques are used to identify weaknesses and vulnerabilities of software. Techniques such as \textit{static analysis}, fuzzing, taint analysis and symbolic execution, etc. are the most common techniques that can be used cooperatively for error detection \cite{su2016vuldetection}. The static analysis evaluates the source code or binary to expose the vulnerabilities without executing the program.
 
-\input{Codes/Chapter2/bubble.tex}
+\subsection{Control Flow Graph}
 
 To investigate a program for bugs, a model that helps the research is \textbf{Control Flow Graph (CFG)}. CFG is a directed graph whose nodes are the basic blocks of the program, and its edges are the flow path of the execution between two consecutive basic blocks. For instance, the Figure \ref{fig:cfg} illustrates the CFG for \textit{bubblesort} algorithm (Algorithm \ref{algo:bubble}). The branches in CFG split after a \textit{conditional instruction} and a relevant \textit{jump instruction}.
+
+\input{Codes/Chapter2/bubble.tex}
 
 An execution processes a path (sequence) of instructions from an entry to any exit location of the program. For instance, consider Figure \ref{fig:cfg-heat} as a CFG illustrating the executed paths of 1000 trials of the program's execution. The numbers in the basic blocks indicate the number of times each basic block is visited. A path such as $A \rightarrow B \rightarrow E \rightarrow H \rightarrow I$ has been explored more than other execution paths. Basic block $D$ is visited occasionally and the edge $D \rightarrow I$ directly goes to the Exit, representing bugs in basic block $D$. These 1000 trials have discovered 9 seperable basic blocks, but it does not imply that there is no other basic blocks or edges revealed after more trials. Code coverage measures number of basic blocks which could be reached in an experiment of trials.
 
