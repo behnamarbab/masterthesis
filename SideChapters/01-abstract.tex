@@ -1,6 +1,6 @@
 %%-------------Abstract-----------------
 \doublespacing
 \chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract} Start writing from here.
-(not more than 350 words for the doctoral degree and not more than
-150 words for the masters degree).
+\addcontentsline{toc}{chapter}{Abstract} 
+
+Fuzz testing helps software security researchers investigate the existing vulnerabilities within programs, in an automated fashion. AFL is a whitebox coverage-based fuzzer which leverages on genetic algorithm (GA) to search for vulnerabilities inside a program. The inputs to the program, which may affect the program's execution paths, are considered as the individuals of GA, and the content of the files explain the genome. AFL investigates code coverages for the program's executions on each input, and the findings with new coverage information are selected for more testing. This technique guides the fuzzer to discover more regions of code. Waffle, is an AFL-based fuzzer which searches for executions with higher resource usages, such as execution time. Waffle searches for files which not only discover new regions of code, but also require more resources to complete a run. Waffle modifies the instrumentation and fuzzing modules of AFL, with an intention of storing resource/time-consuming executions. To confirm the correctness of the modifications, the binaries are assessed, and the fuzzing procedure is monitored from an status screen. Finally, the performance of Waffle is compared to AFL-based fuzzers, and it is shown that Waffle discovers exhaustive executions effectively.
