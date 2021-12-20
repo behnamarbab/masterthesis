@@ -45,7 +45,7 @@ Figure \ref{fig:cov-growth} shows the code coverage growth of the fuzzers, while
 
 \subsubsection{Unique code coverage findings}
 
-Based on the results collected after each trial, fuzzbench also measures the uniqueness of the fuzzer's findings. Figure \ref{fig:cov-uniq} shows the number of code regions which were uniquely covered in a pairwise fashion. The coloring specifies the significance of the differences; the darker the color is, the more findings are uniquely found by the fuzzer on bottom.
+Based on the results collected after each trial, fuzzbench also measures the uniqueness of the fuzzer's findings. Figure \ref{fig:cov-uniq} shows the number of code regions that were uniquely covered in a pairwise fashion. The coloring specifies the significance of the differences; the darker the color is, the more findings are uniquely found by the fuzzer on bottom.
 
 % ! Should explain more?
 
@@ -155,31 +155,31 @@ Table \ref{table:all-cov} contains the coverage stats of the experiments. These 
         \hline
         \textbf{Fuzzer}         & \textbf{Benchmarks} & \begin{tabular}[c]{@{}c@{}}\textbf{Coverage}\\ \textbf{STD}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Mean}\\ \textbf{Coverage}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Max}\\ \textbf{Coverage}\end{tabular} \\
         \hline
-        \multirow{4}{*}{freetype}     
-        & Waffle & 673.115 & 18968.3 & 19745.0 \\ \cline{2-5}
+        \rowcolor{lightgray}\multirow[t]{4}{*}{\cellcolor{white}freetype}     
+         & Waffle & 673.115 & 18968.3 & 19745.0 \\ \cline{2-5}
         & AFL & 146.550 & 18520.0 & 18612.0 \\ \cline{2-5}
-        & AFLFast &  59.732 & 17508.0 & 17576.0 \\ \cline{2-5}
+        \rowcolor{lightgray} \cellcolor{white} & AFLFast &  59.732 & 17508.0 & 17576.0 \\ \cline{2-5}
         & AFL++ & 694.859 & 20961.3 & 21625.0 \\ \cline{2-5}
         
         \hline
-        \multirow{4}{*}{libjpeg}    
+        \rowcolor{lightgray} \multirow[t]{4}{*}{\cellcolor{white}libjpeg}    
         & Waffle   & 155.094 &  3454.6 &  3628.0 \\ \cline{2-5}
         & AFL   &  51.156 &  3352.0 &  3411.0 \\ \cline{2-5}
-        & AFLFast   &  41.761 &  3354.0 &  3402.0 \\ \cline{2-5}
+        \rowcolor{lightgray} \cellcolor{white} & AFLFast   &  41.761 &  3354.0 &  3402.0 \\ \cline{2-5}
         & AFL++   & 195.438 &  3634.6 &  3749.0 \\ \cline{2-5}
         
         \hline
-        \multirow{4}{*}{libpng}
+        \rowcolor{lightgray} \multirow[t]{4}{*}{\cellcolor{white}libpng}
         & Waffle    &  	0.577 &  1941.6 &  1942.0 \\ \cline{2-5}
         & AFL    &   2.645 &  1943.0 &  1945.0 \\ \cline{2-5}
-        & AFLFast    &   0.577 &  1942.3 &  1943.0 \\ \cline{2-5}
+        \rowcolor{lightgray} \cellcolor{white} & AFLFast    &   0.577 &  1942.3 &  1943.0 \\ \cline{2-5}
         & AFL++    &  16.258 &  2092.6 &  2111.0 \\ \cline{2-5}
         
         \hline
-        \multirow{4}{*}{libxml}  
+        \rowcolor{lightgray} \multirow[t]{4}{*}{\cellcolor{white}libxml}  
         & Waffle    & 225.646 & 11246.3 & 11504.0 \\ \cline{2-5}
         & AFL    & 355.017 & 11456.3 & 11851.0 \\ \cline{2-5}
-        & AFLFast    & 152.346 & 10953.6 & 11093.0 \\ \cline{2-5}
+        \rowcolor{lightgray} \cellcolor{white} & AFLFast    & 152.346 & 10953.6 & 11093.0 \\ \cline{2-5}
         & AFL++    & 84.571  & 11334.3 & 11431.0 \\ \cline{2-5}
         \hline
     \end{tabular}
@@ -337,28 +337,28 @@ Table \ref{table:all-exe} has the performance of \textbf{one} trial of each test
             \hline
             $Benchmarks$   & $Fuzzer$ & $Min_{(ms)}$ & $Max_{(ms)}$ & $Mean_{(ms)}$ & $Median_{(ms)}$ & $STD$ & $Total$ \\
             \hline
-            \rowcolor{gray!20} \multirow{4}{*}{freetype} 
+            \rowcolor{lightgray} \cellcolor{white} \multirow[t]{4}{*}{freetype} 
             & Waffle & 4.2 & 155.0 & 5.7 & 5.2 & 5.647 & 8201\\ \cline{2-8}
             & AFL & 4.3 & 12.7 & 5.2 & 5.0 & 0.668 & 8544 \\ \cline{2-8}
-            & AFLFast & 5.4 & 14.3 & 6.7 & 6.5 & 0.831 & 7647 \\ \cline{2-8}
+            \rowcolor{lightgray} \cellcolor{white} & AFLFast & 5.4 & 14.3 & 6.7 & 6.5 & 0.831 & 7647 \\ \cline{2-8}
             & AFL++ & 3.9 & 23.1 & 5.7 & 4.9 & 1.682 & 7056 \\ \cline{2-8}
             \hline
-            \rowcolor{gray!20} \multirow{4}{*}{libjpeg}
+            \rowcolor{lightgray} \cellcolor{white} \multirow[t]{4}{*}{libjpeg}
             & Waffle   & 3.1 & 81.3 & 4.6 & 3.9 & 2.884 & 1637 \\ \cline{2-8}
             & AFL   & 3.3 & 38.2 & 4.7 & 3.9 & 2.674 & 1729 \\ \cline{2-8}
-            & AFLFast   & 3.3 & 71.6 & 5.3 & 4.1 & 4.374 & 1665 \\ \cline{2-8}
+            \rowcolor{lightgray} \cellcolor{white} & AFLFast   & 3.3 & 71.6 & 5.3 & 4.1 & 4.374 & 1665 \\ \cline{2-8}
             & AFL++   & 3.0 & 258.8 & 4.4 & 3.7 & 6.025 & 2307 \\ \cline{2-8}
             \hline
-            \rowcolor{gray!20} \multirow{4}{*}{libpng}
+            \rowcolor{lightgray} \cellcolor{white} \multirow[t]{4}{*}{libpng}
             & Waffle    & 2.8 & 295.1 & 12.1 & 3.9 & 31.245 & 643 \\ \cline{2-8}
             & AFL    & 2.7 & 34.8 & 5.0 & 3.8 & 3.882 & 629 \\ \cline{2-8}
-            & AFLFast    & 2.9 & 64.9 & 4.9 & 3.8 & 3.967 & 635 \\ \cline{2-8}
+            \rowcolor{lightgray} \cellcolor{white} & AFLFast    & 2.9 & 64.9 & 4.9 & 3.8 & 3.967 & 635 \\ \cline{2-8}
             & AFL++    & 2.8 & 65.1 & 4.1 & 3.5 & 3.003 & 684 \\ \cline{2-8}
             \hline
-            \rowcolor{gray!20} \multirow{4}{*}{libxml} 
+            \rowcolor{lightgray} \cellcolor{white} \multirow[t]{4}{*}{libxml} 
             & Waffle    & 5.2 & 188.0 & 8.3 & 6.2 & 13.071 & 5369 \\ \cline{2-8}
             & AFL    & 6.0 & 85.0 & 7.7 & 7.5 & 1.551 & 6757 \\ \cline{2-8}
-            & AFLFast    & 5.2 & 67.5 & 6.2 & 6.0 & 1.064 & 6078 \\ \cline{2-8}
+            \rowcolor{lightgray} \cellcolor{white} & AFLFast    & 5.2 & 67.5 & 6.2 & 6.0 & 1.064 & 6078 \\ \cline{2-8}
             & AFL++    & 5.0 & 100.8 & 6.1 & 5.9 & 1.781 & 6426 \\ \cline{2-8}
             \hline
         \end{tabular}

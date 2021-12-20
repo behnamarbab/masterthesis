@@ -108,7 +108,7 @@ AFL analyzes the cases using the above provided functions, and the best queue en
 
 % MAYBE: explain the structure of top_rated[] entries
 
-% AFL's static instrumentation starts with the allocation of a shared memory. This shared memory stands between AFL's fuzzer and each program's execution. Everytime the instrumentated program is run, the injected instructions fill the shared memory with the coverage status of the execution. After the termination of the process, AFL continues its fuzzing procedure. Shared memory is updated with new execution's data, and AFL can use it to evaluate the performance of the recent execution. The runtime initialization recipe is saved in \texttt{llvm-mode/waffle-llvm-rt.o.c} of the project.
+% AFL's static instrumentation starts with the allocation of a shared memory. This shared memory stands between AFL's fuzzer and each program's execution. Everytime the instrumented program is run, the injected instructions fill the shared memory with the coverage status of the execution. After the termination of the process, AFL continues its fuzzing procedure. Shared memory is updated with new execution's data, and AFL can use it to evaluate the performance of the recent execution. The runtime initialization recipe is saved in \texttt{llvm-mode/waffle-llvm-rt.o.c} of the project.
 
 % An snippet of the AFL's instrumentation pass is shown in Listing \ref{lst:afl-llvm}.
 

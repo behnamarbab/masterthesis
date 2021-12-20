@@ -1,10 +1,11 @@
 \section{Summary of contributions}
 \label{sec:1.2}
 
-In this thesis, we introduce a fuzzer which searches for states of program with a high load on available resources. The main contributions of our work are as follows:
+In this thesis, we introduce a fuzzer which searches for states of a program with a high load on available resources. The main contributions of our work are as follows:
 
 \begin{itemize}
+    \item Waffle: Waffle is a whitebox performance-guided AFL-based fuzzer for guiding the corpus-generation based on coverage and performance features. Waffle stands for What An Amazing AFL (WAAAFL)! The introduced fuzzer is designed to collect the usages of any type of instruction in a run. Waffle can focus on a set of one or more instructions, and searches for the inputs which maximizes the occurrences of the targeted instructions. The coverage information derived from AFL remains the exploration methology of AFL, and the performance-guidance exploits the discovered regions by finding excessive resource usages.
     \item Injecting fuzzing-dependent instructions for monitoring the execution of a targeted program, so that a run with a high resource usage is distinguishable.
     \item An algorithm for increasing the resource usages during testing of the program, which leads to the discovery of exhaustive executions.
-    \item Testing our work with state-of-the-art fuzzers, and evaluate the benefit of using our fuzzer. 
+    \item Testing our work with state-of-the-art fuzzers, and evaluating the benefit of using our fuzzer. 
 \end{itemize}

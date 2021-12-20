@@ -29,12 +29,12 @@ AFL uses both dynamic and static instrumentation to profile executions; the firs
     \label{fig:llvm}
 \end{figure}
 
-AFL utilizes the compilation \textit{passes} of Clang with a custom \textit{module pass}. Passes are the modules performing the transformations and optimizations of a compilation. A pass builds the analysis results that are used by these transformations, and a sequence of passes construct the compiler. AFL's instrumentation takes the whole program as one module and analyses it to detect the basic blocks.
+AFL utilizes the compilation \textit{passes} of Clang with a custom \textit{module pass}. Passes are the modules performing the transformations and optimizations of a compilation. A pass builds the analysis results that are used by these transformations, and a sequence of passes construct the compiler. AFL's instrumentation takes the whole program as one module and analyzes it to detect the basic blocks.
 
 \subsubsection{Static Instrumentation and Code Coverage}
 \label{instrumentation}
 
-AFL's static instrumentation starts with the allocation of a shared memory. This shared memory stands between AFL's fuzzer and each program's execution. Everytime the instrumentated program is run, the injected instructions fill the shared memory with the coverage status of the execution. After the termination of the process, AFL continues its fuzzing procedure. Shared memory is updated with new execution's data, and AFL can use it to evaluate the performance of the recent execution. The runtime initialization recipe is saved in \texttt{llvm-mode/waffle-llvm-rt.o.c} of the project.
+AFL's static instrumentation starts with the allocation of a shared memory. This shared memory stands between AFL's fuzzer and each program's execution. Everytime the instrumented program is run, the injected instructions fill the shared memory with the coverage status of the execution. After the termination of the process, AFL continues its fuzzing procedure. Shared memory is updated with new execution's data, and AFL can use it to evaluate the performance of the recent execution. The runtime initialization recipe is saved in \texttt{llvm-mode/waffle-llvm-rt.o.c} of the project.
 
 \begin{lstlisting}[language=C++,style=CodeStyle,label={lst:hash},caption={Select element and update in shared\_mem}]
     cur_location = <COMPILE_TIME_RANDOM>;

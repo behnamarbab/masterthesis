@@ -46,6 +46,8 @@
 %
 %examining board including name, degree department or field starting from Chair
 \def\examboard#1{\gdef\@examboard{#1}}
+
+\def\examboards#1{\gdef\@examboards{#1}}
 %
 %external examiner including name, degree, department or field and Institution
 \def\externalexam#1{\gdef\@externalexam{#1}}
@@ -76,6 +78,7 @@
 \begin{tabular}{l l}
 Supervisor(s): & \@supervisor \\
 Examining Board: & \@examboard \\
+& \@examboards \\
 External Examiner: & \@externalexam
 %\@externalexam
 \end{tabular}

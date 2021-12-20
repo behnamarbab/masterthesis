@@ -2,7 +2,7 @@
 \label{sec:3-3}
 
 % -T: Introduce fuzzgoat and it's details
-In this section, we assess the performance of Waffle by fuzzing \textit{fuzzgoat}. Fuzzgoat is an open source C project with predesigned vulnerabilities inside it \cite{fuzzgoat}. Waffle generates a C-compiler program (\texttt{./waffle-clang}) based on \texttt{clang} which maintains the indicated instrumentation. We investigate the instrumentated binary (call it \texttt{./fuzzgoat-wfl}) using \textit{radare2}. Next, Waffle gets \texttt{./fuzzgoat-wfl} as the target program, and the procedure continues fuzzing until we stop it. 
+In this section, we assess the performance of Waffle by fuzzing \textit{fuzzgoat}. Fuzzgoat is an open source C project with predesigned vulnerabilities inside it \cite{fuzzgoat}. Waffle generates a C-compiler program (\texttt{./waffle-clang}) based on \texttt{clang} which maintains the indicated instrumentation. We investigate the instrumented binary (call it \texttt{./fuzzgoat-wfl}) using \textit{radare2}. Next, Waffle gets \texttt{./fuzzgoat-wfl} as the target program, and the procedure continues fuzzing until we stop it. 
 
 % -T: Apply instrumentation, explain radare2 and it's application on fuzzgoat
 
@@ -25,13 +25,13 @@ In this section, we assess the performance of Waffle by fuzzing \textit{fuzzgoat
    \label{fig:fuzzgoat-inst}
 \end{figure}
 
-This command results in \texttt{./fuzzgoat-wfl} binary file. We pass this file to \textit{radare2} to confirm the instrumentation. Figure \ref{fig:fuzzgoat-inst} illustrates one of the basic blocks collected from the program, and different sections of the seleced basic block are specified as well. The orange sections, locate and COV, are inherited from AFL's implementation, and Waffle leverages on these parts to find the next edge index, and update the trace\_bits of the program. Next, the instructions for measuring the program's ERU come after. As stated on the figure, the first three instructions try to load the content of the edge-index of the ERU array. The loaded value is then increased by the precalculated value of the estimated resource usage of the current basic block. Then, the result of the addition is passed back into the array and updates the content of assigned pointer.
+This command results in \texttt{./fuzzgoat-wfl} binary file. We pass this file to \textit{radare2} to confirm the instrumentation. Figure \ref{fig:fuzzgoat-inst} illustrates one of the basic blocks collected from the program, and different sections of the selected basic block are specified as well. The orange sections, locate and COV, are inherited from AFL's implementation and Waffle leverages on these parts to find the next edge index, and update the trace\_bits of the program. Next, the instructions for measuring the program's ERU come after. As stated on the figure, the first three instructions try to load the content of the edge-index of the ERU array. The loaded value is then increased by the precalculated value of the estimated resource usage of the current basic block. Then, the result of the addition is passed back into the array and updates the content of assigned pointer.
 
 % -T: Explain the new status screen
 
 \subsection{Fuzzing}
 
-The steps for running Waffle are similiar to AFL; \texttt{./waffle-fuzz} gets the input and output directories, in addition to the instrumentated program:
+The steps for running Waffle are similar to AFL; \texttt{./waffle-fuzz} gets the input and output directories, in addition to the instrumented program:
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:wafl-fuzzgoat-fuzz}]
    cd fuzzgoat/
