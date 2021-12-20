@@ -84,10 +84,10 @@ External Examiner: & \@externalexam
 \end{tabular}
 \end{table}
 \begin{center}
-\normalfont\normalsize\acceptnote\\
+% \normalfont\normalsize\acceptnote\\
 % \vskip 0.5em
-\normalfont\normalsize\dean\\
-\vskip 2em
+% \normalfont\normalsize\dean\\
+\vskip 10em
 \normalfont\normalsize\bfseries\school\\
 \vskip 0.5em
 \normalfont\normalsize\bfseries\@date\\
