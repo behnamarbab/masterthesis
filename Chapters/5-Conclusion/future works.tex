@@ -6,13 +6,14 @@ We explain some possible future works in three domains:
 \begin{enumerate}
     \item Instrumentation:
 
-        The usage of a performance array slows down the execution of the program and the analysis of executions in the fuzzing phase. Possible suggested enhancements for mitigating this problem are enriching the instrumentation with more pre-compilation analysis of the binary, and reducing the size of the shared memory for saving the performance data.
+        The usage of a performance array slows down the execution of the program and the analysis of executions in the fuzzing phase. Possible suggested enhancements for mitigating this problem are enriching the instrumentation with more pre-compilation analysis of the binary and reducing the size of the shared memory for saving the performance data.
         
     \item Fuzzing:
     
-        The processing of the inputs is impacted by evaluating the shared memory. In AFL, the performance of the executions' analysis is enhanced by decreasing the comparisons made while checking the shared array, yet, Waffle compares all 4-bytes cells of the shared array to find new fitnesses. In addition, as Waffle is looking for resource (time) consuming executions, the growth of the queue entries, and the execution of those entries takes longer duration. Refering to this problem, an efficient less number of executions for testing resource-consuming executions would help the fuzzer. 
+        The processing of the inputs is impacted by evaluating the shared memory. In AFL, the performance of the executions' analysis is enhanced by decreasing the comparisons made while checking the shared array, yet, Waffle compares all 4-bytes cells of the shared array to find new fitnesses. In addition, as Waffle is looking for resource/time-consuming executions, the executions of the queue entries take a longer duration. Referring to this problem, fewer executions for testing resource-consuming executions would help the fuzzer. 
+
 
     \item Benchmarking:
         
-        The suggested testing configurations for fuzzbenching the fuzzers is a minimum of 20 trials which takes 24 hours of testing for each fuzzer. The setup for such configuration was not applicable on the local machines, but Google accepts free cloud testings after submitting changes to the project. By adding a stable version of Waffle to the project, we can investigate the performance of our fuzzer among other provided fuzzers. Another work, which would enhance the benchmarking procedure is to add the time/resource-consumption measurements while processing the benchmarks, and generate the reports in a human-readable document.
+        The suggested testing configurations for fuzzbenching the fuzzers are a minimum of 20 trials which takes 24 hours of testing for each fuzzer. The setup for such configuration was not applicable on the local machines, but Google accepts free cloud testings after submitting changes to the project. By adding a stable version of Waffle to the project, we can investigate the performance of our fuzzer among other provided fuzzers. Another work, which would enhance the benchmarking procedure is to add the time/resource-consumption measurements while processing the benchmarks and generate the reports in a human-readable document.
 \end{enumerate}
