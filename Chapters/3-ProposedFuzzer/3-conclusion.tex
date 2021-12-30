@@ -1,11 +1,11 @@
 \section{Concluding remarks}
 
-The guidance in coverage-guided fuzzers such as AFL, generates variable inputs with different execution paths. Hence, the input generation would escape from creating resource exhaustive procedures. Our solution to this problem is implemented in Waffle. Waffle measures the number of instructions which are under our investigation, and utilizes the trace of the measurements to search for exhaustive vulnerabilities. Our approach contains the following steps: 
+The guidance in coverage-guided fuzzers such as AFL generates variable inputs with different execution paths. Hence, the input generation would escape from creating resource exhaustive procedures. Our solution to this problem is implemented in Waffle. Waffle measures the number of instructions that are under our investigation and utilizes the trace of the measurements to search for exhaustive vulnerabilities. Our approach contains the following steps: 
 
 \begin{enumerate}
     \item To effectively count the instructions, Waffle enhances the instrumentation phase with the capability of exporting the instructions' information to the fuzzer. Waffle changes AFL's Module Pass for these considerations. With the benefit of Visitor functions, the instructions in basic blocks of a program are counted and defined as static values to the program. Every time a basic block is executed, the Estimated Resource Usage of the basic block is stored in an edge corresponding to the explored execution path.
-    \item The prior step configures a clang compiler which can get a C program and outputs a binary with the proper instrumentations.
-    \item The instrumented program is passed to the fuzzer, and the testing begins. Every time the program is executed with an input, the coverage and ERU information are stored in separate shared memories. Waffle pursues the coverage information to explore the code, and exploits the ERU data to eventually increase the resource usages of the executions.
+    \item The prior step configures a clang compiler that can get a C program and outputs a binary with the proper instrumentations.
+    \item The instrumented program is passed to the fuzzer, and the testing begins. Every time the program is executed with an input, the coverage and ERU information are stored in separate shared memories. Waffle pursues the coverage information to explore the code and exploits the ERU data to eventually increase the resource usages of the executions.
     \item The performance of the analysis of each execution required a careful implementation of both instrumentation and fuzzing phases. We will investigate the performance of the executions in the next section.
 \end{enumerate}
 

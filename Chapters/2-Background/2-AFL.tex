@@ -1,7 +1,7 @@
 \section{American Fuzzy Lopper (AFL)} 
 \label{sec:2-afl}
 
-Michal Zalewski developed American Fuzzy Lopper as a coverage-guided greybox fuzzer. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpus produced by the tool help seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american} AFL is designed to perform \textbf{fast} and \textbf{reliable}, and at the same time, benefits from the \textbf{simplicity} and \textbf{chainability} features \cite{about_afl}:
+Michal Zalewski developed American Fuzzy Lopper as a coverage-guided greybox fuzzer. He introduces this open-source project as \say{a security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test inputs that trigger new internal states of the targeted binary. This substantially improves the functional coverage for the fuzzed code. The compact synthesized corpus produced by the tool helps seed other, more labor- or resource-intensive testing regimes down the road.} \cite{zalewski2014american} AFL is designed to perform \textbf{fast} and \textbf{reliable}, and at the same time, benefits from the \textbf{simplicity} and \textbf{chainability} features \cite{about_afl}:
 
 \begin{itemize}
     \item \textbf{Speed:} Avoiding the time-consuming operations and increasing the number of executions over time.
@@ -19,14 +19,14 @@ Michal Zalewski developed American Fuzzy Lopper as a coverage-guided greybox fuz
 \end{figure}
 
 % The simplified version of the AFL
-AFL tests the program by running the program and monitoring the execution path for each run. To extract information from a run, AFL offers multiple \textbf{instrumentation} techniques for constructing hashes of the explored paths while following the executing path of the actual program. AFL requires instrumented binaries which provide the execution information when they are run by AFL. AFL is a whitebox/greybox fuzzer when it can effectively insert the instrumentations into the program. Figure \ref{fig:afl-io} shows a simplified illustration of the procedure of AFL. In whitebox fuzzing, AFL takes the source code of the program and executes static instrumentation during the compilation of the program, and passes the generated binary to the fuzzing module. On the other hand, the greybox feature of AFL lets the fuzzer to execute the un-instrumented binary under a dynamic instrumentation, which executes the instrumenting instructions wrapped around the basic blocks of the program.
+AFL tests the program by running the program and monitoring the execution path for each run. To extract information from a run, AFL offers multiple \textbf{instrumentation} techniques for constructing hashes of the explored paths while following the executing path of the actual program. AFL requires instrumented binaries that provide the execution information when they are run by AFL. AFL is a whitebox/greybox fuzzer when it can effectively insert the instrumentations into the program. Figure \ref{fig:afl-io} shows a simplified illustration of the procedure of AFL. In whitebox fuzzing, AFL takes the source code of the program and executes static instrumentation during the compilation of the program, and passes the generated binary to the fuzzing module. On the other hand, the greybox feature of AFL lets the fuzzer execute the un-instrumented binary under dynamic instrumentation, which executes the instrumenting instructions wrapped around the basic blocks of the program.
 
 % Instrumentation features - Coverage calculations.
 
 \subsection{Instrumentation}
 \label{subsec:instrumentation}
 
-The collection of coverage information is generated during the execution; when the execution steps into a basicblock, the procedure \ref{lst:hash} stores the visited edge (pair of two consecutive basicblocks) in CFG. The hashing only stores the information from the previous basicblock and the current basicblock which we are already in. For instance, suppose we have CFG of a program as shown in \ref{fig:instrumentation}; by giving the persmission to the program to modify a memory region shared with AFL - which AFL also has access to it - the coverage instructions generate a summary of the executed path. For example, suppose we have an instrumented program with the random values which are set in compile time (for simplicity, suppose that initially random value $cur\_location=1010$). Running the first basic block assigns $CUR\_HASH$ to $73\oplus1010=955$; the content of index $955$ of shared memory is then increased by one, and the execution continues to the next basic block. If the execution is jumped into basicblock 2, the content of $shared\_mem[310\oplus(73>>1)=274]$ is incremented by one, and so on. This procedure continues along with the main execution and in the end, the content of the shared memory contains a hashing of the traveled path. In this scenario, taking the path $1\rightarrow2\rightarrow5$ results in an array of zeros except for $\{51: 1, 274: 1, 955: 1\}$ as the hashed path.
+The collection of coverage information is generated during the execution; when the execution steps into a basic block, the procedure \ref{lst:hash} stores the visited edge (pair of two consecutive basic blocks) in CFG. The hashing only stores the information from the previous basic block and the current basic block which we are already in. For instance, suppose we have CFG of a program as shown in \ref{fig:instrumentation}; by permitting the program to modify a memory region shared with AFL - which AFL also has access to it - the coverage instructions generate a summary of the executed path. For example, suppose we have an instrumented program with the random values which are set in compile time (for simplicity, suppose that initially random value $cur\_location=1010$). Running the first basic block assigns $CUR\_HASH$ to $73\oplus1010=955$; the content of index $955$ of shared memory is then increased by one, and the execution continues to the next basic block. If the execution is jumped into basic block 2, the content of $shared\_mem[310\oplus(73>>1)=274]$ is incremented by one, and so on. This procedure continues along with the main execution and in the end, the content of the shared memory contains a hashing of the traveled path. In this scenario, taking the path $1\rightarrow2\rightarrow5$ results in an array of zeros except for $\{51: 1, 274: 1, 955: 1\}$ as the hashed path.
 
 \begin{lstlisting}[language=C++,style=CodeStyle,label={lst:hash},caption={Select element and update in shared\_mem}]
     cur_location = <COMPILE_TIME_RANDOM>;
@@ -42,7 +42,7 @@ The collection of coverage information is generated during the execution; when t
     \label{fig:instrumentation}
 \end{figure}
 
-AFL uses both dynamic and static instrumentation for profiling executions. Static instrumentation is applied using \textbf{LLVM} modules which can analyze and insert instructions anywhere in the program. Dynamic instrumentation is another method which let let the fuzzer to use the instrumentation instructions while executing the program. By default, AFL uses \texttt{QEMU} for dynamic instrumentation \cite{afl_qemu}. The emulator wraps the genuine instructions into analyzable modules, and constructs the execution path while running. This technique, \textbf{qemu-mode}, causes a slow down of 10-100\% for each execution compared to the \textbf{llvm-mode}. For the purpose of this article, we need to dig more into the procedure of instrumentation in llvm-mode \cite{afl-llvm}.
+AFL uses both dynamic and static instrumentation for profiling executions. Static instrumentation is applied using \textbf{LLVM} modules which can analyze and insert instructions anywhere in the program. Dynamic instrumentation is another method that lets the fuzzer use the instrumentation instructions while executing the program. By default, AFL uses \texttt{QEMU} for dynamic instrumentation \cite{afl_qemu}. The emulator wraps the genuine instructions into analyzable modules and constructs the execution path while running. This technique, \textbf{qemu-mode}, causes a slow down of 10-100\% for each execution compared to the \textbf{llvm-mode}. For this article, we need to dig more into the procedure of instrumentation in llvm-mode \cite{afl-llvm}.
 
 \subsubsection{LLVM}
 \label{subsub:llvm}
@@ -58,12 +58,12 @@ AFL uses both dynamic and static instrumentation for profiling executions. Stati
 \say{The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines. The name \textbf{LLVM} itself is not an acronym; it is the full name of the project.} \cite{llvm} Two of the relevant projects used by AFL are:
 
 \begin{itemize}
-    \item The \textbf{LLVM Core} libraries contain source/target-independent optimizers as well as code generators for popular CPUs. These well-documented modules assist development of a custom compiler in every step (\textit{pass}) through the conversion of source code to executable binary file.
+    \item The \textbf{LLVM Core} libraries contain source/target-independent optimizers as well as code generators for popular CPUs. These well-documented modules assist the development of a custom compiler in every step (\textit{pass}) through the conversion of source code to an executable binary file.
     
     \item \textbf{Clang} \cite{clang} provides a front-end for compiling C language family (C, C++, Objective C/C++, OpenCL, CUDA, and RenderScript) for the LLVM Project. Clang uses the LLVM Core libraries to generate an \textit{Intermediate Representation} (\textbf{IR}) of the source code \cite{lattner2004llvm}. The IR is then translated into an executable binary for the machine's CPU (Figure \ref{fig:llvm}).
 \end{itemize}
 
-AFL utilizes the compilation \textit{passes} of Clang with a custom recipe for \textit{module pass}. Passes are the modules performing the transformations and optimizations of a compilation. Each pass is applied on a specified section of the code. For instance, the \textbf{ModulePass} class (and any classes derived from this class) performs the analysis of the code and the insertion of new instructions. Other classes such as \textbf{FunctionPass}, \textbf{LoopPass}, and etc perform their instructions using different parts of the code, and they contain less information about the rest of the program. AFL uses only the ModulePass and iterates over every basicblock existing in the program
+AFL utilizes the compilation \textit{passes} of Clang with a custom recipe for \textit{module pass}. Passes are the modules performing the transformations and optimizations of a compilation. Each pass is applied to a specified section of the code. For instance, the \textbf{ModulePass} class (and any classes derived from this class) performs the analysis of the code and the insertion of new instructions. Other classes such as \textbf{FunctionPass}, \textbf{LoopPass}, etc., perform their instructions using different parts of the code, and they contain less information about the rest of the program. AFL uses only the ModulePass and iterates over every basic block existing in the program.
 
 \subsection{AFL Fuzz}
 
@@ -71,7 +71,7 @@ AFL utilizes the compilation \textit{passes} of Clang with a custom recipe for \
 The automatic fashion of testing a targeted software using AFL requires a modified execution of the software with coverage-based instructions. The coverage-based instructions are used during the fuzz testing to provide a summary of the execution under AFL's supervision. AFL passes the next test case from the queue of entries to the program, and \textit{caliberates} the test case so that it is ready to be fuzzed. After the calibration of the case, AFL tries to trim the case such that the execution's profile remains the same.
 
 % How it is continued
-AFL fuzzes the case after it's preperations; different mutation techniques are applied to the test case, and the newly generated test cases are analyzed to check if they are producing any new execution behavior based on their code coverage and execution's $speed \times file\_size$. The cases which pass the prior check are considered as \textit{interesting} cases and are added to the queue of entries. We will investigate the details of this functionality later in this article. 
+AFL fuzzes the case after its preparations; different mutation techniques are applied to the test case, and the newly generated test cases are analyzed to check if they are producing any new execution behavior based on their code coverage and execution's $speed \times file\_size$. The cases which pass the prior check are considered as \textit{interesting} cases and are added to the queue of entries. We will investigate the details of this functionality later in this article. 
 
 % Fuzzing techniques
 AFL uses various mutation techniques for fuzzing a case. There are two main stages for mutations:
@@ -88,7 +88,7 @@ AFL uses various mutation techniques for fuzzing a case. There are two main stag
     \item \textbf{Non-deterministic} stage: This stage contains two main operations:
     \begin{enumerate}
         % TODO: Describe perf score as it is an important feature that may interfere with our work
-        \item Random HAVOC: A sequence of random mutations are applied on the input in this stage. The operations include actions on file such as insertion and deletion of random bytes, cloning subsequences of input, and etc. The repetition of this stage depends on the \textbf{performance score} of the current case under investigation. AFL calculates this score based on the code coverage of the test case and it's execution speed; the more locations visited stored in \textit{coverage bitmap}, and the lower the execution speed are prefereable, and as a result, AFL increases the score based on that. 
+        \item Random HAVOC: A sequence of random mutations is applied on the input in this stage. The operations include actions on file such as insertion and deletion of random bytes, cloning subsequences of input, etc. The repetition of this stage depends on the \textbf{performance score} of the current case under investigation. AFL calculates this score based on the code coverage of the test case and its execution speed; the more locations visited stored in \textit{coverage bitmap}, and the lower the execution speed is preferable, and as a result, AFL increases the score based on that. 
         \item Splicing: If non of the previous stages result in any new findings, AFL tries selecting a random case from the queue, and copies a subsequence of that case into the current case, and relies on the HAVOC stage for mutating the results.
     \end{enumerate}
 \end{itemize}
@@ -97,14 +97,14 @@ AFL uses various mutation techniques for fuzzing a case. There are two main stag
 As we discussed, the input files generated for the target program after the fuzzing phase are processed for any \textit{interesting} feature. This procedure goes through two functions called as \texttt{save\_if\_interesting()} and \textit{update\_bitmap\_score()}:
 
 \begin{itemize}
-    \item \textbf{\texttt{save\_if\_interesting()}}: This function checks if there are any new bits in the shared trace bits (which stores the coverage information) and if a finding is showing new previously unset bits, it tags the case as an interesting one. This function also summerizes the trace bits to reduce the processing effort in later checks - to compare new findings with this generated case.
+    \item \textbf{\texttt{save\_if\_interesting()}}: This function checks if there are any new bits in the shared trace bits (which stores the coverage information) and if a finding is showing new previously unset bits, it tags the case as an interesting one. This function also summarizes the trace bits to reduce the processing effort in later checks - to compare new findings with this generated case.
 
 % Save if interesting
     \item \textbf{\texttt{update\_bitmap\_score()}}: AFL maintains a list of \texttt{top\_rated[]} entries for every byte in the bitmap. Each element of the \texttt{top\_rated[]} entries tracks the fastest \texttt{queue\_entry} which visits an edge.
 \end{itemize}
 
 % Cull queue
-AFL analyzes the cases using the above provided functions, and the best queue entries are updated eventually in the fuzzing procedure. To select the next element of the queue for fuzzing, AFL uses this information for tagging the \textit{favorite} and \textit{redundant} entries. These operations are done under the function \textit{cull\_queue()}. Each element of the list \texttt{top\_rated[]} contains a pointer to the \texttt{queue\_entries[]}, and marks the pointed entry as a \texttt{favored} entry. After a complete walk over the list, the remaining unfavored entries are marked as \texttt{redundant}. In every fuzzing cycle over the queue entries, \texttt{cull\_queue()} prepares the queue and then AFL takes the next front entry which is also \textit{favored}.
+AFL analyzes the cases using the above-provided functions, and the best queue entries are updated eventually in the fuzzing procedure. To select the next element of the queue for fuzzing, AFL uses this information for tagging the \textit{favorite} and \textit{redundant} entries. These operations are done under the function \textit{cull\_queue()}. Each element of the list \texttt{top\_rated[]} contains a pointer to the \texttt{queue\_entries[]}, and marks the pointed entry as a \texttt{favored} entry. After a complete walk over the list, the remaining unfavored entries are marked as \texttt{redundant}. In every fuzzing cycle over the queue entries, \texttt{cull\_queue()} prepares the queue and then AFL takes the next front entry which is also \textit{favored}.
 
 % MAYBE: explain the structure of top_rated[] entries
 
@@ -132,7 +132,7 @@ The \textbf{status screen} is a UI for the status of the fuzzing procedure. As i
 
     \item \textbf{Cycle progress}: As mentioned before, AFL takes one input and repeats mutating it for a while. This section shows the information about the current cycle that the fuzzer is working with.
 
-    \item \textbf{Map coverage}: The AFL's documentation explains the information in this section as: \say{The section provides some trivia about the coverage observed by the instrumentation embedded in the target binary. The first line in the box tells you how many branches we have already hit, in proportion to how much the bitmap can hold. The number on the left describes the current input; the one on the right is the entire input corpus's value. The other line deals with the variability in tuple hit counts seen in the binary. In essence, if every taken branch is always taken a fixed number of times for all the inputs we have tried, this will read "1.00". As we manage to trigger other hit counts for every branch, the needle will start to move toward "8.00" (every bit in the 8-bit map hit) but will probably never reach that extreme. 
+    \item \textbf{Map coverage}: The AFL's documentation explains the information in this section as \say{The section provides some trivia about the coverage observed by the instrumentation embedded in the target binary. The first line in the box tells you how many branches we have already hit, in proportion to how much the bitmap can hold. The number on the left describes the current input; the one on the right is the entire input corpus's value. The other line deals with the variability in tuple hit counts seen in the binary. In essence, if every taken branch is always taken a fixed number of times for all the inputs we have tried, this will read "1.00". As we manage to trigger other hit counts for every branch, the needle will start to move toward "8.00" (every bit in the 8-bit map hit) but will probably never reach that extreme. 
     
     Together, the values can help compare the coverage of several different fuzzing jobs that rely on the same instrumented binary.}
 
@@ -142,7 +142,7 @@ The \textbf{status screen} is a UI for the status of the fuzzing procedure. As i
 
     \item \textbf{Fuzzing strategy yields}: To illustrate more stats about the strategies used since the beginning of fuzzing. For the comparison of those strategies, AFL keeps track of how many paths it has explored, in proportion to the number of executions attempted.
 
-    \item \textbf{Path geometry}: The information about the inputs and their depths, which says how many generations of different paths were produced in the process. The depth of an input referes to which generation the input belongs to. Considering the first input seeds as depth 0, the generated population from these inputs increase the depth by one. This shows how far the fuzzing has progressed.
+    \item \textbf{Path geometry}: The information about the inputs and their depths, which says how many generations of different paths were produced in the process. The depth of input refers to which generation the input belongs to. Considering the first input seeds as depth 0, the generated population from these inputs increases the depth by one. This shows how far the fuzzing has progressed.
 \end{enumerate}
 
 \subsection{AFL fuzzing chain}
@@ -154,13 +154,13 @@ The \textbf{status screen} is a UI for the status of the fuzzing procedure. As i
     \label{fig:afl-proc}
 \end{figure}
 
-Figure \ref{fig:afl-proc} illustrates the procedure of fuzzing, from static intrumentation to fuzz testing the target and outputing results. To start the procedure, AFL instrumentates the program and configures the target binary for fuzz testing stage. To perform the instrumentation, AFL calls its own compiler, which applies the instrumentation when it's process is finished [Listing \ref{lst:sample_inst}]: 
+Figure \ref{fig:afl-proc} illustrates the procedure of fuzzing, from static instrumentation to fuzz testing the target and outputting results. To start the procedure, AFL instruments the program and configures the target binary for the fuzz testing stage. To perform the instrumentation, AFL calls its compiler, which applies the instrumentation when its process is finished [Listing \ref{lst:sample_inst}]: 
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:sample_inst},caption=Instrument $sample\_vul$.c]
     afl-clang sample.c -o sample_inst
 \end{lstlisting}
 
-The result file, \texttt{sample\_inst}, is an executable which contains shared memory for later analysis in fuzzing. Now AFL can start testing the program for probable vulnerabilities. The test requires the input and output directories, as well as the command for executing the program [Listing \ref{lst:fuzz_inst}]. The fuzzing continues until recieving a halt signal (For instance, by pressing \textit{Ctrl+C}). 
+The resulting file, \texttt{sample\_inst}, is an executable that contains shared memory for later analysis in fuzzing. Now AFL can start testing the program for probable vulnerabilities. The test requires the input and output directories, as well as the command for executing the program [Listing \ref{lst:fuzz_inst}]. The fuzzing continues until receiving a halt signal (For instance, by pressing \textit{Ctrl+C}). 
 
 \begin{lstlisting}[language=bash,style=CommandStyle,label={lst:fuzz_inst},caption=Execute AFL]
   # afl-fuzz -i <in_dir> -o <out_dir> [options] -- /path/to/fuzzed/app [params]
